@@ -1,0 +1,74 @@
+.logo2137 {
+     float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+  .main-404 h1,h2,h3{
+    text-align: center;
+  }
+  .circle {
+    float: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+  }
+  .logo2138 {
+    float: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  .logo2139 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .logo2140 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+  .img2 {
+    float: right;
+  }
+ .img3{
+    float: right;
+    max-width: 20%;
+    height: auto;
+    padding: 5px;
+      }
+.tekst3{
+    margin: 90px;
+}
+.tekst4{
+    margin: 90px;
+}
+.foto{
+    margin: 20px;
+    display: block;
+    margin-left: 10%;
+    margin-right: auto;
+    width: 30%;
+}
+.hline {  
+width:100%; 
+height:1px;
+background: rgb(158, 81, 81);
+}
+.img4{
+    float: right;
+    max-width: 20%;
+    height: auto;
+    padding: 5px;
+      }
+      .grid.purples {
+        background: #43259E;
+        color: #fefefe;
+      }
+
