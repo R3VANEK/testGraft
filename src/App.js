@@ -5,6 +5,8 @@ import Header from './components/header/header'
 import HeaderMobile from './components/headerMobile/headerMobile'
 import Home from './components/home/home'
 import Account from './components/account/account'
+import Site404 from './components/404/404'
+import Media from './components/media/media'
 import './app.css'
 
 
@@ -26,6 +28,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />    
           <Route exact path="/test-gitPage" component={Home} />  
           <Route exact path="/account" component={Account} />
+          <Route exact path="/404" component={Site404} />
+          <Route exact path="/media" component={Media} />
           <Footer/>
         </div>
       </BrowserRouter>
@@ -34,3 +38,4 @@ class App extends Component {
 }
 
 export default App;
+
