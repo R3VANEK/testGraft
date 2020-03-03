@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import {NavLink} from 'react-router-dom'
-import logo from '../../images/logo.png'
+import logo from '../../images/logo.svg'
 
 class headerMobile extends Component {
 
@@ -15,25 +15,33 @@ class headerMobile extends Component {
     render() {
     return (
         
-    <header>  
-        <div class="header-mobile">
-            <img src={logo}/>
-            <button class="hamburger" onClick={this.handleClick}>
-                <span class="hamburger-box">
-                    <span class="hamburger-inner "></span>
+        <header>  
+        <div className="header-mobile">
+            <a className="logo-mobile-a">
+                <img class="header-logo-mobile" src={logo}/>
+            </a>
+            <button className="hamburger ham1" onClick={this.handleClick}>
+                <span className="hamburger-box">
+                    <span className="hamburger-inner "></span>
                 </span>
             </button>
-            <div class="navigation">
-                <ul class="navigation-list">
-                    <li class="navigation-item"><NavLink exact to="/">Home</NavLink></li>
-                    <li class="navigation-item"><NavLink to="/a">O nas</NavLink></li>
-                    <li class="navigation-item"><NavLink to="/w">Kontakt</NavLink></li>
-                    <li class="navigation-item"><NavLink to="/b">Logowanie</NavLink></li>
-                </ul>
-            </div> 
+        <nav className="navigation nav1">
+        <ul className="navigation-list">
+            <li className="navigation-item"><NavLink to="/rejestracja">Załóż konto</NavLink></li>
+            <li className="navigation-item"><NavLink to="/logowanie">Zaloguj się</NavLink></li>
+            <div className="break-line"></div>
+            <li className="navigation-item"><NavLink to="/">Home</NavLink></li>
+            <li className="navigation-item"><NavLink to="/o-nas">O nas</NavLink></li>
+            <li className="navigation-item"><NavLink to="/kontakt">Kontakt</NavLink></li>
+            <div className="break-line"></div>  
+            <li className="navigation-item"><NavLink to="/a">Cos tam</NavLink></li>
+            <li className="navigation-item"><NavLink to="/b">Lorem</NavLink></li>
+            <li className="navigation-item"><NavLink to="/c">Ipsum</NavLink></li>                    
+        </ul>
+        </nav> 
         </div>
-        <div class="filler-mobile"></div>
-    </header>  
+        <div className="filler-mobile"></div>
+    </header>   
         
             
         

@@ -1,12 +1,5 @@
 import React, {Component} from 'react'
 import baner2  from '../../images/baner2.svg'
-import ikona2  from '../../images/IKONKA2.svg'
-import ikona3  from '../../images/IKONKA3.svg'
-//import oferta  from '../../images/oferta.svg'
-import reklama from  '../../images/72480187_1139453392927230_7778508410999275520_n.png'
-import swinia from '../../images/SWINIA.svg'
-import obrazek from  '../../images/obrazek.svg'
-import message from  '../../images/message.svg'
 import plus500 from '../../images/biale-tlo.png'
 import videoNr1 from '../../videos/reklama.mp4'
 import videoNr2 from '../../videos/troska.mp4'
@@ -15,8 +8,13 @@ import karta from '../../images/karta.png'
 import chmura from '../../images/chmura.png'
 import n1 from '../../images/nl.png'
 import exit from '../../images/exit.png'
+import bank from '../../images/Bank.svg'
+import voucher from '../../images/Voucher.svg'
+import flame from '../../images/Flame.svg'
+import purchase from '../../images/purchase.svg'
+import screen2 from '../../images/screen2.svg'
+import contact from '../../images/contact.svg'
 import {createCookie, readCookie} from '../../functions/cookiesMethods'
-
 
 
 class Home extends Component {
@@ -26,20 +24,49 @@ class Home extends Component {
             }
     
             componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll, true);
-        window.addEventListener('load', this.handleScroll, true);
-        this.showNewsLetter();
+                window.addEventListener('scroll', this.handleScroll, true);
+                window.addEventListener('load', this.handleScroll, true);
+
+                this.showNewsLetter = setTimeout( () => {                                  
+                    this.setState({
+                    isNewsLetterActive:true
+                    })
+                    console.log("AAAA")
+                    
+                    this.toggleBlurAndOverlay();
+
+                }, 3000)   
          }
+
+         componentWillUnmount(){
+             clearTimeout(this.showNewsLetter)
+         }
+
+         
+                        
+            /***** COMMENTED CODE ALLOWS TO SHOW NEWSLETTER ONCE A DAY *****/
+            
+               // if( readCookie('showNewsLetter')===null ){
+                 //   createCookie('showNewsLetter','1', 1)
+                 
+                 
+                 //if(this.props)
+                     
+                
+              //  }                                          
+            
     
          toggleBlurAndOverlay = () => {
                         let header = document.querySelector('header')
                         let container = document.querySelector('.container')
                         let footer = document.querySelector('footer')
                         const overlay = document.querySelector('.overlay');
+                        if(overlay){
                         overlay.classList.toggle('hidden');
                         header.classList.toggle('blur')
                         container.classList.toggle('blur')
                         footer.classList.toggle('blur')
+                    }
                     }
                 
                      handleOnLoad = (e) => {
@@ -118,22 +145,7 @@ class Home extends Component {
                             }
                         }
                 
-                        showNewsLetter = () => {
                         
-                           // if( readCookie('showNewsLetter')===null ){
-                             //   createCookie('showNewsLetter','1', 1)
-                            
-                                 setTimeout( () => {
-                                    this.setState({
-                                    isNewsLetterActive:true
-                                })
-                                console.log("HEELo")
-    
-                                this.toggleBlurAndOverlay();
-                    
-                                }, 3000)
-                          //  }                                          
-                        }
                         
                         closeNewsLetter = () => {
                             this.setState({
@@ -190,26 +202,25 @@ class Home extends Component {
     
         <section className="grid  special" onScroll={this.handleScroll} onLoad={this.handleOnLoad}>
             <div className="grid-elem-1">
-                <h1 className="big-h1">Zapewnij sobie</h1>
-    
-            <div class="anim-word">
-                <div class="anim-cont">
-                    <div class="anim a1">WYGODĘ!</div>
-                    <div class="anim a2">SPOKÓJ!</div>
-                    <div class="anim a3">PEWNOŚĆ!</div>
-                    <div class="anim a4">CZAS!</div>
-                    <div class="anim a5">SZYBKOŚĆ!</div>
-                    <div class="anim a6">WYGODĘ!</div>
-                </div>
-            </div>
-             
-            <button className="btn purple-btn">ZACZNIJ!</button>
-                <p>
-                Nie masz prawo odpocząć od irytujących, nietrafionych ofert i niechcianych ofert.
-                Nie masz prawo odpocząć od irytujących, nietrafionych ofert i niechcianych ofert.
-                Nie masz prawa odpocząć od irytujących, nietrafionych ofert i niechcianych ofert.
-                </p>
+            <h1 className="big-h1">Zapewnij sobie</h1>
 
+                <div class="anim-word">
+                    <div class="anim-cont">
+                        <div class="anim a1">WYGODĘ!</div>
+                        <div class="anim a2">SPOKÓJ!</div>
+                        <div class="anim a3">PEWNOŚĆ!</div>
+                        <div class="anim a4">CZAS!</div>
+                        <div class="anim a5">SZYBKOŚĆ!</div>
+                        <div class="anim a6">WYGODĘ!</div>
+                    </div>
+                </div>
+                
+                <button className="btn purple-btn"><i class="fas fa-eye"></i>&nbsp;ZACZNIJ!</button>
+                <i><p>
+                    Masz prawo odpocząć od irytujących, nietrafionych ofert i niechcianych ofert.
+                    Pragniemy Ci udostępnić proste i przejrzyste narzędzie, które pozwoli Ci oszczędić
+                    czas nerwy i pieniądze.
+                </p></i>       
             </div>
     
              <div className="grid-elem-2">
@@ -222,14 +233,14 @@ class Home extends Component {
     
         <section className="grid purple">
                 <div className="grid-elem-1">
-                    <h1 className="big-h1">Zakupy w internercie, po Twojemu</h1>
+                    <h1 className="big-h1">Zakupy w internecie, po Twojemu</h1>
                     <i><p>NIEZALEŻNIE CZY TO NOWY UPOMINEK, UBRANIE CZY UPRAGNIONA WYCIECZKA.</p></i>
                     <p>Jesteś unikalny, korzystając z naszej aplikacji nigdy już nie będziesz "Kolejnym klientem".</p> 
     
                     <button className="btn purple-btn" onClick={this.handleClick2}>Zobacz video</button>
                 </div>
                 <div className="grid-elem-2">
-                    <img className="moving left" src={reklama} alt="offer"/>
+                    <img className="moving left" src={screen2} alt="offer"/>
                 </div>
         </section>
     
@@ -239,26 +250,26 @@ class Home extends Component {
                     <i><p>NIGDZIE NIE MA IDENTYCZNEGO PŁATKU ŚNIEGU, PODOBNIE JEST Z GUSTAMI. KAŻDYM MA INNY I TO JEST PIĘKNE</p></i>
                     <p>Sprzeciw się traktowaniu każdego z klientów jednakowo. W końcu nie jesteś jak inni.</p> 
                     <div className="text-and-img">
-                    <img className="moving left" src={swinia} alt=""/><br/>
+                    <img className="moving left" src={bank} alt=""/><br/>
                     OSZCZĘDZAJ
                     </div>
                     <div className="text-and-img">
-                    <img className="moving left" src={ikona2} alt=""/><br/>
+                    <img className="moving left" src={voucher} alt=""/><br/>
                     OTRZYMUJ
                     </div>
                     <div className="text-and-img">
-                    <img className="moving left" src={ikona3} alt=""/><br/>
+                    <img className="moving left" src={flame} alt=""/><br/>
                     PROMUJ
                     </div>
                 </div>
                 <div className="grid-elem-2">
-                    <img className="moving left" src={obrazek} alt=""/>
+                    <img className="moving left" src={purchase} alt=""/>
                 </div>
         </section>
     
         <section className="grid purple">  
                 <div className="grid-elem-1">
-                    <h1 className="big-h1">Już wkrótce</h1>
+                    <h1 className="big-h1">Już wkrótcę</h1>
                     <i><p>ZAPEWNIJ NAJBLIŻSZYM ŚWIETLANĄ PRZYSZŁOŚĆ. W PROSTY SPOSÓB ZNAJDŹ NAJLEPSZE FUNDUSZE OSZCZĘDNOŚCIOWE</p></i>
                     <p>sposób aby zatroszczyć się o przyszłość bliskich!</p> 
                     <p>POMYŚL O PRZYSZŁOŚCI, TO SIĘ OPŁACI...</p>
@@ -288,7 +299,7 @@ class Home extends Component {
                     
                 </div>
                 <div className="grid-elem-2">
-                    <img src={message} alt="message"/>
+                    <img src={contact} alt="message"/>
                     <h1 className="icon-fb">/COZA500PLUS</h1>
                     <h1 className="icon-insta">@COZA500PLUS</h1>
                 </div>

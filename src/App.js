@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Footer from './components/footer/footer'
-import Header from './components/header/header'
+import HeaderDesktop from './components/headerDesktop/headerDesktop'
 import HeaderMobile from './components/headerMobile/headerMobile'
 import Home from './components/home/home'
-import Account from './components/account/account'
-import Site404 from './components/404/404'
-import Media from './components/media/media'
+import Register from './components/register/register';
+import About from './components/about/about';
+import ForMedia from './components/forMedia/forMedia';
+import Regulations from './components/regulations/regulations';
+import Page404 from './components/page404/page404';
+//import Contact from './components/about/contact';
 import './app.css'
 
 
@@ -16,23 +19,41 @@ class App extends Component {
     mobileHeader:false
   }
 
+  componentDidMount(){
+    window.addEventListener('resize', () => {
+    if(window.innerWidth < 850 || window.innerHeight < 500){this.setState({mobileHeader:true})}
+    else{this.setState({mobileHeader:false})}
+    }, true);
+    window.addEventListener('load', () => {
+    if(window.innerWidth < 850 || window.innerHeight < 500) {
+        this.setState({mobileHeader:true})
+    } else {
+        this.setState({mobileHeader:false})
+    }
+
+    });
+  }
   
 
   
     render() {
-      const header = this.state.mobileHeader ? <HeaderMobile/>  : <Header/>
-    return (
-      <BrowserRouter>
-        <div className="App">
-          {header}
-          <Route exact path="/" component={Home} />    
-          <Route exact path="/test-gitPage" component={Home} />  
-          <Route exact path="/account" component={Account} />
-          <Route exact path="/404" component={Site404} />
-          <Route exact path="/media" component={Media} />
-          <Footer/>
-        </div>
-      </BrowserRouter>
+      const header = this.state.mobileHeader ? <HeaderMobile/>  : <HeaderDesktop/>
+      return (
+        <BrowserRouter>
+          <div className="App">
+            {header}
+
+            <Route exact path="/test-gitPage" component={Home} /> 
+            <Route exact path="/" component={Home} />   
+            <Route path="/rejestracja" component={Register} />
+            <Route path="/o-nas" component={About} />
+            <Route path="/dla-mediow" component={ForMedia} />
+            <Route path="/regulamin" component={Regulations} />
+            <Route component={Page404} />
+            
+            <Footer/>
+          </div>
+        </BrowserRouter>
     )
 }
 }

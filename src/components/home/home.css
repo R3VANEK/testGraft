@@ -114,23 +114,23 @@ h1, h3 {
     opacity: 1;
   }
   20% {
-    transform: translateY(-90px);
+    transform: translateY(-95px);
     opacity: 0;
   }
   40% {
-    transform: translateY(-180px);
+    transform: translateY(-190px);
     opacity: 1;
   }
   60% {
-    transform: translateY(-270px);
+    transform: translateY(-285px);
     opacity: 0;
   }
   80% {
-    transform: translateY(-360px);
+    transform: translateY(-380px);
     opacity: 1;
   }
   100% {
-    transform: translateY(-450px);
+    transform: translateY(-475px);
     opacity: 0;
   }
 }
@@ -141,23 +141,23 @@ h1, h3 {
     opacity: 0;
   }
   20% {
-    transform: translateY(-90px);
+    transform: translateY(-95px);
     opacity: 1;
   }
   40% {
-    transform: translateY(-180px);
+    transform: translateY(-190px);
     opacity: 0;
   }
   60% {
-    transform: translateY(-270px);
+    transform: translateY(-285px);
     opacity: 1;
   }
   80% {
-    transform: translateY(-360px);
+    transform: translateY(-380px);
     opacity: 0;
   }
   100% {
-    transform: translateY(-450px);
+    transform: translateY(-475px);
     opacity: 1;
   }
 }
@@ -165,12 +165,12 @@ h1, h3 {
 .anim {
   width: 600px;
   text-align: left;
-  height: 90px;
+  height: 95px;
   box-sizing: border-box;
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  font-size: 70px;
+  font-size: 68px;
   box-sizing: border-box;
   line-height: 70px;
 }
@@ -221,9 +221,18 @@ h1, h3 {
   margin: 25px auto;
 }
 
+.btn {
+  font-size: 18px;
+  min-width: 180px;
+}
+
 .newsletter .btn {
   width: 225px;
   margin: 25px auto;
+}
+
+.newsletter .btn:hover {
+  background-position: -225px;
 }
 
 @media (min-width: 901px) {
@@ -306,10 +315,8 @@ h1, h3 {
     border-radius: 0;
   }
   .btn {
-    margin: 10px;
-    width: 30%;
-    height: 35px;
-    margin-top: 3vw;
+    margin: 35px 10px 25px;
+    height: 40px;
   }
   .with-img-oko.purple-btn.btn::after, .moving.left.with-img-oko.white-btn.btn::after,
   .with-img-klod.purple-btn.btn::after, .moving.left.with-img-klod.white-btn.btn::after {
@@ -327,7 +334,7 @@ h1, h3 {
     width: 25%;
   }
   .special {
-    row-gap: 100px;
+    row-gap: 200px;
   }
   .special.grid-elem-2 {
     margin: 22vw auto 0;
@@ -444,7 +451,6 @@ h1, h3 {
   .btn {
     margin-top: 45px;
     display: block;
-    width: 60%;
     min-width: 180px;
     height: 40px;
   }
@@ -482,7 +488,7 @@ h1, h3 {
   }
   .newsletter {
     grid-template-columns: 0 100%;
-    top: 2vh;
+    top: 0;
     text-align: center;
   }
   .newsletter-right {
