@@ -29,7 +29,10 @@
   .offers-block{
       display: flex;
       flex-wrap: wrap;
-      row-gap: 20px;
+      overflow-y: auto;
+      height:40px;
+      padding-right: 10px;
+      
   }
 .offer{
     background-color: #d7d4ff;
@@ -37,8 +40,8 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    margin: 0 10px 0px;
-    border-radius: 5px;
+    margin: 0 10px 0;
+    border-radius: 8px;
     font-size: 1.1em;
 }
   .user-grid {
@@ -76,40 +79,38 @@
     border: 2px solid lightgray;
   }
   .user-family, .offer-list {
-    margin: 15px auto;
+    margin: 20px auto;
     width: 100%;
     max-width: 1000px;
   }
   .user-members {
     text-align: center;
-    gap: 25px;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 25px auto 0;
     justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 1000px;
-    white-space: nowrap;
-    height: 360px;
+    height: 300px;
     border-right: 1px solid #eeeeee;
     border-left: 1px solid #eeeeee;
-    padding: 2vw 0 0;
     min-width: 300px;
     position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-y: auto;
   }
   .user-member {
     white-space: normal;
-    width: 200px;
+    width: 185px;
     display: inline-block;
     height: 250px;
     padding: 25px 20px;
     background: #fefefe;
-    border-radius: 20px;
+    border-radius: 10px;
     box-sizing: border-box;
     position: relative;
-    margin: 0 15px;
-    border: 1px solid lightgray;
+    margin: 0 15px 25px;
+    border: 1px solid gray;
   }
   .user-member .flying-exit {
     width: 21px;
@@ -148,6 +149,7 @@
     border: 1px solid lightgray;
     opacity: 0;
     transition: opacity .25s ease-in-out;
+    display: none; //delete this line to see efects of this element
   }
   
   .user-member-hover:hover {
@@ -209,9 +211,7 @@
   .purple-line-text:hover {
     background: palevioletred;
   }
-  .add {
-    transform: translateY(-56px);
-  }
+ 
 
   @media (min-width: 1000px) {
     .user-description {
