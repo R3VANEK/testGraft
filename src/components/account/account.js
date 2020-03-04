@@ -1,8 +1,9 @@
 import React from 'react'
 import Swinia from '../../images/SWINIA.svg'
-import './account-new.css'
+import './account.min.css'
 import k from '../../images/k.png'
 import Kid from './kid'
+import Offer from './offer'
 
 const Account =(props)=>{
 
@@ -23,14 +24,30 @@ const Account =(props)=>{
         {id:3, name:'KACPER', age:5, sizeOfShoe:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'},
     ]
 
+    const DUMMY_OFFERS = [
+        {id:6, name:'Pan Tadeusz', page:'www.CzemuPanTadeuszToEpopejaNarodowa.pl', price:1830, description:'W "Panu Tadeuszu" znajduje się wiele elementów charakterystycznych dla eposu.Jest on wielowątkowym utworem poetyckim ukazującym bohaterskie czyny wielkich postaci, na tle przełomowych dla narodu wydarzeń. W utworze występuje wszechwiedzący i wszechobecny narrator uprzedzający o przyszłych przypadkach bohaterów. Nie każdy epos jest jednak epopeją narodową.', img:'a.png'},
+        {id:4, name:'Dziady III', page:'www.KonradJakoBohaterRomantyczny.pl', price:1830, description:'Konrad to przede wszystkim bohater dynamiczny. Już na początku dramatu przechodzi przeobrażenie - "Gustavus obiit - hic hatus est Conradus [Gustaw umarł - urodził się Konrad]". Maria Janion określiła tę przemianę jako transformację z Kochanka kobiety w Kochanka ojczyzny.', img:'a.png'},
+        {id:5, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+        {id:5, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+        {id:5, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+
+        {id:5, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'}
+    ]
+
     const listOfKids = DUMMY_DATA.map(element=>{
         return(
             <Kid kid={element} key={element.id}/>
         )
     })
 
+    const listOfOffers = DUMMY_OFFERS.map(element=>{
+        return(
+            <Offer offer={element} key={element.id}/>
+        )
+    })
+
     return(
-        <div>
+        <main>
 
             <div className="user-description">
                 <div className="user-edit">
@@ -45,10 +62,10 @@ const Account =(props)=>{
                             Nazwa użytkownika
                         </h2>
                         <h5 className="user-likes-h5">
-                            Polubione oferty: 51
+                            Polubione oferty: <span>51</span>
                         </h5>
                         <h5 className="user-likes-h5">
-                            Data założenia: 15 stycznia 2030 rok
+                            Data założenia: <span>15 stycznia 2030 rok</span>
                         </h5>     
                     </div>
                 </div>
@@ -59,20 +76,25 @@ const Account =(props)=>{
                 <div className="user-members">
                     <div className="user-member add">
                         <div className="user-member-img">
-                            <img src={k} alt="dodaj_członka" onClick={ ()=>{props.handleClickEditProfile('addNewChild')}}/>
+                            <img src={k} alt="dodaj_członka" />
                         </div>
                         <div className="user-member-text">
                             Dodaj nowego członka.
                         </div>
-                        <div className="user-member-text">
                         
-                        </div>
                     </div>
                     {listOfKids}         
-                </div>    
+                </div>   
+            </div>
+            <div className="offer-list wrapping-border">
+                <h1 className="fine-text">Ulubione oferty:</h1>
+                <div className="offers-block">
+                    {listOfOffers}
+                </div>
+                  
             </div>
 
-        </div>
+        </main>
         
     )
 }

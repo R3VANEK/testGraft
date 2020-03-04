@@ -9,6 +9,7 @@ import About from './components/about/about';
 import ForMedia from './components/forMedia/forMedia';
 import Regulations from './components/regulations/regulations';
 import Page404 from './components/page404/page404';
+import Account from './components/account/account';
 //import Contact from './components/about/contact';
 import './app.css'
 
@@ -43,13 +44,14 @@ class App extends Component {
           <div className="App">
             {header}
 
-            <Route exact path="/test-gitPage" component={Home} /> 
             <Route exact path="/" component={Home} />   
             <Route path="/rejestracja" component={Register} />
             <Route path="/o-nas" component={About} />
             <Route path="/dla-mediow" component={ForMedia} />
             <Route path="/regulamin" component={Regulations} />
-            <Route component={Page404} />
+            <Route path="/regulamin" component={Regulations} />
+            <Route path="/moje-konto" component={Account} />
+            <Route path="/404" component={Page404} />
             
             <Footer/>
           </div>

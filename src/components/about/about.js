@@ -39,7 +39,7 @@ const About = () => {
                 </div>
             </section>
 
-            <div class="tekst3">
+            <div class="tekst3-about">
                 <h1>Pozwalamy zadbać o finanse i rozsądnie wydawać pieniądze.</h1>
                 <h3>
                     Dzięki CoZa500Plus zyskujesz spokój, oszczędność i czas,<br/>
@@ -50,7 +50,7 @@ const About = () => {
                 <img src={image} alt="Screen"/>
             </div>
 
-                <div class="tekst4">
+                <div class="tekst4-about">
                     <h1>
                         Oferty szyte na miare.
                     </h1>
@@ -62,7 +62,7 @@ const About = () => {
                         <img src={image1} alt="Screen"/>
                     </div>
 
-                    <div class="tekst4">
+                    <div class="tekst4-about">
                         <h1>
                             Z nami zapewnisz sobie i swojej rodzinie<br/>
                             To co najlepsze.
@@ -76,7 +76,7 @@ const About = () => {
                         </div>        
                     </div>
 
-                <div class="tekst4">
+                <div class="tekst4-about">
                     <h1>
                         Bezpieczne, szybkie i przyjemne zakupy dla całej twojej rodziny. <br/>
                         Po prostu... 
