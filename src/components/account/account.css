@@ -290,12 +290,6 @@
   animation-fill-mode: forwards;
 }
 
-.user-settings {
-  height: 500px;
-  background-color: red;
-  width: 1000px;
-}
-
 @media (min-width: 1000px) {
   .user-description {
     border-radius: 25px;
