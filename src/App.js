@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Footer from './components/footer/footer'
 import HeaderDesktop from './components/headerDesktop/headerDesktop'
 import HeaderMobile from './components/headerMobile/headerMobile'
@@ -44,14 +44,16 @@ class App extends Component {
           <div className="App">
             {header}
 
-            <Route exact path="/" component={Home} />   
+          <Switch>
             <Route path="/rejestracja" component={Register} />
             <Route path="/o-nas" component={About} />
             <Route path="/dla-mediow" component={ForMedia} />
             <Route path="/regulamin" component={Regulations} />
-            <Route path="/regulamin" component={Regulations} />
-            <Route path="/moje-konto" component={Account} />
-            <Route path="/404" component={Page404} />
+            <Route path="/moje-konto" component={Account} />  
+            <Route exact path="/" component={Home} />  
+            <Route  component={Page404} />
+          </Switch>
+            
             
             <Footer/>
           </div>
