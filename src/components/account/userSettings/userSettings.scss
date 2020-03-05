@@ -1,0 +1,41 @@
+.flying-block{
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width:100%;
+    top:-100vh;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(0);
+    } 
+    to{
+        opacity: 1;
+        transform: translateY(105vh);
+    }
+}
+/*@keyframes fadeIn{            MEDIA QUERIES!!!!
+    from{
+        opacity: 0;
+        transform: translateY(0);
+    } 
+    to{
+        opacity: 1;
+        transform: translateY(100vh);
+    }
+}*/
+.anim-fade-in{
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: .5s;
+    animation-delay: .1s;
+    animation-fill-mode: forwards;
+}
+.user-settings-wrapper{
+    height:500px;
+    background-color: red;
+    width: 1000px;
+}
