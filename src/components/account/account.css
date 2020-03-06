@@ -290,6 +290,40 @@
   animation-fill-mode: forwards;
 }
 
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes reverseFadeInOverlay {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.anim-fade-in-overlay {
+  opacity: 0;
+  animation-name: fadeInOverlay;
+  animation-duration: .5s;
+  animation-delay: .1s;
+  animation-fill-mode: forwards;
+}
+
+.reverse-anim-fade-in-overlay {
+  opacity: 0.5;
+  animation-name: reverseFadeInOverlay;
+  animation-duration: .5s;
+  animation-delay: .1s;
+  animation-fill-mode: forwards;
+}
+
 @media (min-width: 1000px) {
   .user-description {
     border-radius: 25px;

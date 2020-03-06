@@ -1,29 +1,47 @@
-export const toggleSettings = (doAnimation = false) => {
+export const toggleSettings = (show=true) => {
 
-    //if(doAnimation){ 
-        let userSettings  = document.querySelector('.user-settings-wrapper');
-        userSettings.classList.toggle('none');
-      
+    let userSettings  = document.querySelector('.user-settings-wrapper');
+        if(show){
+            userSettings.classList.remove('none');
+        } else {
+            userSettings.classList.add('none');
+        }
+
         toggleOverlayAndBlur();
-    //}
 }
 
-export const toggleOverlayAndBlur = () => {
-    let header = document.querySelector('header')
-    let main = document.querySelector('main')
-    let footer = document.querySelector('footer')
-    const overlay = document.querySelector('.overlay');
-    overlay.classList.toggle('none');
-    header.classList.toggle('blur');
-    main.classList.toggle('blur');
-    footer.classList.toggle('blur');
+export const toggleOverlayAndBlur = (show=true) => {
+    let header = document.querySelector('header');
+    let main = document.querySelector('main');
+    let footer = document.querySelector('footer');
+    let overlay = document.querySelector('.overlay');
+    
+    if(show){
+        overlay.classList.remove('none');
+        overlay.classList.add('anim-fade-in-overlay');
+        header.classList.add('blur');
+        main.classList.add('blur');
+        footer.classList.add('blur');
+    } else {
+        overlay.classList.add('reverse-anim-fade-in-overlay');
+        header.classList.remove('blur');
+        main.classList.remove('blur');
+        footer.classList.remove('blur');
+
+        setTimeout( () => {
+            overlay.classList.add('none');
+            overlay.classList.remove('anim-fade-in-overlay');
+            overlay.classList.remove('reverse-anim-fade-in-overlay');
+            
+        }, 600)
+    }
+    
+   
 }
 
 export const removeAll = () => {
-    let userSettings  = document.querySelector('.user-settings-wrapper');
-    userSettings.classList.add('none');
-
-    toggleOverlayAndBlur();
+    toggleSettings(false)
+    toggleOverlayAndBlur(false);
 }
 
 export const changeSecondSection = (section) => {
