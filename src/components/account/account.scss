@@ -251,7 +251,11 @@
         transform: translateY(105vh);
     }
   }
-  /*@keyframes fadeIn{            MEDIA QUERIES!!!!
+
+@media(max-width:780px){
+
+
+@keyframes fadeIn{           
     from{
         opacity: 0;
         transform: translateY(0);
@@ -260,7 +264,8 @@
         opacity: 1;
         transform: translateY(100vh);
     }
-  }*/
+  }
+}
   .anim-fade-in{
     opacity: 0;
     animation-name: fadeIn;

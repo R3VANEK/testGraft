@@ -60,11 +60,11 @@ const Account =(props)=>{
 
             {/* FLYING THINGS */}
 
-            <div className="flying-block user-settings-wrapper anim-fade-in none">
+            <div className="flying-block user-settings-wrapper anim-fade-in">
                 <UserSettings />
             </div>
 
-            <div className="overlay none" onClick={removeAll}></div>
+            <div className="overlay" onClick={removeAll}></div>
 
             {/*****************/}
 

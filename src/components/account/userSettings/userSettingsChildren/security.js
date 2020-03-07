@@ -1,4 +1,5 @@
 import React from 'react'
+import '../userSettings.min.css';
 
 const Security = () => {
     return (

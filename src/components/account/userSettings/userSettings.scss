@@ -1,21 +1,45 @@
 .user-settings-wrapper{
-    width:100%;
+    width:95%;
     max-width: 900px;
     min-height:565px; 
+
+    @media(max-width: 780px){
+        width: 100%;
+    }
 }
 .user-settings-block{
     display: grid;
     grid-template-columns: 30% 70%;
-    border-radius: 25px;   
+    border-radius: 25px;
+    overflow: hidden;
+    @media(max-width: 780px){
+        grid-template-columns: 40% 60%;
+        height:100vh;
+        border-radius: 0;
+        overflow-y:scroll;
+        overflow-x:hidden;
+    }
+    @media(max-width: 535px){
+        grid-template-columns: 70px calc(100% - 70px);
+    }
+    
 }
-.user-settings-first{
+
+.fixed-when-mobile{
     background: lighten(lightgray, 10%);
     display: grid;
     flex-direction: column;
     height: 100%;
-    border-radius: 25px 0 0px 25px;
     grid-template-rows: repeat(7, 1fr);
-    overflow: hidden;
+    
+
+    @media(max-width: 535px){
+        position: fixed;
+        width: 70px;
+        height: 100vh; 
+        min-height: 250px;
+        grid-template-rows: repeat(3, 1fr);
+    }
 }
 .first-text-and-img{
     display: grid;
@@ -43,9 +67,134 @@
     &:nth-child(3){
         grid-row: 7 / 8;
     }
+    @media(max-width: 780px){
+        padding:18px 10px 18px 15px;;
+    }
+    @media(max-width: 535px){
+      grid-template-columns: 100% 0;
+      padding:0;
+      .text{
+          display: none;
+      }
+      &:nth-child(1){
+        grid-row: 1 / 2;
+        }
+        &:nth-child(2){
+            grid-row: 2 / 3;
+        }
+        &:nth-child(3){
+            grid-row: 3 / 4;
+        }
+    }
 }
 .user-settings-second{
     background-color: #fefefe;
-    border-radius:0 25px  25px 0;
+    
+}
+.img-inside-img{
+    position: relative;
+    margin: 25px auto 50px;
+    img{
+        width:150px;
+        height:150px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+.img-on-img{    //YOU CAN CHANGE OPACITY OF CIRCLE IN images/plusCircle.svg
+    position: absolute;
+    left:0;
+    right:0;
+    margin: 0 auto;
+}
+.change-data-block{
+    display: grid;
+    grid-template-columns: calc(50% - 1px) 2px calc(50% - 1px);
+
+    img{
+        width:65px;
+        margin-bottom: 15px;
+    }
+    @media(max-width: 535px){
+        grid-template-columns: 100%;
+        
+        img{
+            margin-bottom: 0;
+        }
+      }
+}
+.change-data-first{
+    @media(max-width: 535px){
+        margin-bottom: 30px;
+        
+      } 
+}
+.change-data-line{
+    background-color: lightgray;
+    width:100%;
+}
+.change-data-input-and-label{
+    width:70%;
+    margin: 10px auto 0;
+
+    @media(max-width: 535px){
+        width:80%;
+        max-width: 300px;
+    }
+}
+.change-data-label{
+    text-align: left;
+    display: block;
+    color: gray;
+    font-size: 14px;
+}
+.change-data-input{
+    width:100%;
+    display: block;
+    border:none;
+    border-radius: 5px;
+    background-color: lightgray;
+    height:29px;
+    margin-top: 1px;
+    padding:2px 8px;
+    font-size: 15px;
+
+    &:focus{
+        background-color: lighten(lightgray, 5%);
+        border:1px solid lightgray;
+    }
+    
+}
+.user-settings-second{
+    .btn{
+        margin: 30px auto 25px;
+        height:40px;
+    }
+}
+.delete-account{
+
+     .change-data-input-and-label{
+         margin: 25px auto;
+         width: 60%;
+
+         @media(max-width: 535px){
+            width:80%;
+            max-width: 300px;
+        }
+     }
+     img{
+         width:80%;
+         max-width: 300px;
+     }
+    
+}
+.delete-account, .edit-data{
+    h2{
+        padding: 0 20px;
+
+         @media(max-width: 535px){
+            font-size: 1.2em;
+        }
+    }
 }
 

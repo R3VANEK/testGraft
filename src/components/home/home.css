@@ -286,7 +286,7 @@ h1, h3 {
   .container .text-and-img img {
     width: 80%;
   }
-  input[type='text'], input[type='email'], textarea {
+  .grid.odd input[type='text'], input[type='email'], textarea {
     width: 60%;
   }
   .special {
@@ -632,7 +632,7 @@ video {
   background: transparent url("../../images/empty.png") 50% 50%/cover no-repeat;
 }
 
-input[type='text'], input[type='email'], textarea {
+.grid.odd input[type='text'], input[type='email'], textarea {
   background: transparent;
   border: none;
   border-bottom: 1px solid black;
@@ -642,7 +642,7 @@ input[type='text'], input[type='email'], textarea {
   font-size: 1.1em;
 }
 
-textarea {
+.grid.odd textarea {
   resize: none;
   border: 1px solid black;
   padding: 10px;
