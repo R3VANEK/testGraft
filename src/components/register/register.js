@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import './register.min.css';
+import fb from '../../images/fb.svg'
 
 class Register extends Component {
 
     render(){ 
         return (
-            <div className="container">
+            <main className="container-register">
                 <form className="register-form">
                     <div className="register-form-1st">
                         <div className="text-with-vertical-line">
@@ -30,7 +31,8 @@ class Register extends Component {
                                 -CAPTCHA-
                             </div>
                             <button className="btn-fb">
-                                Zarejestruj się przez facebooka
+                            <img src={fb} />
+                            <p>Zarejestruj się przez facebooka</p>
                             </button>
                         </div>
                         <div className="checkbox-and-text">
@@ -44,7 +46,7 @@ class Register extends Component {
                         <input type="submit" value="Zarejestruj się" className="btn purple-btn" />
                     </div>
                 </form>
-            </div>
+            </main>
         )
     }
 }
