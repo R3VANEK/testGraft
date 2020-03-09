@@ -9,6 +9,17 @@ export const toggleSettings = (show=true) => {
 
         toggleOverlayAndBlur();
 }
+export const toggleAddKid = (show=true) => {
+
+    let addKid  = document.querySelector('.add-new-kid-wrapper');
+        if(show){
+            addKid.classList.remove('none');
+        } else {
+            addKid.classList.add('none');
+        }
+
+        toggleOverlayAndBlur();
+}
 
 export const toggleOverlayAndBlur = (show=true) => {
     let header = document.querySelector('header');
@@ -40,7 +51,9 @@ export const toggleOverlayAndBlur = (show=true) => {
 }
 
 export const removeAll = () => {
-    toggleSettings(false)
+    console.log("AAAA")
+    toggleSettings(false);
+    toggleAddKid(false);
     toggleOverlayAndBlur(false);
 }
 

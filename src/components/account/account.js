@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react' //ZROBIC USESTATE
 import Swinia from '../../images/SWINIA.svg'
 import './account.min.css'
-import k from '../../images/k.png'
-import Kid from './kid'
-import Offer from './offer'
+import plusCircle from '../../images/plusCircle.svg';
+import Kid from './kids/kid'
+import AddKid from './kids/addKid'
+import Offer from './offers/offer'
 import UserSettings from './userSettings/userSettings';
-import {toggleSettings, removeAll} from '../../functions/userAccountHelplers';
+import {toggleSettings, toggleAddKid, removeAll} from '../../functions/userAccountHelplers';
 
 const Account =(props)=>{
 
-
+    
     /*
         !!UWAGA TO JEST ORYGINALNA FUNKCJA WYŚWIETLAJĄCA DIVY DZIECI, NA RAZIE W CELU
         WYŚWIETLANIA PRZYKŁADOWAYCH DANYCH JEST ONA ZASTĄPIONA KOPIĄ!!
@@ -60,8 +61,11 @@ const Account =(props)=>{
 
             {/* FLYING THINGS */}
 
-            <div className="flying-block user-settings-wrapper anim-fade-in">
+            <div className="flying-block user-settings-wrapper anim-fade-in none">
                 <UserSettings />
+            </div>
+            <div className="flying-block add-new-kid-wrapper anim-fade-in">
+                <AddKid />
             </div>
 
             <div className="overlay" onClick={removeAll}></div>
@@ -96,7 +100,8 @@ const Account =(props)=>{
                 <div className="user-members">
                     <div className="user-member add">
                         <div className="user-member-img">
-                            <img src={k} alt="dodaj_członka" />
+                            <img src={plusCircle} alt="dodaj_członka" 
+                            onClick={toggleAddKid}/>
                         </div>
                         <div className="user-member-text">
                             Dodaj nowego członka.
