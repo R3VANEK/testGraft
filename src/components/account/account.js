@@ -1,9 +1,10 @@
-import React from 'react' //ZROBIC USESTATE
+import React, {useState} from 'react' //ZROBIC USESTATE
 import Swinia from '../../images/SWINIA.svg'
 import './account.min.css'
 import plusCircle from '../../images/plusCircle.svg';
 import Kid from './kids/kid'
 import AddKid from './kids/addKid'
+import KidDetails from './kids/kidDetails'
 import Offer from './offers/offer'
 import UserSettings from './userSettings/userSettings';
 import {toggleSettings, toggleAddKid, removeAll} from '../../functions/userAccountHelplers';
@@ -56,6 +57,16 @@ const Account =(props)=>{
         )
     })
 
+    const [kid, editKid] = useState({
+        id:11,
+        name:'',
+        age:5,
+        shoeSize:5,
+        favColor:'s',
+        height:5,
+        img:''
+    })
+
     return(
         <>
 
@@ -64,8 +75,11 @@ const Account =(props)=>{
             <div className="flying-block user-settings-wrapper anim-fade-in none">
                 <UserSettings />
             </div>
-            <div className="flying-block add-new-kid-wrapper anim-fade-in">
+            <div className="flying-block add-new-kid-wrapper anim-fade-in none">
                 <AddKid />
+            </div>
+            <div className="flying-block add-new-kid-wrapper anim-fade-in">
+                <KidDetails kid={kid} editKid={editKid} />    
             </div>
 
             <div className="overlay" onClick={removeAll}></div>

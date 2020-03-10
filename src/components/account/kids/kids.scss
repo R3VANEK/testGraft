@@ -14,7 +14,7 @@
     position: relative;
 
     .btn{
-        margin: 20px auto;
+        margin: 30px auto 20px;
     }
 
     @media(max-width: 780px){
@@ -149,6 +149,5 @@
       &:checked + label{
         background: lightgray;    
       }
-    }
-    
+    } 
   }
