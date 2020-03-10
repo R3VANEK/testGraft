@@ -11,7 +11,9 @@ const AddKid = () => {
     const [name , changeName] = useState("");
     const [height , changeHeight] = useState(100);
     const [age , changeAge] = useState(10);
-    const [ShoeSize , changeShoeSize] = useState(25);
+    const [shoeSize , changeShoeSize] = useState(20);
+    const [gender , changeGender] = useState('');
+    const [color , changeFavColor] = useState('Czerwony');
 
     const changeValueWithInput = (e,  name) => {
         switch(name){
@@ -56,6 +58,12 @@ const AddKid = () => {
                 }
             }
         }
+    }
+    const changeFavouriteColor = (e) => {
+        changeFavColor(e.target.value);
+    }
+    const changeFavouriteGender = (e) => {
+        changeGender(e.target.id);
     }
 
     return (
@@ -119,7 +127,7 @@ const AddKid = () => {
                             onClick={(e) => {changeValueWithButton(e, '-', 'SHOE_SIZE')}}
                             >-</button>
                             <input type="number" 
-                            value={ShoeSize}
+                            value={shoeSize}
                             onChange={(e) => {changeValueWithInput(e, 'SHOE_SIZE')}}
                             name="sizeOfShoe"
                             />
@@ -130,18 +138,19 @@ const AddKid = () => {
                     </div>
                     <div class="edit-child-text">
                         Kolor: <br/>
-                        <select name="favColor" id="favColor" class="input-select">
-                        <option value="">Czerwony</option>
-                        <option value="">Żólty</option>
-                        <option value="">Zielona</option>
-                        <option value="">Pomarańczowy</option>
-                        <option value="">Niebieski</option>
-                        <option value="">Granatowy</option>
-                        <option value="">Fioletowy</option>
-                        <option value="">Różowy</option>
-                        <option value="">Czarny</option>
-                        <option value="">Brązowy</option>
-                        <option value="">Biały</option>
+                        <select name="favColor" id="favColor" class="input-select"
+                        onChange={(e)=> {changeFavouriteColor(e)}}>
+                        <option value="Czerwony">Czerwony</option>
+                        <option value="Żólty">Żólty</option>
+                        <option value="Zielony">Zielony</option>
+                        <option value="Pomarańczowy">Pomarańczowy</option>
+                        <option value="Niebieski">Niebieski</option>
+                        <option value="Granatowy">Granatowy</option>
+                        <option value="Fioletowy">Fioletowy</option>
+                        <option value="Różowy">Różowy</option>
+                        <option value="Czarny">Czarny</option>
+                        <option value="Brązowy">Brązowy</option>
+                        <option value="Biały">Biały</option>
                         </select>
                         
                     </div>
@@ -149,12 +158,12 @@ const AddKid = () => {
 
                 <div class="input-sex">
                     <div>
-                        <input name="sex" id="male" type="radio"/>
-                        <label className="first-label" for="male">Chłopiec</label>
+                        <input name="sex" id="m" type="radio" onChange={(e) => {changeFavouriteGender(e)}}/>
+                        <label className="first-label" for="m">Chłopiec</label>
                     </div>
                     <div>
-                        <input name="sex" id="female" type="radio"/>
-                        <label className="second-label" for="female">Dziewczynka</label>
+                        <input name="sex" id="k" type="radio" onChange={(e) => {changeFavouriteGender(e)}}/>
+                        <label className="second-label" for="k">Dziewczynka</label>
                     </div>
                 </div>
 

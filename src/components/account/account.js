@@ -7,7 +7,7 @@ import AddKid from './kids/addKid'
 import KidDetails from './kids/kidDetails'
 import Offer from './offers/offer'
 import UserSettings from './userSettings/userSettings';
-import {toggleSettings, toggleAddKid, removeAll} from '../../functions/userAccountHelplers';
+import {toggleSettings, toggleAddKid, toggleKidDetails, removeAll} from '../../functions/userAccountHelplers';
 
 const Account =(props)=>{
 
@@ -25,9 +25,9 @@ const Account =(props)=>{
 
 
     const DUMMY_DATA = [
-        {id:1, name:'HENIO', age:5, sizeOfShoe:42, favColor:'BLACK', height:'545', img:'a.png'},
-        {id:2,name:'PABLO', age:5, sizeOfShoe:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'},
-        {id:3, name:'KACPER', age:5, sizeOfShoe:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'}
+        {id:0, name:'HENIO', age:5, gender:'chłopiec', shoeSize:42, favColor:'BLACK', height:'545', img:'a.png'},
+        {id:1,name:'PABLO', age:5, gender:'dziewczyna', shoeSize:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'},
+        {id:2, name:'KACPER', age:5, gender:'chłopiec', shoeSize:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'}
         
     ]
 
@@ -45,9 +45,29 @@ const Account =(props)=>{
         {id:14, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'}
     ]
 
+
+    /*******  DYNAMICALLY CHANGING ACTUALLY EDITING KID  ******/
+    const [kid, editKid] = useState({
+        id:11,
+        name:'ssss',
+        age:5,
+        shoeSize:5,
+        favColor:'s',
+        height:5,
+        img:''
+    })
+
+    const changeActualKid = (id) => {
+        let index = DUMMY_DATA.findIndex( (item) => item.id === id)
+        editKid(DUMMY_DATA[index]);
+    }
+    /*************************************************************/
+
+
     const listOfKids = DUMMY_DATA.map(element=>{
         return(
-            <Kid kid={element} key={element.id}/>
+            <Kid kid={element} key={element.id} 
+            changeActualKid={changeActualKid} toggleKidDetails={toggleKidDetails}/>
         )
     })
 
@@ -57,15 +77,7 @@ const Account =(props)=>{
         )
     })
 
-    const [kid, editKid] = useState({
-        id:11,
-        name:'',
-        age:5,
-        shoeSize:5,
-        favColor:'s',
-        height:5,
-        img:''
-    })
+    
 
     return(
         <>
@@ -78,11 +90,11 @@ const Account =(props)=>{
             <div className="flying-block add-new-kid-wrapper anim-fade-in none">
                 <AddKid />
             </div>
-            <div className="flying-block add-new-kid-wrapper anim-fade-in">
+            <div className="flying-block edit-kid-wrapper anim-fade-in none">
                 <KidDetails kid={kid} editKid={editKid} />    
             </div>
 
-            <div className="overlay" onClick={removeAll}></div>
+            <div className="overlay none" onClick={removeAll}></div>
 
             {/*****************/}
 

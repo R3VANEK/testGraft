@@ -1,8 +1,8 @@
-.add-new-kid-wrapper {
+.add-new-kid-wrapper, .edit-kid-wrapper {
   max-width: 550px;
 }
 
-.add-child-block {
+.add-child-block, .edit-child-block {
   width: 100%;
   max-width: 550px;
   min-height: 425px;
@@ -15,12 +15,12 @@
   position: relative;
 }
 
-.add-child-block .btn {
+.add-child-block .btn, .edit-child-block .btn {
   margin: 30px auto 20px;
 }
 
 @media (max-width: 780px) {
-  .add-child-block {
+  .add-child-block, .edit-child-block {
     border-radius: 0;
     max-width: 780px;
     width: 100%;
@@ -28,13 +28,13 @@
     overflow-y: scroll;
     overflow-x: hidden;
   }
-  .add-child-block .btn {
+  .add-child-block .btn, .edit-child-block .btn {
     margin: 40px auto 30px;
   }
 }
 
 @media (max-width: 415px) {
-  .add-child-block h2 {
+  .add-child-block h2, .edit-child-block h2 {
     margin-top: 40px;
   }
 }
@@ -59,13 +59,21 @@
   border-bottom: 1px solid palevioletred;
 }
 
-.input-number, .input-select {
+.input-number, .input-select, .input-color {
   position: relative;
   height: 30px;
   width: 60%;
   margin: 13px auto 0;
   box-sizing: border-box;
   min-width: 129px;
+}
+
+.input-color {
+  border: none;
+  border-bottom: 3px solid purple;
+  font-size: 18px;
+  top: -3px;
+  text-align: center;
 }
 
 .input-select {

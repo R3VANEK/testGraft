@@ -21,7 +21,8 @@ const Kid =(props)=>{
                 {props.kid.age} lat
             </div>
 
-            <div className="user-member-text-edit" id={props.kid.id}>
+            <div className="user-member-text-edit" id={props.kid.id}
+             onClick={()=>{props.changeActualKid(props.kid.id); props.toggleKidDetails(true)}}>
                 Edytuj dane
             </div>
 
@@ -50,7 +51,7 @@ const Kid =(props)=>{
 
                     <div className="edit-child-text">
                         <img src={require(`../../../images/Shoe.svg`)} alt=""/><br/>
-                        {props.kid.sizeOfShoe}
+                        {props.kid.shoeSize}
                     </div>
 
                     <div className="edit-child-text">

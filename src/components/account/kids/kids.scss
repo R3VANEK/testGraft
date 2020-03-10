@@ -1,7 +1,7 @@
-.add-new-kid-wrapper{
+.add-new-kid-wrapper, .edit-kid-wrapper{
   max-width: 550px;
 }
-.add-child-block{
+.add-child-block, .edit-child-block{
     width:100%;
     max-width: 550px;
     min-height:425px;
@@ -53,13 +53,21 @@
       border-bottom:1px solid palevioletred;
     }
 }
-.input-number, .input-select {
+.input-number, .input-select, .input-color {
     position: relative;
     height:30px;
     width:60%;
     margin: 13px auto 0;
     box-sizing: border-box;
     min-width: 129px;
+  }
+  .input-color{
+    border:none;
+    border-bottom: 3px solid purple;
+    font-size: 18px;
+    top:-3px;
+    text-align: center;
+     
   }
   .input-select{
     border:none;

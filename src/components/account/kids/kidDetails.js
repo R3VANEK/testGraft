@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import exit from '../../../images/x.png';
 import boyAvatar from '../../../images/Boy Avatar.svg';
 import plusCircle from '../../../images/plusCircle.svg';
@@ -11,8 +11,24 @@ const KidDetails = (props) => {
     const [name , changeName] = useState(props.kid.name);
     const [height , changeHeight] = useState(props.kid.height);
     const [age , changeAge] = useState(props.kid.age);
-    const [ShoeSize , changeShoeSize] = useState(props.kid.shoeSize);
-    const [favColor, changeFavColor] = useState(props.kid.shoeSize);
+    const [shoeSize , changeShoeSize] = useState(props.kid.shoeSize);
+    const [favColor, changeFavColor] = useState(props.kid.favColor);
+    const [gender, changeGender] = useState(props.kid.gender);
+    const [id, changeId] = useState(props.kid.id);
+
+    useEffect( () => {
+        if(id !== props.kid.id){
+            
+        changeShoeSize(props.kid.shoeSize);
+        changeName(props.kid.name);
+        changeHeight(props.kid.height);
+        changeAge(props.kid.age);
+        changeFavColor(props.kid.favColor);
+        changeGender(props.kid.gender);
+        changeId(props.kid.id)
+
+        }
+    })
 
     const changeValueWithInput = (e,  name) => {
         switch(name){
@@ -23,7 +39,9 @@ const KidDetails = (props) => {
             case 'AGE':
                 changeAge(e.target.value); break;
             case 'SHOE_SIZE':
-                changeShoeSize(e.target.value); break;     
+                changeShoeSize(e.target.value); break;
+            case 'COLOR':
+                changeFavColor(e.target.value); break;      
         }
     }
 
@@ -60,13 +78,13 @@ const KidDetails = (props) => {
     }
 
     return (
-        <div class="add-child-block">
+        <div class="edit-child-block">
             <form action="">
                 <div class="flying-exit" >
                     <img src={exit} alt="wyjście" 
                     onClick={removeAll}/>
                 </div>
-                <h2>Dodaj nowego członka</h2>
+                <h2>Zmień dane dziecka</h2>
                     <div class="kid-img img-inside-img">
                         <img src={boyAvatar} alt="Skarb"/>   
                         <img className="img-on-img" src={plusCircle} alt="Skarb"/> 
@@ -120,7 +138,7 @@ const KidDetails = (props) => {
                             onClick={(e) => {changeValueWithButton(e, '-', 'SHOE_SIZE')}}
                             >-</button>
                             <input type="number" 
-                            value={ShoeSize}
+                            value={shoeSize}
                             onChange={(e) => {changeValueWithInput(e, 'SHOE_SIZE')}}
                             name="sizeOfShoe"
                             />
@@ -131,20 +149,9 @@ const KidDetails = (props) => {
                     </div>
                     <div class="edit-child-text">
                         Kolor: <br/>
-                        <select name="favColor" id="favColor" class="input-select">
-                        <option value="">Czerwony</option>
-                        <option value="">Żólty</option>
-                        <option value="">Zielona</option>
-                        <option value="">Pomarańczowy</option>
-                        <option value="">Niebieski</option>
-                        <option value="">Granatowy</option>
-                        <option value="">Fioletowy</option>
-                        <option value="">Różowy</option>
-                        <option value="">Czarny</option>
-                        <option value="">Brązowy</option>
-                        <option value="">Biały</option>
-                        </select>
-                        
+                        <input className="input-color" type="text"
+                        value={favColor} 
+                        onChange={(e)=>changeValueWithInput = (e,  'COLOR')}/>
                     </div>
                 </div>
 
