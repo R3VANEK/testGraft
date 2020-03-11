@@ -1,13 +1,22 @@
-import React, {useState} from 'react' //ZROBIC USESTATE
-import Swinia from '../../images/SWINIA.svg'
-import './account.min.css'
+import React, {useState} from 'react'; //ZROBIC USESTATE
+import Swinia from '../../images/SWINIA.svg';
+import './account.min.css';
+import './offers/offer.min.css';
 import plusCircle from '../../images/plusCircle.svg';
-import Kid from './kids/kid'
-import AddKid from './kids/addKid'
-import KidDetails from './kids/kidDetails'
-import Offer from './offers/offer'
+import Kid from './kids/kid';
+import AddKid from './kids/addKid';
+import KidDetails from './kids/kidDetails';
+import Offer from './offers/offer';
+import OfferDetails from './offers/offerDetails';
 import UserSettings from './userSettings/userSettings';
-import {toggleSettings, toggleAddKid, toggleKidDetails, removeAll} from '../../functions/userAccountHelplers';
+import {
+        toggleSettings, 
+        toggleAddKid, 
+        toggleKidDetails, 
+        toggleOfferDetails,
+        removeAll
+        } 
+        from '../../functions/userAccountHelplers';
 
 const Account =(props)=>{
 
@@ -46,7 +55,7 @@ const Account =(props)=>{
     ]
 
 
-    /*******  DYNAMICALLY CHANGING ACTUALLY EDITING KID  ******/
+    /*******  DYNAMICALLY CHANGING CURRENTLY EDITING KID  ******/
     const [kid, editKid] = useState({
         id:11,
         name:'ssss',
@@ -63,7 +72,25 @@ const Account =(props)=>{
     }
     /*************************************************************/
 
+     /************  DYNAMICALLY CHANGING CURRENT OFFER ***********/
+     const [offer, editOffer] = useState({
+        id:11,
+        name:'ssss',
+        age:5,
+        shoeSize:5,
+        favColor:'s',
+        height:5,
+        img:''
+    })
 
+    const changeActualOffer = (id) => {
+        let index = DUMMY_OFFERS.findIndex( (item) => item.id === id)
+        editOffer(DUMMY_OFFERS[index]);
+    }
+    /*************************************************************/
+
+
+    /**************** RENDER LIST OF KIDS AND OFFERS **************/
     const listOfKids = DUMMY_DATA.map(element=>{
         return(
             <Kid kid={element} key={element.id} 
@@ -73,10 +100,11 @@ const Account =(props)=>{
 
     const listOfOffers = DUMMY_OFFERS.map(element=>{
         return(
-            <Offer offer={element} key={element.id}/>
+            <Offer offer={element} key={element.id}
+            changeActualOffer={changeActualOffer} toggleOfferDetails={toggleOfferDetails}/>
         )
     })
-
+    /*************************************************************/
     
 
     return(
@@ -92,6 +120,9 @@ const Account =(props)=>{
             </div>
             <div className="flying-block edit-kid-wrapper anim-fade-in none">
                 <KidDetails kid={kid} editKid={editKid} />    
+            </div>
+            <div className="flying-block user-offer-details-wrapper anim-fade-in none">
+                <OfferDetails offer={offer} editOffer={editOffer} />    
             </div>
 
             <div className="overlay none" onClick={removeAll}></div>

@@ -45,6 +45,11 @@
     margin: 0 10px 0;
     border-radius: 8px;
     font-size: 1.1em;
+    cursor: pointer;
+
+    &:hover{
+      background-color: darken(#d7d4ff,5%);
+    }
 }
   .user-grid {
     display: grid;

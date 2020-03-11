@@ -3,33 +3,45 @@ export const toggleSettings = (show=true) => {
     let userSettings  = document.querySelector('.user-settings-wrapper');
         if(show){
             userSettings.classList.remove('none');
+            toggleOverlayAndBlur();
         } else {
             userSettings.classList.add('none');
         }
 
-        toggleOverlayAndBlur();
+        
 }
 export const toggleAddKid = (show=true) => {
 
     let addKid  = document.querySelector('.add-new-kid-wrapper');
         if(show){
             addKid.classList.remove('none');
+            toggleOverlayAndBlur();
         } else {
             addKid.classList.add('none');
         }
 
-        toggleOverlayAndBlur();
+       
 }
 export const toggleKidDetails = (show=true) => {
 
     let kidDetails  = document.querySelector('.edit-kid-wrapper');
         if(show){
             kidDetails.classList.remove('none');
+            toggleOverlayAndBlur();
         } else {
             kidDetails.classList.add('none');
         }
+}
 
-        toggleOverlayAndBlur();
+export const toggleOfferDetails = (show=true) => {
+
+    let offerDetails  = document.querySelector('.user-offer-details-wrapper');
+        if(show){
+            offerDetails.classList.remove('none');
+            toggleOverlayAndBlur();
+        } else {
+            offerDetails.classList.add('none');
+        }
 }
 
 export const toggleOverlayAndBlur = (show=true) => {
@@ -64,8 +76,10 @@ export const toggleOverlayAndBlur = (show=true) => {
 export const removeAll = () => {
     toggleSettings(false);
     toggleAddKid(false);
-    toggleOverlayAndBlur(false);
     toggleKidDetails(false);
+    toggleOfferDetails(false); 
+    toggleOverlayAndBlur(false);
+    
 }
 
 export const changeSecondSection = (section) => {
@@ -77,7 +91,7 @@ export const changeSecondSection = (section) => {
         let deleteData = document.querySelector('.second.DELETE_ACCOUNT');
         let security = document.querySelector('.second.SECURITY');
         let actualOption = document.querySelector(`.first.${section}`);
-        console.log(actualOption)
+
         actualOption.classList.add('active');
 
         previousOption.classList.remove('active')
