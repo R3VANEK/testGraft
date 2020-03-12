@@ -181,7 +181,7 @@ class Home extends Component {
             )
     
             return ( 
-    <main>  
+    <main className="landing-page">  
         {newsLetter}
         <div className="video2 hidden" onClick={(e)=>{this.handleClick2(e)}} >
             <video  controls className="video">

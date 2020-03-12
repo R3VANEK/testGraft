@@ -36,12 +36,20 @@ class Register extends Component {
                             </button>
                         </div>
                         <div className="checkbox-and-text">
-                            <input className="register-checkbox" type="checkbox" name="regulations"/>
-                           <p>Akceptuje warunki umowy bla bla bla bla bal</p>
+                            <div className="register-checkbox">
+                                <input className="register-checkbox" type="checkbox" name="regulations"/>
+                            </div>
+                            <div className="text">
+                                <p>Akceptuje warunki umowy bla bla bla bla bal</p>
+                            </div>
                         </div>
                         <div className="checkbox-and-text">
-                            <input className="register-checkbox" type="checkbox" name="receiveNotif"/>
-                            <p>Akceptuje warunki umowy bla bla bld da bdddd d d d d d dla bal asd dd</p>
+                            <div className="register-checkbox">
+                                <input className="register-checkbox" type="checkbox" name="receive-not"/>
+                            </div>
+                            <div className="text">
+                                <p>Akceptuje warunki umowy bla bla bla bla bal asd sad asd asd as asd asd as</p>
+                            </div>
                         </div>
                         <input type="submit" value="Zarejestruj się" className="btn purple-btn" />
                     </div>

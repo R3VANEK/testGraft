@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import logo from '../../images/logo.svg';
+import landingLogo from '../../images/logo.svg';    
+import logo from '../../images/logo.png';
 import notif from '../../images/notif.png';
 import './headerDesktop.css';
 
@@ -8,19 +9,19 @@ import './headerDesktop.css';
 class Header extends Component {
     state = {
         mobileHeader:false,
-        user:''
+        user:'',
+        landingLogo:false
     }
 
- 
-
-   
-
-    handleClick = () => {
-    const hamburger = document.querySelector('.ham1');
-    const navigation = document.querySelector('.nav1');
-    hamburger.classList.toggle('hamburger-active');
-    navigation.classList.toggle('navigation-active');
+    componentDidMount(){
+        let main = document.querySelector("main");
+        if(main.classList.contains('landing-page')){
+            this.setState({
+                landingLogo:true
+            })
+        }
     }
+
 
     HandleClickOpenNot = (event = '') => {
         let opt = document.querySelector('.notification-list.N2');
@@ -55,6 +56,10 @@ class Header extends Component {
 
 
 render() {   
+
+  let LOGO = this.state.landingLogo ? 
+        (<img className="landing" src={landingLogo}/>) : 
+        (<img className="other" src={logo}/>)
 
   const deskopLoggedIn =(
     <nav className="header-right in">
@@ -147,7 +152,7 @@ render() {
         <header>
             <div className="header">
             <NavLink to="/" className="logo">
-                <img src={logo}/>
+                {LOGO}
             </NavLink>
                 {isLoggedDeskop}
             </div>

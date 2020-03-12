@@ -234,10 +234,13 @@ a.active {
   display: inline-block;
   position: relative;
 }
-.logo img{
+.logo img.landing {
   height:100px;
   top:-10px;
   position: absolute;
+}
+.logo img.other {
+  height:50px;
 }
 
 .basic-nav {
@@ -250,7 +253,7 @@ a.active {
   border-radius: 4px;
 }
 
-.basic-nav:hover {
+.basic-nav.active {
   color: black;
   background: #d7d3ed;
   border-radius: 25px;
