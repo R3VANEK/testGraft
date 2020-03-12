@@ -15,11 +15,11 @@ class Header extends Component {
 
     componentDidMount(){
         let main = document.querySelector("main");
-        if(main.classList.contains('landing-page')){
+        /*if(main.classList.contains('landing-page')){
             this.setState({
                 landingLogo:true
             })
-        }
+        }*/
     }
 
 

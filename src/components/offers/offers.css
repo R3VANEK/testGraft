@@ -1,4 +1,4 @@
- /*.big-container {
+ .big-container {
     width: 100%;
     max-width: 1300px;
     background: #fefefe;
@@ -7,7 +7,7 @@
     box-sizing: border-box;
     padding: 1vw;
     position: relative;
-      .select::after{
+      /*.select::after{
          
           background-size: cover;
           right:10px;
@@ -17,7 +17,7 @@
           height: 20px;
           content:"";
           position: absolute;
-      }
+      }*/
   }
   
   .big-container .sort {
@@ -626,7 +626,7 @@
     width: 2222px;
   }
   
-  .single-type:nth-child(1) label::before {
+  /*.single-type:nth-child(1) label::before {
     content: url("./ikony/agd.png");
   }
   
@@ -672,7 +672,7 @@
   
   .single-type:nth-child(6) input:checked + label::before {
     content: url("./ikony/smoczek-white.png");
-  }
+  }*/
   
   .hot {
     position: absolute;
@@ -834,4 +834,4 @@
     color: #660091;
     font-weight: 300;
   }
-  */
+  
