@@ -11,36 +11,36 @@ const EditData = () => {
                 <img src={a} alt="Ja" />
                 <img className="img-on-img" src={plusCircle} alt="zmień"/>
             </div>
-            <div class="change-data-block">
-                <div class="change-data-first">
+            <div className="change-data-block">
+                <div className="change-data-first">
                     <img src={a} alt="dane"/>
 
-                    <div class="change-data-input-and-label">
-                        <label className="change-data-label" HtmlFor="username">Nazwa</label>
+                    <div className="change-data-input-and-label">
+                        <label className="change-data-label" htmlFor="username">Nazwa</label>
                         <input className="change-data-input" type="text" id="username"/>
                     </div>
 
-                    <div class="change-data-input-and-label">
-                        <label className="change-data-label" HtmlFor="userEmail">E-mail</label>
+                    <div className="change-data-input-and-label">
+                        <label className="change-data-label" htmlFor="userEmail">E-mail</label>
                         <input className="change-data-input" type="text" id="userEmail"/> 
                     </div>
                 </div>
 
-                <div class="change-data-line"></div>
+                <div className="change-data-line"></div>
 
-                <div class="change-data-second">
+                <div className="change-data-second">
                     <img src={a} alt="hasło"/>
 
-                    <div class="change-data-input-and-label">
-                        <label className="change-data-label" HtmlFor="userPass">Hasło</label>
+                    <div className="change-data-input-and-label">
+                        <label className="change-data-label" htmlFor="userPass">Hasło</label>
                         <input className="change-data-input" type="text" id="userPass"/>
                     </div>
-                    <div class="change-data-input-and-label">
-                        <label className="change-data-label" HtmlFor="userNewPass">Wpisz nowe hasło</label>
+                    <div className="change-data-input-and-label">
+                        <label className="change-data-label" htmlFor="userNewPass">Wpisz nowe hasło</label>
                         <input className="change-data-input" type="text" id="userNewPass"/>     
                     </div>
-                    <div class="change-data-input-and-label">
-                        <label className="change-data-label" HtmlFor="userEmail">Powtórz nowe hasło</label>
+                    <div className="change-data-input-and-label">
+                        <label className="change-data-label" htmlFor="userEmail">Powtórz nowe hasło</label>
                         <input className="change-data-input" type="text" id="userNewPassRep"/> 
                     </div>
                 </div>

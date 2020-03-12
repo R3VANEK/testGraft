@@ -74,13 +74,13 @@ const Account =(props)=>{
 
      /************  DYNAMICALLY CHANGING CURRENT OFFER ***********/
      const [offer, editOffer] = useState({
-        id:11,
-        name:'ssss',
-        age:5,
-        shoeSize:5,
-        favColor:'s',
-        height:5,
-        img:''
+        id:14, 
+        name:'Treny'
+        , page:'www.PoChujKochanowskiNapisałTreny.pl'
+        , price:1830, 
+        description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.',
+         img:'a.png'
+
     })
 
     const changeActualOffer = (id) => {
@@ -121,11 +121,11 @@ const Account =(props)=>{
             <div className="flying-block edit-kid-wrapper anim-fade-in none">
                 <KidDetails kid={kid} editKid={editKid} />    
             </div>
-            <div className="flying-block user-offer-details-wrapper anim-fade-in none">
+            <div className="flying-block user-offer-details-wrapper anim-fade-in">
                 <OfferDetails offer={offer} editOffer={editOffer} />    
             </div>
 
-            <div className="overlay none" onClick={removeAll}></div>
+            <div className="overlay" onClick={removeAll}></div>
 
             {/*****************/}
 

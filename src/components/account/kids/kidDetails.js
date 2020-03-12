@@ -78,30 +78,30 @@ const KidDetails = (props) => {
     }
 
     return (
-        <div class="edit-child-block">
+        <div className="edit-child-block">
             <form action="">
-                <div class="flying-exit" >
+                <div className="flying-exit" >
                     <img src={exit} alt="wyjście" 
                     onClick={removeAll}/>
                 </div>
                 <h2>Zmień dane dziecka</h2>
-                    <div class="kid-img img-inside-img">
+                    <div className="kid-img img-inside-img">
                         <img src={boyAvatar} alt="Skarb"/>   
                         <img className="img-on-img" src={plusCircle} alt="Skarb"/> 
                     </div>
                     
                 
-                    <div class="edit-child-text">
+                    <div className="edit-child-text">
                         
                         <input className="kid-text-input" type="text" placeholder="Imię"
                         value={name}
                         onChange={(e) => {changeValueWithInput(e, 'NAME')}}/>
 
                     </div>
-                <div class="child-F-grid">
-                    <div class="edit-child-text">
+                <div className="child-F-grid">
+                    <div className="edit-child-text">
                         Wzrost: [CM] <br/>
-                        <div class="input-number">
+                        <div className="input-number">
                             <button 
                             onClick={(e) => {changeValueWithButton(e, '-', 'HEIGHT')}}
                             >-</button>
@@ -115,9 +115,9 @@ const KidDetails = (props) => {
                             >+</button>
                         </div>
                     </div>
-                    <div class="edit-child-text">
+                    <div className="edit-child-text">
                         Wiek: <br/>
-                        <div class="input-number">
+                        <div className="input-number">
                             <button
                             onClick={(e) => {changeValueWithButton(e, '-', 'AGE')}}
                             >-</button>
@@ -131,9 +131,9 @@ const KidDetails = (props) => {
                             >+</button>
                         </div>
                     </div>
-                    <div class="edit-child-text">
+                    <div className="edit-child-text">
                         Rozmiar buta: <br/>
-                        <div class="input-number">
+                        <div className="input-number">
                             <button
                             onClick={(e) => {changeValueWithButton(e, '-', 'SHOE_SIZE')}}
                             >-</button>
@@ -147,7 +147,7 @@ const KidDetails = (props) => {
                             >+</button>
                         </div>
                     </div>
-                    <div class="edit-child-text">
+                    <div className="edit-child-text">
                         Kolor: <br/>
                         <input className="input-color" type="text"
                         value={favColor} 
@@ -155,18 +155,18 @@ const KidDetails = (props) => {
                     </div>
                 </div>
 
-                <div class="input-sex">
+                <div className="input-sex">
                     <div>
                         <input name="sex" id="male" type="radio"/>
-                        <label className="first-label" for="male">Chłopiec</label>
+                        <label className="first-label" htmlFor="male">Chłopiec</label>
                     </div>
                     <div>
                         <input name="sex" id="female" type="radio"/>
-                        <label className="second-label" for="female">Dziewczynka</label>
+                        <label className="second-label" htmlFor="female">Dziewczynka</label>
                     </div>
                 </div>
 
-                <button class="btn purple-btn">
+                <button className="btn purple-btn">
                    Zapisz
                 </button>
             </form>   

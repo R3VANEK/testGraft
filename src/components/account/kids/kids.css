@@ -37,6 +37,9 @@
   .add-child-block h2, .edit-child-block h2 {
     margin-top: 40px;
   }
+  .add-child-block form, .edit-child-block form {
+    padding-bottom: 30px;
+  }
 }
 
 .edit-child-text {

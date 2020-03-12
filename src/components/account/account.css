@@ -21,7 +21,7 @@
 .offer-list {
   display: grid;
   grid-template-columns: 330px calc(100% - 330px);
-  align-items: baseline;
+  align-items: start;
   padding: 25px 0;
 }
 
@@ -31,19 +31,20 @@
 }
 
 .offers-block {
-  display: flex;
-  flex-wrap: wrap;
-  overflow-y: auto;
-  height: 40px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 55px;
   padding-right: 10px;
 }
 
 .offer {
   background-color: #d7d4ff;
-  height: 30px;
-  display: flex;
+  display: inline-block;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
+  height: 30px;
+  padding: 5px 15px;
   margin: 0 10px 0;
   border-radius: 8px;
   font-size: 1.1em;
@@ -262,7 +263,6 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 100%;
   top: -100vh;
 }
 

@@ -6,12 +6,12 @@ const DeleteAccount = () => {
     return (
         <div className="delete-account">
             <h2>Usuwanie konta</h2>
-            <div class="change-data-input-and-label">
-                <label className="change-data-label" HtmlFor="username">Hasło</label>
+            <div className="change-data-input-and-label">
+                <label className="change-data-label" htmlFor="username">Hasło</label>
                 <input className="change-data-input" type="password" id="password"/>
             </div>
-            <div class="change-data-input-and-label">
-                <label className="change-data-label" HtmlFor="username">Powtórz hasło</label>
+            <div className="change-data-input-and-label">
+                <label className="change-data-label" htmlFor="username">Powtórz hasło</label>
                 <input className="change-data-input" type="password" id="repeatPassword"/>
             </div>
             <h2>Czy na pewno chcesz nas opuścić?</h2>

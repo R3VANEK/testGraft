@@ -67,30 +67,30 @@ const AddKid = () => {
     }
 
     return (
-        <div class="add-child-block">
+        <div className="add-child-block">
             <form action="">
-                <div class="flying-exit" >
+                <div className="flying-exit" >
                     <img src={exit} alt="wyjście" 
                     onClick={removeAll}/>
                 </div>
                 <h2>Dodaj nowego członka</h2>
-                    <div class="kid-img img-inside-img">
+                    <div className="kid-img img-inside-img">
                         <img src={boyAvatar} alt="Skarb"/>   
                         <img className="img-on-img" src={plusCircle} alt="Skarb"/> 
                     </div>
                     
                 
-                    <div class="edit-child-text">
+                    <div className="edit-child-text">
                         
                         <input className="kid-text-input" type="text" placeholder="Imię"
                         value={name}
                         onChange={(e) => {changeValueWithInput(e, 'NAME')}}/>
 
                     </div>
-                <div class="child-F-grid">
-                    <div class="edit-child-text">
+                <div className="child-F-grid">
+                    <div className="edit-child-text">
                         Wzrost: [CM] <br/>
-                        <div class="input-number">
+                        <div className="input-number">
                             <button 
                             onClick={(e) => {changeValueWithButton(e, '-', 'HEIGHT')}}
                             >-</button>
@@ -104,9 +104,9 @@ const AddKid = () => {
                             >+</button>
                         </div>
                     </div>
-                    <div class="edit-child-text">
+                    <div className="edit-child-text">
                         Wiek: <br/>
-                        <div class="input-number">
+                        <div className="input-number">
                             <button
                             onClick={(e) => {changeValueWithButton(e, '-', 'AGE')}}
                             >-</button>
@@ -120,9 +120,9 @@ const AddKid = () => {
                             >+</button>
                         </div>
                     </div>
-                    <div class="edit-child-text">
+                    <div className="edit-child-text">
                         Rozmiar buta: <br/>
-                        <div class="input-number">
+                        <div className="input-number">
                             <button
                             onClick={(e) => {changeValueWithButton(e, '-', 'SHOE_SIZE')}}
                             >-</button>
@@ -136,9 +136,9 @@ const AddKid = () => {
                             >+</button>
                         </div>
                     </div>
-                    <div class="edit-child-text">
+                    <div className="edit-child-text">
                         Kolor: <br/>
-                        <select name="favColor" id="favColor" class="input-select"
+                        <select name="favColor" id="favColor" className="input-select"
                         onChange={(e)=> {changeFavouriteColor(e)}}>
                         <option value="Czerwony">Czerwony</option>
                         <option value="Żólty">Żólty</option>
@@ -156,18 +156,18 @@ const AddKid = () => {
                     </div>
                 </div>
 
-                <div class="input-sex">
+                <div className="input-sex">
                     <div>
                         <input name="sex" id="m" type="radio" onChange={(e) => {changeFavouriteGender(e)}}/>
-                        <label className="first-label" for="m">Chłopiec</label>
+                        <label className="first-label" htmlFor="m">Chłopiec</label>
                     </div>
                     <div>
                         <input name="sex" id="k" type="radio" onChange={(e) => {changeFavouriteGender(e)}}/>
-                        <label className="second-label" for="k">Dziewczynka</label>
+                        <label className="second-label" htmlFor="k">Dziewczynka</label>
                     </div>
                 </div>
 
-                <button class="btn purple-btn">
+                <button className="btn purple-btn">
                    Zapisz
                 </button>
             </form>   
