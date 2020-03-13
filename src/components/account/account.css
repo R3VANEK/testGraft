@@ -30,12 +30,25 @@
   margin-right: 15px;
 }
 
+@media (max-width: 690px) {
+  .offer-list {
+    grid-template-columns: 100%;
+  }
+}
+
 .offers-block {
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
   height: 55px;
   padding-right: 10px;
+}
+
+@media (max-width: 690px) {
+  .offers-block {
+    margin-top: 30px;
+    border-bottom: 1px solid #e0e0e0;
+  }
 }
 
 .offer {

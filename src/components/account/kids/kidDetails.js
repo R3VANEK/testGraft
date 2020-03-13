@@ -28,7 +28,17 @@ const KidDetails = (props) => {
         changeId(props.kid.id)
 
         }
-    })
+    }, [
+          id, 
+          props.kid.id,
+          props.kid.shoeSize,
+          props.kid.name,
+          props.kid.height,
+          props.kid.age,
+          props.kid.favColor,
+          props.kid.gender
+        ]
+    )
 
     const changeValueWithInput = (e,  name) => {
         switch(name){

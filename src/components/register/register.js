@@ -10,9 +10,22 @@ class Register extends Component {
                 <form className="register-form">
                     <div className="register-form-1st">
                         <div className="text-with-vertical-line">
-                            Szybki i nieograniczny spis ofert, które pokochasz!
+                            <div className="anim-text-register">
+                                <div className="anim-text-register-child b1">
+                                    Szybki i nieograniczny spis ofert, które pokochasz!
+                                </div>
+                                <div className="anim-text-register-child b2">
+                                    Znajdź produkty, które pokochasz!
+                                </div>
+                                <div className="anim-text-register-child b3">
+                                    Zarejestruj się, aby poznać nowy wymiar zakupów online!
+                                </div>
+                                <div className="anim-text-register-child b4">
+                                    Szybki i nieograniczny spis ofert, które pokochasz!
+                                </div>
+                            </div>
                         </div>
-                        <p>
+                        <p className="register-form-1st-p">
                             Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro.
                             De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo
                             vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.
@@ -32,7 +45,8 @@ class Register extends Component {
                             </div>
                             <button className="btn-fb">
                             <img src={fb} />
-                            <p>Zarejestruj się przez facebooka</p>
+                            <span>Użyj facebooka</span>
+                             
                             </button>
                         </div>
                         <div className="checkbox-and-text">

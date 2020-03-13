@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import landingLogo from '../../images/logo.svg';    
-import logo from '../../images/logo.png';
-import notif from '../../images/notif.png';
+import landingLogo from '../../../images/logo.svg';    
+import logo from '../../../images/logo.png';
+import notif from '../../../images/notif.png';
 import './headerDesktop.css';
 
 
@@ -13,15 +13,8 @@ class Header extends Component {
         landingLogo:false
     }
 
-    componentDidMount(){
-        let main = document.querySelector("main");
-        /*if(main.classList.contains('landing-page')){
-            this.setState({
-                landingLogo:true
-            })
-        }*/
-    }
-
+    
+    
 
     HandleClickOpenNot = (event = '') => {
         let opt = document.querySelector('.notification-list.N2');
@@ -57,7 +50,7 @@ class Header extends Component {
 
 render() {   
 
-  let LOGO = this.state.landingLogo ? 
+  let LOGO = this.props.landingLogo ? 
         (<img className="landing" src={landingLogo}/>) : 
         (<img className="other" src={logo}/>)
 
@@ -137,7 +130,7 @@ render() {
   ) ;
   const deskopLoggedOut= (
     <nav className="header-right out">
-        <NavLink className="basic-nav" to="/" exact >HOME</NavLink>
+        <NavLink className="basic-nav" exact to="/" >HOME</NavLink>
         <NavLink className="basic-nav" to="o-nas" >O NAS</NavLink>
         <NavLink className="basic-nav" to="kontakt">KONTAKT</NavLink>
         <NavLink className="basic-nav" to="logowanie">ZALOGUJ SIĘ</NavLink>

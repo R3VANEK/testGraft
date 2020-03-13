@@ -83,6 +83,12 @@ body {
   top:-25px;
 }
 
+.logo-mobile-a img.other{
+  position: absolute;
+  height:35px;
+  top:-18px;
+}
+
 .header-user-img-mobile {
   top: 4px;
 }
@@ -230,7 +236,7 @@ a.active {
 .logo{
   width: 200px;
   height:60px;
-  margin-left: 5vw;
+  margin-left: 4.93vw;
   display: inline-block;
   position: relative;
 }
@@ -240,7 +246,7 @@ a.active {
   position: absolute;
 }
 .logo img.other {
-  height:50px;
+  height:60px;
 }
 
 .basic-nav {

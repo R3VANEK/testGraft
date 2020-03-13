@@ -456,12 +456,9 @@
     position: relative;
   }
   
-  p:first-of-type {
-    text-align: justify;
-    padding: 0 30px;
-  }
   
-  button {
+  
+ /* button {
     background: lightgray;
     border: none;
     border-radius: 25px;
@@ -470,7 +467,7 @@
     height: 50px;
     font-size: 25px;
     cursor: pointer;
-  }
+  }*/
   
   .flying-img {
     position: absolute;
@@ -596,9 +593,7 @@
     padding-top: 20px;
   }
   
-  input {
-    display: none;
-  }
+ 
   
   input:checked + label {
     background: #7b00bd;

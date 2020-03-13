@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Footer from './components/footer/footer'
-import HeaderDesktop from './components/headerDesktop/headerDesktop'
-import HeaderMobile from './components/headerMobile/headerMobile'
+import Nav from './components/nav/nav';
 import Home from './components/home/home'
 import Register from './components/register/register';
 import About from './components/about/about';
@@ -16,36 +15,13 @@ import './app.css'
 
 
 class App extends Component {
-
-  state = {
-    mobileHeader:false
-  }
-
-
-  
-  componentDidMount(){
-    window.addEventListener('resize', () => {
-    if(window.innerWidth < 850 || window.innerHeight < 500){this.setState({mobileHeader:true})}
-    else{this.setState({mobileHeader:false})}
-    }, true);
-    window.addEventListener('load', () => {
-    if(window.innerWidth < 850 || window.innerHeight < 500) {
-        this.setState({mobileHeader:true})
-    } else {
-        this.setState({mobileHeader:false})
-    }
-
-    });
-  }
-  
-
-  
+ 
     render() {
-      const header = this.state.mobileHeader ? <HeaderMobile/>  : <HeaderDesktop/>
       return (
         <BrowserRouter>
           <div className="App">
-            {header}
+            
+            <Route path="/" component={Nav} />
 
           <Switch>
             <Route path="/rejestracja" component={Register} />

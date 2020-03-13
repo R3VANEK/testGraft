@@ -204,18 +204,18 @@ class Home extends Component {
             <div className="grid-elem-1">
             <h1 className="big-h1">Zapewnij sobie</h1>
 
-                <div class="anim-word">
-                    <div class="anim-cont">
-                        <div class="anim a1">WYGODĘ!</div>
-                        <div class="anim a2">SPOKÓJ!</div>
-                        <div class="anim a3">PEWNOŚĆ!</div>
-                        <div class="anim a4">CZAS!</div>
-                        <div class="anim a5">SZYBKOŚĆ!</div>
-                        <div class="anim a6">WYGODĘ!</div>
+                <div className="anim-word">
+                    <div className="anim-cont">
+                        <div className="anim a1">WYGODĘ!</div>
+                        <div className="anim a2">SPOKÓJ!</div>
+                        <div className="anim a3">PEWNOŚĆ!</div>
+                        <div className="anim a4">CZAS!</div>
+                        <div className="anim a5">SZYBKOŚĆ!</div>
+                        <div className="anim a6">WYGODĘ!</div>
                     </div>
                 </div>
                 
-                <button className="btn purple-btn"><i class="fas fa-eye"></i>&nbsp;ZACZNIJ!</button>
+                <button className="btn purple-btn"><i className="fas fa-eye"></i>&nbsp;ZACZNIJ!</button>
                 <i><p>
                     Masz prawo odpocząć od irytujących, nietrafionych ofert i niechcianych ofert.
                     Pragniemy Ci udostępnić proste i przejrzyste narzędzie, które pozwoli Ci oszczędić
