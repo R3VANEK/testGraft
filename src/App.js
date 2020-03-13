@@ -21,6 +21,8 @@ class App extends Component {
     mobileHeader:false
   }
 
+
+  
   componentDidMount(){
     window.addEventListener('resize', () => {
     if(window.innerWidth < 850 || window.innerHeight < 500){this.setState({mobileHeader:true})}
