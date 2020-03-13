@@ -121,7 +121,7 @@
   align-items: center;
   width: 100%;
   max-width: 1000px;
-  height: 300px;
+  height: 350px;
   border-right: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
   min-width: 300px;
@@ -169,18 +169,17 @@
 .user-member-hover {
   position: absolute;
   z-index: 2;
-  top: -20px;
-  left: calc(-25px);
+  top: -35px;
+  left: calc(-33px);
   right: 0;
   margin: 0 auto;
   background: #fefefe;
-  height: 325px;
+  height: 310px;
   width: 250px;
-  border-radius: 20px;
-  border: 1px solid lightgray;
+  border-radius: 15px;
+  border: 1px solid black;
   opacity: 0;
   transition: opacity .25s ease-in-out;
-  display: none;
 }
 
 .user-member-hover:hover {
@@ -210,6 +209,10 @@
   text-decoration: underline;
 }
 
+.edit-child-text-and-img img {
+  height: 30px;
+}
+
 .user-member-text-edit {
   margin-top: 22px;
 }
@@ -219,22 +222,36 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 10px 10px 5px;
 }
 
 .purple-line-text {
   display: grid;
+  grid-template-columns: 50% 50%;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   width: 100%;
   height: 40px;
-  background: purple;
   color: white;
   margin-top: 15px;
   border: none;
   font-weight: 400;
   transition: background-color .2s ease-in-out;
+}
+
+.purple-line-text-first, .purple-line-text-second {
+  background-color: purple;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .4s ease-in-out;
+}
+
+.purple-line-text-first:hover, .purple-line-text-second:hover {
+  text-decoration: underline;
+  background-color: #9a009a;
 }
 
 .purple-line-text input {
@@ -243,10 +260,6 @@
   background: transparent;
   border: none;
   font-weight: 400;
-}
-
-.purple-line-text:hover {
-  background: palevioletred;
 }
 
 .overlay {

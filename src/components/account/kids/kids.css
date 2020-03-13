@@ -129,7 +129,7 @@
   right: 0;
 }
 
-.input-sex {
+.add-kid-input-sex {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -144,7 +144,7 @@
   margin-top: 15px;
 }
 
-.input-sex label {
+.add-kid-input-sex label {
   display: block;
   width: 100%;
   height: 40px;
@@ -153,22 +153,22 @@
   cursor: pointer;
 }
 
-.input-sex label.first-label {
+.add-kid-input-sex label.first-label {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   color: #59cbff;
 }
 
-.input-sex label.second-label {
+.add-kid-input-sex label.second-label {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   color: #f700ff;
 }
 
-.input-sex input {
+.add-kid-input-sex input {
   display: none;
 }
 
-.input-sex input:checked + label {
+.add-kid-input-sex input:checked + label {
   background: lightgray;
 }

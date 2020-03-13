@@ -34,9 +34,9 @@ const Account =(props)=>{
 
 
     const DUMMY_DATA = [
-        {id:0, name:'HENIO', age:5, gender:'chłopiec', shoeSize:42, favColor:'BLACK', height:'545', img:'a.png'},
-        {id:1,name:'PABLO', age:5, gender:'dziewczyna', shoeSize:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'},
-        {id:2, name:'KACPER', age:5, gender:'chłopiec', shoeSize:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'}
+        {id:0, name:'HENIO', age:5, gender:'m', shoeSize:41, favColor:'BLACK', height:'545', img:'a.png'},
+        {id:1,name:'PABLO', age:5, gender:'k', shoeSize:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'},
+        {id:2, name:'KACPER', age:5, gender:'m', shoeSize:43, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'}
         
     ]
 
@@ -121,11 +121,11 @@ const Account =(props)=>{
             <div className="flying-block edit-kid-wrapper anim-fade-in none">
                 <KidDetails kid={kid} editKid={editKid} />    
             </div>
-            <div className="flying-block user-offer-details-wrapper anim-fade-in">
+            <div className="flying-block user-offer-details-wrapper anim-fade-in none">
                 <OfferDetails offer={offer} editOffer={editOffer} />    
             </div>
 
-            <div className="overlay" onClick={removeAll}></div>
+            <div className="overlay none" onClick={removeAll}></div>
 
             {/*****************/}
 

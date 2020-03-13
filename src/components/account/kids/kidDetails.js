@@ -87,9 +87,23 @@ const KidDetails = (props) => {
         }
     }
 
+    const submitChanges = (e) => {
+        e.preventDefault();
+
+        const changedKid = {
+            name,
+            height,
+            shoeSize,
+            age,
+            favColor,
+            gender
+        }
+        console.log(changedKid);
+    }
+
     return (
         <div className="edit-child-block">
-            <form action="">
+            <form onSubmit={submitChanges}>
                 <div className="flying-exit" >
                     <img src={exit} alt="wyjście" 
                     onClick={removeAll}/>
@@ -165,9 +179,9 @@ const KidDetails = (props) => {
                     </div>
                 </div>
 
-                <div className="input-sex">
+                <div className="add-kid-input-sex">
                     <div>
-                        <input name="sex" id="male" type="radio"/>
+                        <input name="sex" id="male" type="radio" />
                         <label className="first-label" htmlFor="male">Chłopiec</label>
                     </div>
                     <div>
