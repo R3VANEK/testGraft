@@ -21,6 +21,8 @@
 
 .user-offer-details .btn {
   margin-top: 20px;
+  border-radius: 5px;
+  height: 45px;
 }
 
 @media (max-width: 780px) {
@@ -37,13 +39,30 @@
   }
 }
 
+@media (max-width: 780px) and (max-width: 500px) {
+  .user-offer-details .btn:first-of-type {
+    margin: 30px auto 20px;
+  }
+}
+
+.user-offer-details-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 500px) {
+  .user-offer-details-buttons {
+    flex-direction: column;
+  }
+}
+
 .user-offer-details-img img {
   width: 80%;
   max-width: 300px;
 }
 
 .user-description-of-item .big-padding {
-  max-height: 200px;
+  max-height: 150px;
   overflow: auto;
   text-align: left;
   padding: 15px 25px;
@@ -53,6 +72,31 @@
   .user-description-of-item {
     padding-bottom: 35px;
   }
+}
+
+.delete-user-offer-accept {
+  background-color: #5e03fc;
+  color: #fefefe;
+  width: 180px;
+  padding: 5px 0;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+.delete-user-offer-accept input {
+  border: none;
+  background-color: transparent;
+  font-size: 19px;
+  color: #fefefe;
+  cursor: pointer;
+}
+
+.delete-user-offer-accept input:hover {
+  text-decoration: underline;
+}
+
+.delete-user-offer-accept input:first-of-type {
+  margin-right: 10px;
 }
 
 .price-and-url {
