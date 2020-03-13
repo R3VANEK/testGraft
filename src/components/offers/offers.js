@@ -142,7 +142,7 @@ class Offers extends React.Component{
 
         return(
             <div>
-                <div id="contentt" class="big-container">
+                <div id="contentt" class="big-container1">
     
                     <div class="user-family-title-box special">
                         <div class="user-family-title-box-text">
@@ -150,8 +150,8 @@ class Offers extends React.Component{
                             <h2>Oto oferty, które dla Ciebie przygotowaliśmy</h2>
                         </div>
                         <div class="user-family-title-box-img">
-                            <button class="btn">ZMIEŃ KRYTERIA</button><br/>
-                            <button class="btn">JAK TO DZIAŁA?</button>
+                            <button class="btn1">ZMIEŃ KRYTERIA</button><br/>
+                            <button class="btn1">JAK TO DZIAŁA?</button>
                         </div>
                     </div>
 

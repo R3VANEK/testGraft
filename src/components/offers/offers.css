@@ -1,4 +1,4 @@
- /*.big-container {
+ .big-container1 {
     width: 100%;
     max-width: 1300px;
     background: #fefefe;
@@ -7,7 +7,7 @@
     box-sizing: border-box;
     padding: 1vw;
     position: relative;
-      .select::after{
+      /*.select::after{
          
           background-size: cover;
           right:10px;
@@ -17,20 +17,20 @@
           height: 20px;
           content:"";
           position: absolute;
-      }
+      }*/
   }
   
-  .big-container .sort {
+  .big-container1 .sort {
     display: inline-block;
     margin: 10px;
   }
   
-  .big-container .text {
+  .big-container1 .text {
     display: inline-block;
     margin-right: 10px;
   }
   
-  .big-container select {
+  .big-container1 select {
     border-radius: 5px;
     background-color: #ededed;
     background-image: url("../../images/vector-down.png");
@@ -50,16 +50,16 @@
     padding-left: 8px;
   }
   
-  .big-container .select {
+  .big-container1 .select {
     position: relative;
   }
   
-  .big-container .container-offers {
+  .big-container1 .container-offers {
     text-align: center;
     min-height: 300px;
   }
   
-  .big-container .single-item {
+  .big-container1 .single-item {
     display: inline-block;
     width: 280px;
     height: 345px;
@@ -72,33 +72,33 @@
     position: relative;
   }
   
-  .big-container .single-item.margin-bottom {
+  .big-container1 .single-item.margin-bottom {
     margin-bottom: 300px;
   }
   
-  .big-container .single-item img:nth-child(1), .big-container .single-item img:nth-child(2) {
+  .big-container1 .single-item img:nth-child(1), .big-container .single-item img:nth-child(2) {
     width: 35px;
     height: 35px;
     position: absolute;
     left: 6px;
   }
   
-  .big-container .single-item img:nth-child(1) {
+  .big-container1 .single-item img:nth-child(1) {
     top: 6px;
   }
   
-  .big-container .single-item img:nth-child(2) {
+  .big-container1 .single-item img:nth-child(2) {
     top: 45px;
   }
   
-  .big-container .single-item .img {
+  .big-container1 .single-item .img {
     width: 190px;
     height: 175px;
     position: relative;
     right: -18px;
   }
   
-  .btn {
+  .btn1 {
     width: 84%;
     height: 40px;
     display: grid;
@@ -145,7 +145,7 @@
     margin: 10px;
   }
   
-  .shown-offer .btn {
+  .shown-offer .btn1 {
     width: 50%;
     max-width: 150px;
     border-radius: 35px;
@@ -200,7 +200,7 @@
     background: linear-gradient(270deg, #020024 0%, #08086d 0%, #080870 0%, #090975 0%, #19087d 0%, #290685 0%, #7600eb 100%);
   }
   
-  .user-family-title-box .btn {
+  .user-family-title-box .btn1 {
     background: transparent;
     position: relative;
     width: 170px;
@@ -214,16 +214,16 @@
     transition: background-color .3s ease-in-out, color .3s ease-in-out;
   }
   
-  .user-family-title-box .btn:first-child {
+  .user-family-title-box .btn1:first-child {
     margin-top: 10px;
   }
   
-  .user-family-title-box .btn:hover {
+  .user-family-title-box .btn1:hover {
     background: #fefefe;
     color: purple;
   }
   
-  .user-family-title-box .btn::before {
+  .user-family-title-box .btn1::before {
     position: absolute;
     width: 25px;
     height: 25px;
@@ -231,11 +231,12 @@
     top: 8px;
   }
   
-  .user-family-title-box .btn:first-child::before {
+  
+  .user-family-title-box .btn1:first-child::before {
     content: url("../../images/color_palette.svg");
   }
   
-  .user-family-title-box .btn:last-child::before {
+  .user-family-title-box .btn1:last-child::before {
     content: url("../../images/color_palette.svg");
   }
   
@@ -479,15 +480,7 @@
     height: 25px;
   }
   
-  .grid {
-    position: relative;
-    max-width: 120px;
-  }
   
-  .grid img {
-    position: relative;
-    top: 5px;
-  }
   
   .mini-img {
     background: lightgray;
@@ -559,17 +552,7 @@
     display: block;
   }
   
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    opacity: .9;
-    z-index: 1;
-  }
+  
   
   .blur {
     filter: blur(7px);
@@ -672,7 +655,7 @@
   
   .single-type:nth-child(6) input:checked + label::before {
     content: url("./ikony/smoczek-white.png");
-  }
+  }*/
   
   .hot {
     position: absolute;
@@ -812,7 +795,7 @@
     cursor: pointer;
   }
   
-  .report .btn {
+  .report .btn1 {
     width: 150px;
     border-radius: 50px;
   }
@@ -834,4 +817,4 @@
     color: #660091;
     font-weight: 300;
   }
-  */
+  
