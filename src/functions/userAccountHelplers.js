@@ -35,12 +35,22 @@ export const toggleKidDetails = (show=true) => {
 
 export const toggleOfferDetails = (show=true) => {
 
-    let offerDetails  = document.querySelector('.user-offer-details-wrapper');
+    let offerDetails = document.querySelector('.user-offer-details-wrapper');
         if(show){
             offerDetails.classList.remove('none');
             toggleOverlayAndBlur();
         } else {
             offerDetails.classList.add('none');
+        }
+}
+export const toggleDeleteKid = (show=true) => {
+
+    let deleteKid = document.querySelector('.delete-kid-wrapper');
+        if(show){
+            deleteKid.classList.remove('none');
+            toggleOverlayAndBlur();
+        } else {
+            deleteKid.classList.add('none');
         }
 }
 
@@ -78,8 +88,8 @@ export const removeAll = () => {
     toggleAddKid(false);
     toggleKidDetails(false);
     toggleOfferDetails(false); 
-    toggleOverlayAndBlur(false);
-    
+    toggleDeleteKid(false);
+    toggleOverlayAndBlur(false);   
 }
 
 export const changeSecondSection = (section) => {

@@ -9,12 +9,14 @@ import KidDetails from './kids/kidDetails';
 import Offer from './offers/offer';
 import OfferDetails from './offers/offerDetails';
 import UserSettings from './userSettings/userSettings';
+import DeleteKid from './kids/deleteKid';
 import {
         toggleSettings, 
         toggleAddKid, 
         toggleKidDetails, 
         toggleOfferDetails,
-        removeAll
+        removeAll,
+        toggleDeleteKid
         } 
         from '../../functions/userAccountHelplers';
 
@@ -94,7 +96,8 @@ const Account =(props)=>{
     const listOfKids = DUMMY_DATA.map(element=>{
         return(
             <Kid kid={element} key={element.id} 
-            changeActualKid={changeActualKid} toggleKidDetails={toggleKidDetails}/>
+            changeActualKid={changeActualKid} toggleKidDetails={toggleKidDetails}
+            toggleDeleteKid={toggleDeleteKid}/>
         )
     })
 
@@ -117,6 +120,9 @@ const Account =(props)=>{
             </div>
             <div className="flying-block add-new-kid-wrapper anim-fade-in none">
                 <AddKid />
+            </div>
+            <div className="flying-block delete-kid-wrapper anim-fade-in none">
+                <DeleteKid kid={kid} />
             </div>
             <div className="flying-block edit-kid-wrapper anim-fade-in none">
                 <KidDetails kid={kid} editKid={editKid} />    

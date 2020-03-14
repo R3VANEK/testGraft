@@ -1,12 +1,20 @@
 import React from 'react'
+import baba from '../../../images/baba.png';
+import chlop from '../../../images/chlop.png';
 
 const Kid =(props)=>{
+
+    const gender = props.kid.gender === 'm' ? (
+        <img src={chlop} alt="usuń" id={props.kid.id}/>
+    ) : (
+        <img src={baba} alt="usuń" id={props.kid.id}/>
+    )
+
     return(
         <div className="user-member" key={props.kid.id}>
 
             <div className="flying-exit" >
-                <img src={require(`../../../images/x.png`)} alt="usuń" id={props.kid.id}     
-                onClick={ ()=>{props.handleClickEditProfile('deleteChild', props.kid.id)}}/>
+                <img src={require(`../../../images/x.png`)} alt="usuń" id={props.kid.id}/>
             </div>
 
             <div className="user-member-img">
@@ -28,8 +36,8 @@ const Kid =(props)=>{
 
             <div className="user-member-hover">
 
-                <div className="flying-exit" >
-                    <img src={require(`../../../images/x.png`)} alt="usuń" id={props.kid.id} />
+                <div className="flying-exit gender" >
+                    {gender}
                 </div>
 
                 <div className="user-member-img">
@@ -60,8 +68,12 @@ const Kid =(props)=>{
 
                 </div>
                 <div className="purple-line-text" id={props.kid.id}> {/* TUTAJ JEST BŁĄD */}
-                    <div className="purple-line-text-first">Edytuj</div>
-                    <div className="purple-line-text-second">Usuń</div>
+                    <div className="purple-line-text-first"
+                    onClick={()=>{props.changeActualKid(props.kid.id); props.toggleKidDetails(true)}}
+                    >Edytuj</div>
+                    <div className="purple-line-text-second"
+                    onClick={()=>{props.changeActualKid(props.kid.id); props.toggleDeleteKid(true)}}
+                    >Usuń</div>
                 </div>
             </div>
         </div>

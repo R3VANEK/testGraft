@@ -156,7 +156,7 @@ const AddKid = () => {
                     </div>
                 </div>
 
-                <div className="input-sex">
+                <div className="add-kid-input-sex">
                     <div>
                         <input name="sex" id="m" type="radio" onChange={(e) => {changeFavouriteGender(e)}}/>
                         <label className="first-label" htmlFor="m">Chłopiec</label>
