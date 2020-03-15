@@ -2,7 +2,10 @@ import React from 'react';
 import './userSettings.min.css';
 import '../account.min.css';
 import x from '../../../images/exit.png';
-import a from '../../../images/a.png';
+import deleteAccount from '../../../images/Delete.svg';
+import edit from '../../../images/Edit.svg';
+import security from '../../../images/Security.svg';
+
 import EditData from './userSettingsChildren/editData';
 import Security from './userSettingsChildren/security';
 import DeleteAccount from './userSettingsChildren/deleteAccount';
@@ -17,7 +20,7 @@ const UserSettings = () => {
                     <div className="first-text-and-img first EDIT_DATA active" 
                     onClick={() => changeSecondSection('EDIT_DATA')}>
                         <div className="img">
-                            <img src={a} alt="opcja" />
+                            <img src={edit} alt="opcja" />
                         </div>
                         <div className="text">
                             Edytuj dane
@@ -26,7 +29,7 @@ const UserSettings = () => {
                     <div className="first-text-and-img first SECURITY"
                     onClick={() => changeSecondSection('SECURITY')}>
                         <div className="img">
-                            <img src={a} alt="opcja" />
+                            <img src={security} alt="opcja" />
                         </div>
                         <div className="text">
                             Bezpieczeństwo
@@ -35,7 +38,7 @@ const UserSettings = () => {
                     <div className="first-text-and-img first DELETE_ACCOUNT"
                     onClick={() => changeSecondSection('DELETE_ACCOUNT')}>
                         <div className="img">
-                            <img src={a} alt="opcja" />
+                            <img src={deleteAccount} alt="opcja" />
                         </div>
                         <div className="text">
                             Usuń konto

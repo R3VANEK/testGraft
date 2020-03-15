@@ -47,8 +47,12 @@ const offerDetails = (props) => {
                     <input type="button" value="nie"  onClick={notToDeleteOffer}/>
                 </form>
                 <div className="user-offer-details-buttons">
-                    <button className="btn purple-btn">🎁ZAKUP</button>
-                    <button className="btn purple-btn" onClick={almostDeleteOffer}>☠️Usuń ofertę</button>
+                    <button className="btn purple-btn">
+                        <i class="fas fa-shopping-basket icon"></i>ZAKUP
+                    </button>
+                    <button className="btn purple-btn" onClick={almostDeleteOffer}>
+                    <i class="fas fa-trash icon"></i>Usuń ofertę
+                    </button>
                 </div>
             </div>
         </div>

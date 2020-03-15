@@ -2,7 +2,8 @@ import React, {useState} from 'react'; //ZROBIC USESTATE
 import Swinia from '../../images/SWINIA.svg';
 import './account.min.css';
 import './offers/offer.min.css';
-import plusCircle from '../../images/plusCircle.svg';
+import plusCircleAdd from '../../images/plusCircleAdd.svg';
+import cog from '../../images/cog-solid.svg';
 import Kid from './kids/kid';
 import AddKid from './kids/addKid';
 import KidDetails from './kids/kidDetails';
@@ -138,7 +139,7 @@ const Account =(props)=>{
         <main>
             <div className="user-description">
                 <div className="user-edit" onClick={toggleSettings}>
-                    Edytuj profil <img src={Swinia} alt="edytuj_profil"/>
+                    Edytuj profil <img src={cog} alt="edytuj_profil"/>
                 </div>
                 <div className="user-grid">
                     <div className="user-his-image">
@@ -163,7 +164,7 @@ const Account =(props)=>{
                 <div className="user-members">
                     <div className="user-member add">
                         <div className="user-member-img">
-                            <img src={plusCircle} alt="dodaj_członka" 
+                            <img src={plusCircleAdd} alt="dodaj_członka" 
                             onClick={toggleAddKid}/>
                         </div>
                         <div className="user-member-text">

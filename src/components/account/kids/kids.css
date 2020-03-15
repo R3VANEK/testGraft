@@ -42,6 +42,14 @@
   }
 }
 
+.flying-exit.gender {
+  right: 20px;
+}
+
+.flying-exit.gender img {
+  width: 25px;
+}
+
 .edit-child-text {
   color: palevioletred;
   font-weight: 600;

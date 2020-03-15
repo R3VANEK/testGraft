@@ -1,13 +1,13 @@
 import React from 'react'
-import baba from '../../../images/baba.png';
-import chlop from '../../../images/chlop.png';
+import  mars from '../../../images/mars-solid.svg';
+import venus from '../../../images/venus-solid.svg';
 
 const Kid =(props)=>{
 
     const gender = props.kid.gender === 'm' ? (
-        <img src={chlop} alt="usuń" id={props.kid.id}/>
+        <img src={mars} alt="usuń" id={props.kid.id}/>
     ) : (
-        <img src={baba} alt="usuń" id={props.kid.id}/>
+        <img src={venus} alt="usuń" id={props.kid.id}/>
     )
 
     return(
@@ -70,10 +70,10 @@ const Kid =(props)=>{
                 <div className="purple-line-text" id={props.kid.id}> {/* TUTAJ JEST BŁĄD */}
                     <div className="purple-line-text-first"
                     onClick={()=>{props.changeActualKid(props.kid.id); props.toggleKidDetails(true)}}
-                    >Edytuj</div>
+                    ><i class="fas fa-user-edit icon"></i>Edytuj</div>
                     <div className="purple-line-text-second"
                     onClick={()=>{props.changeActualKid(props.kid.id); props.toggleDeleteKid(true)}}
-                    >Usuń</div>
+                    > <i class="fas fa-trash icon"></i>Usuń</div>
                 </div>
             </div>
         </div>
