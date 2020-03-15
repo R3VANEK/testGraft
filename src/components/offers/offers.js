@@ -54,7 +54,7 @@ class Offers extends React.Component{
         showOffers : false
     }
 
-    componentDidMount(){
+    componentWillMount(){
         this.setState({
             sortedArray : this.state.dummy_listOfOffers.sort((a,b)=>{
                 if(a.itemName < b.itemName){
@@ -167,8 +167,7 @@ class Offers extends React.Component{
 
     showOffers =  (e) =>{
         this.setState({
-            typeOfOffer : e.target.getAttribute("for"),
-            showOffers : true
+            typeOfOffer : e.target.getAttribute("for")
         })
     }
 
@@ -189,7 +188,7 @@ class Offers extends React.Component{
             )
         })
 
-        const divOffers = (this.state.showOffers != false) ?
+        const divOffers = (this.state.typeOfOffer !=null) ?
         (
             this.state.sortedArray.map((offer)=>{
                 if(offer.category == this.state.typeOfOffer){
@@ -197,36 +196,18 @@ class Offers extends React.Component{
                     <Offer_card item={offer}/>
                 )}
             })
-        ) : null
+        ) : 
+        (
+            this.state.sortedArray.map((offer)=>{
+                return(
+                    <Offer_card item={offer}/>
+                )
+            })
+        )
 
-        /*const divOffers = (this.state.categorySelect != null) ?   
-        (
-            (this.state.sort != null) ?
-            (
-                this.state.sortedArray.map((item)=>{
-                    if(item.category === this.state.categorySelect){
-                        return(
-                            <Offer_card item={item}/>
-                        )
-                    }
-                })
-            ) :
-            (
-                this.state.dummy_listOfOffers.map((item)=>{
-                    if(item.category === this.state.categorySelect){
-                        return(
-                            <Offer_card item={item}/>
-                        )
-                    }
-                    
-                })
-            )
-        ) :
-        (
-            null
-        )*/
         
-        
+            
+       
         
 
         return(
