@@ -9,21 +9,30 @@ const Offer_card = ({item}) =>{
     return(
         <div class="outside-item" key={item.id}>
             <div id={item.id} class="single-item" >
-                <img src={fav} alt="fav"/>
-                <img src={share} alt="share"/>
-                <div class="hot">
-                <img src={not_hot} alt="hot"  />
-                <div class="none">{item.hots}</div>
+                <div className="item-image-area">
+                    <div className="item-flying-images">
+                        <div className="item-flying-image-child">
+                            <img src={fav} alt="fav"/>
+                        </div>
+                        <div className="item-flying-image-child">
+                            <img src={share} alt="share"/>
+                        </div>
+                        <div className="item-flying-image-child">
+                            <img src={not_hot} alt="hot"/>
+                        </div>
+                    </div>
+                    <div className="item-main-image">
+                         <img src={require(`../../images/`+ item.imgUrl)} alt="zdjęcie"/>
+                    </div>        
                 </div>
-                <img class="img" src={require(`../../images/`+ item.imgUrl)} alt=""/>
+                
 
                 <h2>{item.itemName}</h2>
-                <div class="normal-text blue-text">Cena: {item.price}  zł</div>
+                <div class="normal-text blue-text"> {item.price}  zł</div>
                     <a href="#act">
-                        <button class="btn1" >Przejdź do oferty</button>
+                        <button class="btn" >Przejdź do oferty</button>
                     </a>
             </div>
-            <div class="hidden"></div>
         </div>
     )
 }

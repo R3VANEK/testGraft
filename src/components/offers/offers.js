@@ -230,54 +230,54 @@ class Offers extends React.Component{
         
 
         return(
-            <div>
-                <div id="contentt" class="big-container1">
-    
-                    <div class="user-family-title-box special">
-                        <div class="user-family-title-box-text">
-                            <h1>Witaj TwojeImię!</h1>
-                            <h2>Oto oferty, które dla Ciebie przygotowaliśmy</h2>
+            <main>
+                <div class="big-container1">
+                    <div className="big-container-inner">
+                        <div class="user-family-title-box special">
+                            <div class="user-family-title-box-text">
+                                <h1>Witaj TwojeImię!</h1>
+                                <h2>Oto oferty, które dla Ciebie przygotowaliśmy</h2>
+                            </div>
+                            <div class="user-family-title-box-img">
+                                <button class="btn1">ZMIEŃ KRYTERIA</button><br/>
+                                <button class="btn1">JAK TO DZIAŁA?</button>
+                            </div>
                         </div>
-                        <div class="user-family-title-box-img">
-                            <button class="btn1">ZMIEŃ KRYTERIA</button><br/>
-                            <button class="btn1">JAK TO DZIAŁA?</button>
-                        </div>
-                    </div>
 
                     {h1Text}
 
-                    <div class="types-of-offer">
-                        {divCategories}
-                    </div>
-
-                    <div class="sort">
-                        <div class="text" >Sortuj według:</div>
-                        <div class="select">
-                            <select name="sort-1" id="sort-1" onChange={this.sortOption}>
-                                <option value="itemName">Nazwy</option>
-                                <option value="price">Ceny</option>
-                                <option value="hots">Popularności</option>
-                            </select>
+                        <div class="types-of-offer">
+                            {divCategories}
                         </div>
-                    </div>
 
-                    <div class="sort" >
-                        <div class="text">Cena:</div>
-                        <div class="select">
-                            <select name="sort-2" id="sort-2" onChange={this.sortOption}>
-                                <option value="min-max">Rosnąco</option>
-                                <option value="max-min">Malejąco</option>
-                            </select>
+                        <div className="sort-block">
+                            <div class="sort first">
+                                <div class="text" >Sortuj według:</div>
+                                <div class="select">
+                                    <select name="sort-1" id="sort-1" onChange={this.sortOption}>
+                                        <option value="itemName">Nazwy</option>
+                                        <option value="price">Ceny</option>
+                                        <option value="hots">Popularności</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="sort second" >
+                                <div class="text">Cena:</div>
+                                <div class="select">
+                                    <select name="sort-2" id="sort-2" onChange={this.sortOption}>
+                                        <option value="min-max">Rosnąco</option>
+                                        <option value="max-min">Malejąco</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="container-offers">
-                        {divOffers}
+                        <div className="container-offers">
+                            {divOffers}
+                        </div>   
                     </div>
-                    
-    
                 </div>
-            </div>
+            </main>
         )
     }
     
