@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import baner2  from '../../images/baner2.svg'
 import plus500 from '../../images/biale-tlo.png'
-import videoNr1 from '../../videos/reklama.mp4'
+import videoNr1 from '../../videos/film1.mp4'
 import videoNr2 from '../../videos/troska.mp4'
 import './home.css'
 import karta from '../../images/karta.png'
