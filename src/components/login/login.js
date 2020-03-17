@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
-import './register.min.css';
+import {NavLink} from 'react-router-dom';
+import './login.min.css';
 import fb from '../../images/fb.svg'
 
 class Register extends Component {
 
     state = {
-        name:'',
         email:'',
         password:'',
-        repPassword:'',
         error:''
     }
 
@@ -20,22 +19,21 @@ class Register extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state.error)
+
         const user = {
-            name:this.state.name,
             email: this.state.email,
-            password: this.state.password,
+            password: this.state.password
         }
 
         if(false){
-            //REJESTRACJA UDALO SIE
+            //LOGOWANIE UDALO SIE
 
         } else {
-            //REJESTRACJA NIE UDALO SIE
+            //LOGOWANIE NIE UDALO SIE
 
         if(!this.state.error){
             this.setState({
-                error:'Koronawirus zabije nas wszystkiech'
+                error:'Logowanie nie powiodło się'
             })
 
             setTimeout(() => {
@@ -50,7 +48,7 @@ class Register extends Component {
         }
     }
 
-
+   
 
     render(){ 
 
@@ -65,7 +63,7 @@ class Register extends Component {
 
                 {errorMessage}
 
-                <form className="register-form" onSubmit={this.handleSubmit}>
+                <form className="register-form login" onSubmit={this.handleSubmit}>
                     <div className="register-form-1st">
                         <div className="text-with-vertical-line">
                             <div className="anim-text-register">
@@ -91,43 +89,24 @@ class Register extends Component {
                     </div>
                     <div className="register-form-2nd">
                         <div className="title-with-underline">
-                            Zarejestruj się!
+                            Zaloguj się!
                         </div>
-                        <input className="input-1" type="text" placeholder="Podaj swój nick/pseudonim..." name="name"
-                        required onChange={(e) => this.handleChange(e)}/>
-                        <input className="input-1" type="mail" placeholder="Podaj swój email..." name="email"
-                        required onChange={(e) => this.handleChange(e)}/>
-                        <input className="input-1" type="password" placeholder="Podaj nowe hasło..." name="password"
-                        required onChange={(e) => this.handleChange(e)}/>
-                        <input className="input-1" type="password" placeholder="Powtórz hasło..." name="repPassword"
-                        required onChange={(e) => this.handleChange(e)}/>
-                        <div className="captcha-fb-block">
-                            <div className="captcha">
-                                -CAPTCHA-
-                            </div>
-                            <div className="btn-fb">
+                        <input className="input-1" type="mail" placeholder="Podaj swój email..." name="email" required
+                        onChange={(e) => {this.handleChange(e)}}/>
+                        <input className="input-1" type="password" placeholder="Podaj hasło..." name="password" required
+                        onChange={(e) => {this.handleChange(e)}}/>
+                        <input type="submit" value="Zaloguj się" className="btn purple-btn" />
+
+                        <div className="word-between-lines">
+                            lub
+                        </div>
+                        
+                        <div className="btn-fb">
                             <img src={fb} />
-                            <span>Użyj facebooka</span>
-                             
-                            </div>
+                            <span>Użyj facebooka</span>   
                         </div>
-                        <div className="checkbox-and-text">
-                            <div className="register-checkbox">
-                                <input className="register-checkbox" type="checkbox" name="regulations"/>
-                            </div>
-                            <div className="text">
-                                <p>Akceptuje warunki umowy bla bla bla bla bal</p>
-                            </div>
-                        </div>
-                        <div className="checkbox-and-text">
-                            <div className="register-checkbox">
-                                <input className="register-checkbox" type="checkbox" name="receive-not"/>
-                            </div>
-                            <div className="text">
-                                <p>Akceptuje warunki umowy bla bla bla bla bal asd sad asd asd as asd asd as</p>
-                            </div>
-                        </div>
-                        <input type="submit" value="Zarejestruj się" className="btn purple-btn" />
+                        <p className="not-important-text">Nie masz konta? <NavLink to="/rejestracja">Zarejestruj się</NavLink></p>
+                        
                     </div>
                 </form>
             </main>

@@ -51,7 +51,7 @@ const offerDetails = (props) => {
                         <i class="fas fa-shopping-basket icon"></i>ZAKUP
                     </button>
                     <button className="btn purple-btn" onClick={almostDeleteOffer}>
-                    <i class="fas fa-trash icon"></i>Usuń ofertę
+                        <i class="fas fa-trash icon"></i>Usuń ofertę
                     </button>
                 </div>
             </div>
