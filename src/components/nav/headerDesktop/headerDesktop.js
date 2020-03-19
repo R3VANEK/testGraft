@@ -131,9 +131,9 @@ render() {
   const deskopLoggedOut= (
     <nav className="header-right out">
         <NavLink className="basic-nav" exact to="/" >HOME</NavLink>
-        <NavLink className="basic-nav" to="o-nas" >O NAS</NavLink>
-        <NavLink className="basic-nav" to="kontakt">KONTAKT</NavLink>
-        <NavLink className="basic-nav" to="logowanie">ZALOGUJ SIĘ</NavLink>
+        <NavLink className="basic-nav" exact to="o-nas" >O NAS</NavLink>
+        <NavLink className="basic-nav" exact to="kontakt">KONTAKT</NavLink>
+        <NavLink className="basic-nav" exact to="logowanie">ZALOGUJ SIĘ</NavLink>
     </nav>
   )
   
@@ -144,7 +144,7 @@ render() {
     return ( 
         <header>
             <div className="header">
-            <NavLink to="/" className="logo">
+            <NavLink exact to="/" className="logo">
                 {LOGO}
             </NavLink>
                 {isLoggedDeskop}

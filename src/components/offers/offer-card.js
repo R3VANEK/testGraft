@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import fav from '../../images/fav.png'
 import share from '../../images/share.png'
 import not_hot from '../../images/not-hot.png'
@@ -29,9 +30,10 @@ const Offer_card = ({item}) =>{
 
                 <h2>{item.itemName}</h2>
                 <div class="normal-text blue-text"> {item.price}  zł</div>
-                    <a href="#act">
-                        <button class="btn" >Przejdź do oferty</button>
-                    </a>
+
+                        <Link to={"/oferty/"+item.id}>
+                            <button class="btn">Przejdź do oferty</button>
+                        </Link>
             </div>
         </div>
     )

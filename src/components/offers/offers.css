@@ -836,6 +836,7 @@ input:checked + label {
   vertical-align: middle;
   border-radius:5px;
   margin-top:1%;
+  cursor: pointer;
 }
 .backOffers p{
   float:left;
@@ -844,6 +845,7 @@ input:checked + label {
 }
 .h-container{
   margin-top:2%;
+  width:100%;
 }
 .main-h1{
   font-weight:bold;
@@ -858,16 +860,19 @@ input:checked + label {
   margin-bottom:10px;
 }
 .main-container-details{
-  margin-top:5%;
+  margin-top:10%;
   width:100%;
   margin-bottom:5%;
+  height:60vh;
+  position:relative;
 }
 .offer-details-img{
-  max-width:50%;
+  width:50%;
   border: 3px solid purple;
   border-radius:5px;
   float:left;
-  margin-bottom: 10%;
+  position:absolute;
+  height:100%;
  
 }
 .h2-name-offer{
@@ -877,9 +882,9 @@ input:checked + label {
   font-weight: 500;
 }
 .detail-right{
-  
   float:right;
-  max-width: 50%;
+  width:50%;
+  height:100%;
 }
 .detail-description, .h2-name-offer, .stars-price, .buttons-container, .link-detail-container{
   margin-left:6%;
@@ -901,6 +906,7 @@ input:checked + label {
   font-size:130%;
   border: none;
   color:white; 
+  cursor: pointer;
 }
 .blala:nth-child(2){
   margin-left: 5%; 
