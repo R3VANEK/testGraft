@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import store from './store';
+import {Provider} from 'react-redux';
 import Footer from './components/footer/footer'
 import Nav from './components/nav/nav';
 import Home from './components/home/home'
@@ -20,6 +22,7 @@ class App extends Component {
     render() {
       return (
         <BrowserRouter>
+          <Provider store={store}>
           <div className="App">
             
             <Route path="/" component={Nav} />
@@ -39,6 +42,7 @@ class App extends Component {
             
             <Footer/>
           </div>
+          </Provider>
         </BrowserRouter>
     )
 }
