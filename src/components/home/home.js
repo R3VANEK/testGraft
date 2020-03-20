@@ -27,7 +27,10 @@ class Home extends Component {
                 window.addEventListener('scroll', this.handleScroll, true);
                 window.addEventListener('load', this.handleScroll, true);
 
-                this.showNewsLetter = setTimeout( () => {                                  
+
+        /********** NEWSLETTER ***********/
+
+               /* this.showNewsLetter = setTimeout( () => {                                  
                     this.setState({
                     isNewsLetterActive:true
                     })
@@ -35,11 +38,13 @@ class Home extends Component {
                     
                     this.toggleBlurAndOverlay();
 
-                }, 3000)   
+                }, 3000)   */
+
+        /********** NEWSLETTER ***********/
          }
 
          componentWillUnmount(){
-             clearTimeout(this.showNewsLetter)
+             //clearTimeout(this.showNewsLetter)
          }
 
          
@@ -237,7 +242,9 @@ class Home extends Component {
                     <i><p>NIEZALEŻNIE CZY TO NOWY UPOMINEK, UBRANIE CZY UPRAGNIONA WYCIECZKA.</p></i>
                     <p>Jesteś unikalny, korzystając z naszej aplikacji nigdy już nie będziesz "Kolejnym klientem".</p> 
     
-                    <button className="btn purple-btn" onClick={this.handleClick2}>Zobacz video</button>
+                    <button className="btn purple-btn" onClick={this.handleClick2}>
+                        <i class="fas fa-play-circle icon"></i>Zobacz video
+                    </button>
                 </div>
                 <div className="grid-elem-2">
                     <img className="moving left" src={screen2} alt="offer"/>
@@ -291,7 +298,7 @@ class Home extends Component {
                         <input type="email" required/>
                         <h3>Treść</h3>
                         <textarea required max-length="1000" name="mess" id="mess" cols="30" rows="10"></textarea><br/>
-                        <button className="btn purple-btn">Wyślij</button>
+                        <button className="btn purple-btn"><i class="far fa-paper-plane icon"></i>Wyślij</button>
                     </form>
                     <h3>Lub</h3>
                     <h3>Napisz na ten adres E-mail!</h3>

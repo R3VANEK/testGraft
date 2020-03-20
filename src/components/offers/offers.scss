@@ -144,9 +144,10 @@
   .btn1 {
     width: 84%;
     height: 40px;
-    display: grid;
+    display: flex;
     justify-content: center;
     align-items: center;
+    grid-template-columns: 100%;
     border: none;
     margin: 10px auto;
     border-radius: 5px;
@@ -155,6 +156,8 @@
     color: white;
     font-size: inherit;
     text-decoration: none;
+
+
   }
   
   a {
@@ -249,14 +252,13 @@
   
   .user-family-title-box .btn1 {
     background: transparent;
-    position: relative;
     width: 170px;
-    font-size: .9em;
+    font-size: .8em;
     height: 45px;
     margin: 0 auto;
     border: 3px solid #fefefe;
-    text-align: right;
-    padding-left: 30px;
+    
+    
     border-radius: 25px;
     transition: background-color .3s ease-in-out, color .3s ease-in-out;
   }
@@ -270,28 +272,12 @@
     color: purple;
   }
   
-  .user-family-title-box .btn1::before {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    left: 10px;
-    top: 8px;
-  }
   .types-of-offer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5vw 0 2vw;
   }
-  
-  .user-family-title-box .btn1:first-child::before {
-    content: url("../../images/color_palette.svg");
-  }
-  
-  .user-family-title-box .btn1:last-child::before {
-    content: url("../../images/color_palette.svg");
-  }
-  
   .user-family-title-box-text {
     text-align: left;
   }

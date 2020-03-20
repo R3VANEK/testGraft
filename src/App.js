@@ -6,6 +6,7 @@ import Footer from './components/footer/footer'
 import Nav from './components/nav/nav';
 import Home from './components/home/home'
 import Register from './components/register/register';
+import Login from './components/login/login';
 import About from './components/about/about';
 import ForMedia from './components/forMedia/forMedia';
 import Regulations from './components/regulations/regulations';
@@ -13,7 +14,7 @@ import Page404 from './components/page404/page404';
 import Account from './components/account/account';
 import Offers from './components/offers/offers'
 import Offer_details from './components/offers/offer_details'
-//import Contact from './components/about/contact';
+import Contact from './components/contact/contact';
 import './app.css'
 
 
@@ -29,7 +30,9 @@ class App extends Component {
 
           <Switch>
             <Route path="/rejestracja" component={Register} />
+            <Route path="/logowanie" component={Login} />
             <Route path="/o-nas" component={About} />
+            <Route path="/kontakt" component={Contact} />
             <Route path="/dla-mediow" component={ForMedia} />
             <Route path="/regulamin" component={Regulations} />
             <Route path="/moje-konto" component={Account} />  

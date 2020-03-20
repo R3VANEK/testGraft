@@ -242,8 +242,8 @@ class Offers extends React.Component{
                                 <h2>Oto oferty, które dla Ciebie przygotowaliśmy</h2>
                             </div>
                             <div className="user-family-title-box-img">
-                                <button className="btn1">ZMIEŃ KRYTERIA</button><br/>
-                                <button className="btn1">JAK TO DZIAŁA?</button>
+                                <button className="btn1"><i class="fas fa-user-cog icon"></i>ZMIEŃ KRYTERIA</button><br/>
+                                <button className="btn1"><i class="fas fa-user-cog icon"></i>JAK TO DZIAŁA?</button>
                             </div>
                         </div>
 

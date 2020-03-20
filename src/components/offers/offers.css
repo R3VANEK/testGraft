@@ -148,9 +148,10 @@
 .btn1 {
   width: 84%;
   height: 40px;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
+  grid-template-columns: 100%;
   border: none;
   margin: 10px auto;
   border-radius: 5px;
@@ -253,14 +254,11 @@ a {
 
 .user-family-title-box .btn1 {
   background: transparent;
-  position: relative;
   width: 170px;
-  font-size: .9em;
+  font-size: .8em;
   height: 45px;
   margin: 0 auto;
   border: 3px solid #fefefe;
-  text-align: right;
-  padding-left: 30px;
   border-radius: 25px;
   transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
@@ -274,27 +272,11 @@ a {
   color: purple;
 }
 
-.user-family-title-box .btn1::before {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  left: 10px;
-  top: 8px;
-}
-
 .types-of-offer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5vw 0 2vw;
-}
-
-.user-family-title-box .btn1:first-child::before {
-  content: url("../../images/color_palette.svg");
-}
-
-.user-family-title-box .btn1:last-child::before {
-  content: url("../../images/color_palette.svg");
 }
 
 .user-family-title-box-text {
@@ -823,101 +805,4 @@ input:checked + label {
 .purple-text {
   color: #660091;
   font-weight: 300;
-}
-/* STYLE DO DETALI OFERT */
-
-.backOffers{
-  width:200px;
-  height:70px;
-  background-color: purple;
-  color:white;
-  text-align: center;
-  font-size:140%;
-  vertical-align: middle;
-  border-radius:5px;
-  margin-top:1%;
-  cursor: pointer;
-}
-.backOffers p{
-  float:left;
-  margin-left:13%;
-  font-family: 'Montserrat', sans-serif;
-}
-.h-container{
-  margin-top:2%;
-  width:100%;
-}
-.main-h1{
-  font-weight:bold;
-  text-transform: uppercase;
-}
-.main-h1, .our-choise{
-  float:left;
-}
-.our-choise{
-  font-weight:lighter;
-  margin-left:10px;
-  margin-bottom:10px;
-}
-.main-container-details{
-  margin-top:10%;
-  width:100%;
-  margin-bottom:5%;
-  height:60vh;
-  position:relative;
-}
-.offer-details-img{
-  width:50%;
-  border: 3px solid purple;
-  border-radius:5px;
-  float:left;
-  position:absolute;
-  height:100%;
- 
-}
-.h2-name-offer{
-  margin-top:3%;
-  font-size:200%;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.detail-right{
-  float:right;
-  width:50%;
-  height:100%;
-}
-.detail-description, .h2-name-offer, .stars-price, .buttons-container, .link-detail-container{
-  margin-left:6%;
-}
-.stars-price{
-  margin-top:2%;
-  color:purple;
-  font-weight:bold;
-  font-size:200%;
-}
-.buttons-container{
-  margin-top:3%;
-}
-.blala{
-  float:left;
-  width:200px;
-  height:40px;
-  border-radius:5px;
-  font-size:130%;
-  border: none;
-  color:white; 
-  cursor: pointer;
-}
-.blala:nth-child(2){
-  margin-left: 5%; 
-  background-color:rgb(177, 177, 177);
-}
-.blala:nth-child(1){
-  background-color: purple;
-}
-.link-detail-container{
-  margin-top:17%;
-}
-footer{
-  clear:both;
 }
