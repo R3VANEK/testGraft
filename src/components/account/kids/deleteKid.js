@@ -9,6 +9,8 @@ const DeleteKid = (props) => {
     const deleteKid = () => {
         const id = props.kid.id;
 
+        console.log(id);
+
         //USUWANIE DZIECKA
     }
 

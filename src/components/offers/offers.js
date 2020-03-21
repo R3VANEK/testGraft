@@ -287,6 +287,7 @@ class Offers extends React.Component{
 }
  /************************* REDUX *************************/
 const mapStateToProps = state => {
+    console.log(state)
     return{
         offers: state.offer
     }  

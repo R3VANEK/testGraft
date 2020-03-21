@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 import a from '../../../../images/a.png';
 import plusCircle from '../../../../images/plusCircle.svg';
 import '../userSettings.min.css';
 
-const EditData = () => {
+class EditData extends Component{
+
+     handleSubmit = (e) => {
+        e.preventDefault();
+
+        //change data
+    }
+
+render(){
     return (
-        <div className="edit-data">
+        <form className="edit-data" onSubmit={this.handleSubmit}>
             <h2>Twoje dane</h2>
             <div className="img-inside-img">
                 <img src={a} alt="Ja" />
@@ -46,8 +54,9 @@ const EditData = () => {
                 </div>
             </div>
             <button className="btn purple-btn">Zmień dane</button>
-        </div>
+        </form>
     )
+  }
 }
 
 export default EditData

@@ -51,7 +51,9 @@ const KidDetails = (props) => {
             case 'SHOE_SIZE':
                 changeShoeSize(e.target.value); break;
             case 'COLOR':
-                changeFavColor(e.target.value); break;      
+                changeFavColor(e.target.value); break; 
+                
+            default: break;
         }
     }
 
@@ -66,7 +68,9 @@ const KidDetails = (props) => {
                 case 'AGE':
                     changeAge(value); break;
                 case 'SHOE_SIZE':
-                    changeShoeSize(value); break;     
+                    changeShoeSize(value); break;   
+                    
+                default: break;
             }
 
         } else if (sign ==='-') {
@@ -81,6 +85,8 @@ const KidDetails = (props) => {
                         changeAge(value); break;
                     case 'SHOE_SIZE':
                         changeShoeSize(value); break;  
+                    
+                    default: break;
 
                 }
             }

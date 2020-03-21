@@ -20,10 +20,10 @@ class Register extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        const user = {
+     /*   const user = {
             email: this.state.email,
             password: this.state.password
-        }
+        }*/
 
         if(false){
             //LOGOWANIE UDALO SIE
@@ -102,7 +102,7 @@ class Register extends Component {
                         </div>
                         
                         <div className="btn-fb">
-                            <img src={fb} />
+                            <img src={fb} alt="fb"/>
                             <span>Użyj facebooka</span>   
                         </div>
                         <p className="not-important-text">Nie masz konta? <NavLink to="/rejestracja">Zarejestruj się</NavLink></p>

@@ -14,7 +14,7 @@ import flame from '../../images/Flame.svg'
 import purchase from '../../images/purchase.svg'
 import screen2 from '../../images/screen2.svg'
 import contact from '../../images/contact.svg'
-import {createCookie, readCookie} from '../../functions/cookiesMethods'
+//import {createCookie, readCookie} from '../../functions/cookiesMethods'
 
 
 class Home extends Component {

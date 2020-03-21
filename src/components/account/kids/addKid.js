@@ -24,7 +24,9 @@ const AddKid = () => {
             case 'AGE':
                 changeAge(e.target.value); break;
             case 'SHOE_SIZE':
-                changeShoeSize(e.target.value); break;     
+                changeShoeSize(e.target.value); break;
+                
+            default: break;
         }
     }
 
@@ -39,7 +41,9 @@ const AddKid = () => {
                 case 'AGE':
                     changeAge(value); break;
                 case 'SHOE_SIZE':
-                    changeShoeSize(value); break;     
+                    changeShoeSize(value); break;
+                    
+                default: break;
             }
 
         } else if (sign ==='-') {
@@ -55,6 +59,8 @@ const AddKid = () => {
                     case 'SHOE_SIZE':
                         changeShoeSize(value); break;  
 
+                    default: break;
+
                 }
             }
         }
@@ -66,9 +72,25 @@ const AddKid = () => {
         changeGender(e.target.id);
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const newKid = {
+            name,
+            height,
+            age,
+            shoeSize,
+            color,
+            gender
+        }
+        console.log(newKid);
+
+        //add new kid
+    }
+
     return (
         <div className="add-child-block">
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <div className="flying-exit" >
                     <img src={exit} alt="wyjście" 
                     onClick={removeAll}/>
