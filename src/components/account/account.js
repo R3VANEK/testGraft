@@ -1,7 +1,11 @@
-import React, {useState} from 'react'; //ZROBIC USESTATE
+import React, {Component} from 'react'; 
+
+import {connect} from 'react-redux';
+
 import Swinia from '../../images/SWINIA.svg';
 import './account.min.css';
 import './offers/offer.min.css';
+import PropTypes from 'prop-types';
 import plusCircleAdd from '../../images/plusCircleAdd.svg';
 import cog from '../../images/cog-solid.svg';
 import Kid from './kids/kid';
@@ -21,7 +25,7 @@ import {
         } 
         from '../../functions/userAccountHelplers';
 
-const Account =(props)=>{
+class Account extends Component {
 
     
     /*
@@ -33,83 +37,89 @@ const Account =(props)=>{
             <Kid kid={element} key={element.id} handleClickEditProfile={props.handleClickEditProfile}/>
         )
     })*/
+    state = {
+        actualKid : {
+            id:11,
+            name:'ssss',
+            age:5,
+            shoeSize:5,
+            favColor:'s',
+            height:5,
+            img:''
+        },
+        actualOffer : {
+            id:14, 
+            name:'Treny',
+            page:'www.PoChujKochanowskiNapisałTreny.pl', 
+            price:1830, 
+            description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.',
+            img:'a.png'
+        } , 
 
-
-
-    const DUMMY_DATA = [
-        {id:0, name:'HENIO', age:5, gender:'m', shoeSize:41, favColor:'BLACK', height:'545', img:'a.png'},
-        {id:1,name:'PABLO', age:5, gender:'k', shoeSize:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'},
-        {id:2, name:'KACPER', age:5, gender:'m', shoeSize:43, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'}
-        
-    ]
-
-    const DUMMY_OFFERS = [
-        {id:6, name:'Pan Tadeusz', page:'www.CzemuPanTadeuszToEpopejaNarodowa.pl', price:1830, description:'W "Panu Tadeuszu" znajduje się wiele elementów charakterystycznych dla eposu.Jest on wielowątkowym utworem poetyckim ukazującym bohaterskie czyny wielkich postaci, na tle przełomowych dla narodu wydarzeń. W utworze występuje wszechwiedzący i wszechobecny narrator uprzedzający o przyszłych przypadkach bohaterów. Nie każdy epos jest jednak epopeją narodową.', img:'a.png'},
-        {id:4, name:'Dziady III', page:'www.KonradJakoBohaterRomantyczny.pl', price:1830, description:'Konrad to przede wszystkim bohater dynamiczny. Już na początku dramatu przechodzi przeobrażenie - "Gustavus obiit - hic hatus est Conradus [Gustaw umarł - urodził się Konrad]". Maria Janion określiła tę przemianę jako transformację z Kochanka kobiety w Kochanka ojczyzny.', img:'a.png'},
-        {id:7, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
-        {id:8, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochan asd asdasd asd asd asd asd asd asd asd asd asd sad asd asd asd asd sad asd asd asd as das das das asd asd asd asd asd asd as das das das das dasd asd as das dasd asd asd asd asd as das das as das ds asd asd asd asd asd asd asd asd asd asd asd asdas as da asd asdas das dasd asd asd asd asd asd as dasd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd as das das dasd asd asd as das das das as das das das das dassd as dasd asd asd as dasowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'}, 
-        {id:9, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
-        {id:15, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
-        {id:10, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
-        {id:11, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
-        {id:12, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},       
-        {id:13, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
-        {id:14, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'}
-    ]
-
-
-    /*******  DYNAMICALLY CHANGING CURRENTLY EDITING KID  ******/
-    const [kid, editKid] = useState({
-        id:11,
-        name:'ssss',
-        age:5,
-        shoeSize:5,
-        favColor:'s',
-        height:5,
-        img:''
-    })
-
-    const changeActualKid = (id) => {
-        let index = DUMMY_DATA.findIndex( (item) => item.id === id)
-        editKid(DUMMY_DATA[index]);
+        DUMMY_DATA : [
+            {id:0, name:'HENIO', age:5, gender:'m', shoeSize:41, favColor:'BLACK', height:'545', img:'a.png'},
+            {id:1,name:'PABLO', age:5, gender:'k', shoeSize:42, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'},
+            {id:2, name:'KACPER', age:5, gender:'m', shoeSize:43, favColor:'BLACK', height:'545', img:'Boy Avatar.svg'}
+            
+        ],
+    
+         DUMMY_OFFERS : [
+            {id:6, name:'Pan Tadeusz', page:'www.CzemuPanTadeuszToEpopejaNarodowa.pl', price:1830, description:'W "Panu Tadeuszu" znajduje się wiele elementów charakterystycznych dla eposu.Jest on wielowątkowym utworem poetyckim ukazującym bohaterskie czyny wielkich postaci, na tle przełomowych dla narodu wydarzeń. W utworze występuje wszechwiedzący i wszechobecny narrator uprzedzający o przyszłych przypadkach bohaterów. Nie każdy epos jest jednak epopeją narodową.', img:'a.png'},
+            {id:4, name:'Dziady III', page:'www.KonradJakoBohaterRomantyczny.pl', price:1830, description:'Konrad to przede wszystkim bohater dynamiczny. Już na początku dramatu przechodzi przeobrażenie - "Gustavus obiit - hic hatus est Conradus [Gustaw umarł - urodził się Konrad]". Maria Janion określiła tę przemianę jako transformację z Kochanka kobiety w Kochanka ojczyzny.', img:'a.png'},
+            {id:7, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+            {id:8, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochan asd asdasd asd asd asd asd asd asd asd asd asd sad asd asd asd asd sad asd asd asd as das das das asd asd asd asd asd asd as das das das das dasd asd as das dasd asd asd asd asd as das das as das ds asd asd asd asd asd asd asd asd asd asd asd asdas as da asd asdas das dasd asd asd asd asd asd as dasd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd as das das dasd asd asd as das das das as das das das das dassd as dasd asd asd as dasowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'}, 
+            {id:9, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+            {id:15, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+            {id:10, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+            {id:11, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+            {id:12, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},       
+            {id:13, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'},
+            {id:14, name:'Treny', page:'www.PoChujKochanowskiNapisałTreny.pl', price:1830, description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.', img:'a.png'}
+        ]
     }
-    /*************************************************************/
 
-     /************  DYNAMICALLY CHANGING CURRENT OFFER ***********/
-     const [offer, editOffer] = useState({
-        id:14, 
-        name:'Treny'
-        , page:'www.PoChujKochanowskiNapisałTreny.pl'
-        , price:1830, 
-        description:'Jan Kochanowski napisał treny po utracie swojej ukochanej córeczki Orszuli . Napisał je ponieważ nie potrafił zrozumieć dlaczego ona odeszła. Przeżywał również okres, w którym coś tam coś tam nie pameitam.',
-         img:'a.png'
-
-    })
-
-    const changeActualOffer = (id) => {
-        let index = DUMMY_OFFERS.findIndex( (item) => item.id === id)
-        editOffer(DUMMY_OFFERS[index]);
+    static propTypes = {
+        deleteUser: PropTypes.func.isRequired
     }
-    /*************************************************************/
 
 
-    /**************** RENDER LIST OF KIDS AND OFFERS **************/
-    const listOfKids = DUMMY_DATA.map(element=>{
+    changeActualKid = (id) => {
+        let index = this.state.DUMMY_DATA.findIndex( (item) => item.id === id)
+        this.setState({
+            actualKid:this.state.DUMMY_DATA[index]
+        })
+       
+    }
+
+    changeActualOffer = (id) => {
+        let index = this.state.DUMMY_OFFERS.findIndex( (item) => item.id === id)
+        this.setState({
+            actualOffer:this.state.DUMMY_OFFERS[index]
+        })
+    }
+
+render(){
+
+    
+
+     /**************** RENDER LIST OF KIDS AND OFFERS **************/
+     const listOfKids = this.state.DUMMY_DATA.map(element=>{
         return(
             <Kid kid={element} key={element.id} 
-            changeActualKid={changeActualKid} toggleKidDetails={toggleKidDetails}
+            changeActualKid={this.changeActualKid} toggleKidDetails={toggleKidDetails}
             toggleDeleteKid={toggleDeleteKid}/>
         )
     })
 
-    const listOfOffers = DUMMY_OFFERS.map(element=>{
+    const listOfOffers = this.state.DUMMY_OFFERS.map(element=>{
         return(
             <Offer offer={element} key={element.id}
-            changeActualOffer={changeActualOffer} toggleOfferDetails={toggleOfferDetails}/>
+            changeActualOffer={this.changeActualOffer} toggleOfferDetails={toggleOfferDetails}/>
         )
     })
-    /*************************************************************/
+
     
+    /*************************************************************/
 
     return(
         <>
@@ -123,13 +133,13 @@ const Account =(props)=>{
                 <AddKid />
             </div>
             <div className="flying-block delete-kid-wrapper anim-fade-in none">
-                <DeleteKid kid={kid} />
+                <DeleteKid kid={this.state.actualKid} />
             </div>
             <div className="flying-block edit-kid-wrapper anim-fade-in none">
-                <KidDetails kid={kid} editKid={editKid} />    
+                <KidDetails kid={this.state.actualKid} />    
             </div>
             <div className="flying-block user-offer-details-wrapper anim-fade-in none">
-                <OfferDetails offer={offer} editOffer={editOffer} />    
+                <OfferDetails offer={this.state.actualOffer} />    
             </div>
 
             <div className="overlay none" onClick={removeAll}></div>
@@ -186,6 +196,15 @@ const Account =(props)=>{
         </main>
     </>
     )
+  }
 }
 
-export default Account
+const mapStateToProps = state => {
+
+    console.log(state.user);
+    return {
+        state: state.user
+    }
+}
+
+export default connect(mapStateToProps)(Account);

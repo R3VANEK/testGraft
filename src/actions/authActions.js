@@ -50,7 +50,7 @@ export const loadUser = () => (dispatch, getState) => {
    
 
     axios
-    .get('/api/auth/user', tokenConfig(getState))
+    .get( '/api/auth/user', tokenConfig(getState)) //ZMIENIC NA ODPOWIEDNI ROUTE
     .then(res => dispatch({
         type: USER_LOADED,
         payload:res.data
@@ -74,7 +74,7 @@ export const register = ({name, email, password, img}) => dispatch => {
     const body = JSON.stringify({name, email, password, img})
 
     axios
-    .post('/api/users', body, config)
+    .post('/api/users', body, config) //ZMIENIC NA ODPOWIEDNI ROUTE
     .then(res => dispatch({
         type:REGISTER_SUCCESS,
         payload:res.data
@@ -88,6 +88,8 @@ export const register = ({name, email, password, img}) => dispatch => {
         });
     })
 };
+
+//export const editUser = 
 
 export const login = ({email, password}) => dispatch => {
     const config = {
@@ -117,4 +119,19 @@ export const logout = () => {
     return{
         type:LOGOUT_SUCCESS
     }
+};
+
+export const deleteUser = (id) => (dispatch, getState) => {
+
+    logout();
+
+    //zapytanie usuwajacy usera
+
+};
+
+export const editUser = (id) => (dispatch, getState) => {
+
+
+    //zapytanie edytujące usera
+
 };
