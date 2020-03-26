@@ -9,7 +9,7 @@ class DeleteAccount extends Component {
 
     handleDelete = () => {
 
-        
+        //this.props.deleteUser(this.props.userId)
     }
 
     static propTypes = {
@@ -39,4 +39,10 @@ render() {
    }
 }
 
-export default connect(null, {deleteUser})(DeleteAccount);
+const mapStateToProps = state => {
+    return {
+     //   userId: state.auth.user.id
+    }
+}
+
+export default connect(mapStateToProps, {deleteUser})(DeleteAccount);

@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {editUser} from '../../../../actions/authActions';
+import PropTypes from 'prop-types';
 import a from '../../../../images/a.png';
 import plusCircle from '../../../../images/plusCircle.svg';
 import '../userSettings.min.css';
@@ -9,6 +12,11 @@ class EditData extends Component{
         e.preventDefault();
 
         //change data
+        // this.props.editUser();
+    }
+
+    static propTypes = {
+        editUser: PropTypes.func
     }
 
 render(){
@@ -59,4 +67,10 @@ render(){
   }
 }
 
-export default EditData
+const mapStateToProps = state => {
+    return {
+  //      user: state.auth.user
+    }
+}
+
+export default connect(mapStateToProps, {editUser})(EditData)

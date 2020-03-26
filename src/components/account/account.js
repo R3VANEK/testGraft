@@ -78,6 +78,10 @@ class Account extends Component {
         ]
     }
 
+    componentDidUpdate(){
+        console.log(this.state.actualKid)
+    }
+
     static propTypes = {
         deleteUser: PropTypes.func.isRequired
     }

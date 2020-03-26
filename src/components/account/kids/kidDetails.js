@@ -1,4 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {editUser} from '../../../actions/authActions';
+import PropTypes from 'prop-types';
 import exit from '../../../images/x.png';
 import boyAvatar from '../../../images/Boy Avatar.svg';
 import plusCircle from '../../../images/plusCircle.svg';
@@ -6,69 +9,49 @@ import {removeAll} from '../../../functions/userAccountHelplers';
 import './kids.min.css';
 
 
-const KidDetails = (props) => {
+class KidDetails extends Component {
 
-    const [name , changeName] = useState(props.kid.name);
-    const [height , changeHeight] = useState(props.kid.height);
-    const [age , changeAge] = useState(props.kid.age);
-    const [shoeSize , changeShoeSize] = useState(props.kid.shoeSize);
-    const [favColor, changeFavColor] = useState(props.kid.favColor);
-    const [gender, changeGender] = useState(props.kid.gender);
-    const [id, changeId] = useState(props.kid.id);
-
-    useEffect( () => {
-        if(id !== props.kid.id){
-            
-        changeShoeSize(props.kid.shoeSize);
-        changeName(props.kid.name);
-        changeHeight(props.kid.height);
-        changeAge(props.kid.age);
-        changeFavColor(props.kid.favColor);
-        changeGender(props.kid.gender);
-        changeId(props.kid.id)
-
-        }
-    }, [
-          id, 
-          props.kid.id,
-          props.kid.shoeSize,
-          props.kid.name,
-          props.kid.height,
-          props.kid.age,
-          props.kid.favColor,
-          props.kid.gender
-        ]
-    )
-
-    const changeValueWithInput = (e,  name) => {
-        switch(name){
-            case 'NAME':
-                changeName(e.target.value); break;
-            case 'HEIGHT':
-                changeHeight(e.target.value); break;
-            case 'AGE':
-                changeAge(e.target.value); break;
-            case 'SHOE_SIZE':
-                changeShoeSize(e.target.value); break;
-            case 'COLOR':
-                changeFavColor(e.target.value); break; 
-                
-            default: break;
-        }
+    state = {
+        name: this.props.kid.name,
+        height:this.props.kid.height,
+        age:this.props.kid.age,
+        shoeSize:this.props.kid.shoeSize,
+        gender:this.props.kid.gender,
+        color:this.props.kid.favColor
     }
 
-    const changeValueWithButton = (e, sign, name) => {
+    componentDidUpdate(){
+        console.log(this.state)
+    }
+
+    static propTypes = {
+        editUser : PropTypes.func
+    } 
+
+     changeValueWithInput = (e) => {
+        this.setState({
+            [e.target.name]:e.target.value
+        })
+    }
+
+     changeValueWithButton = (e, sign, name) => {
         e.preventDefault();
 
         if(sign === '+') {
             let value = ++e.target.previousElementSibling.value;
             switch(name){
                 case 'HEIGHT':
-                    changeHeight(value); break;
+                    this.setState({
+                        height: value
+                    }); break;
                 case 'AGE':
-                    changeAge(value); break;
+                    this.setState({
+                        age: value
+                    }); break;
                 case 'SHOE_SIZE':
-                    changeShoeSize(value); break;   
+                    this.setState({
+                        shoeSize: value
+                    }); break;
                     
                 default: break;
             }
@@ -80,36 +63,73 @@ const KidDetails = (props) => {
                 value--;
                 switch(name){
                     case 'HEIGHT':
-                        changeHeight(value); break;
+                        this.setState({
+                            height: value
+                        }); break;
                     case 'AGE':
-                        changeAge(value); break;
+                        this.setState({
+                            age: value
+                        }); break;
                     case 'SHOE_SIZE':
-                        changeShoeSize(value); break;  
-                    
+                        this.setState({
+                            shoeSize: value
+                        }); break;  
+
                     default: break;
 
                 }
             }
         }
     }
+     changeFavouriteColor = (e) => {
+        this.setState({
+            color: e.target.value
+        })
+    }
+     changeFavouriteGender = (e) => {
+        this.setState({
+            gender: e.target.id
+        })
+    }
 
-    const submitChanges = (e) => {
+     handleSubmit = (e) => {
+        e.preventDefault();
+
+
+        const newKid = {
+           name: this.state.name,
+           height: this.state.height,
+           age: this.state.age,
+           shoeSize: this.state.shoeSize,
+           color: this.state.color,
+           gender: this.state.gender
+        }
+
+        console.log(newKid);
+
+        //add new kid
+        //this.props.editUser();
+    }
+
+     submitChanges = (e) => {
         e.preventDefault();
 
         const changedKid = {
-            name,
-            height,
-            shoeSize,
-            age,
-            favColor,
-            gender
+            name:this.state.name,
+            height:this.state.height,
+            shoeSize:this.state.shoeSize,
+            age:this.state.age,
+            favColor:this.state.color,
+            gender:this.state.gender
         }
         console.log(changedKid);
     }
 
+
+render(){
     return (
         <div className="edit-child-block">
-            <form onSubmit={submitChanges}>
+            <form onSubmit={this.submitChanges}>
                 <div className="flying-exit" >
                     <img src={exit} alt="wyjście" 
                     onClick={removeAll}/>
@@ -124,8 +144,8 @@ const KidDetails = (props) => {
                     <div className="edit-child-text">
                         
                         <input className="kid-text-input" type="text" placeholder="Imię"
-                        value={name}
-                        onChange={(e) => {changeValueWithInput(e, 'NAME')}}/>
+                        value={this.state.name}
+                        onChange={(e) => {this.changeValueWithInput(e)}}/>
 
                     </div>
                 <div className="child-F-grid">
@@ -133,15 +153,15 @@ const KidDetails = (props) => {
                         Wzrost: [CM] <br/>
                         <div className="input-number">
                             <button 
-                            onClick={(e) => {changeValueWithButton(e, '-', 'HEIGHT')}}
+                            onClick={(e) => {this.changeValueWithButton(e, '-', 'HEIGHT')}}
                             >-</button>
                             <input type="number" 
-                             value={height}
-                             onChange={(e) => {changeValueWithInput(e, 'HEIGHT')}}
+                             value={this.state.height}
+                             onChange={(e) => {this.changeValueWithInput(e, 'HEIGHT')}}
                              name="height"
                             />
                             <button 
-                            onClick={(e) => {changeValueWithButton(e, '+', 'HEIGHT')}}
+                            onClick={(e) => {this.changeValueWithButton(e, '+', 'HEIGHT')}}
                             >+</button>
                         </div>
                     </div>
@@ -149,15 +169,15 @@ const KidDetails = (props) => {
                         Wiek: <br/>
                         <div className="input-number">
                             <button
-                            onClick={(e) => {changeValueWithButton(e, '-', 'AGE')}}
+                            onClick={(e) => {this.changeValueWithButton(e, '-', 'AGE')}}
                             >-</button>
                             <input type="number"
-                            value={age}
-                            onChange={(e) => {changeValueWithInput(e, 'AGE')}} 
+                            value={this.state.age}
+                            onChange={(e) => {this.changeValueWithInput(e)}} 
                              name="age"
                             />
                             <button
-                            onClick={(e) => {changeValueWithButton(e, '+', 'AGE')}}
+                            onClick={(e) => {this.changeValueWithButton(e, '+', 'AGE')}}
                             >+</button>
                         </div>
                     </div>
@@ -165,23 +185,23 @@ const KidDetails = (props) => {
                         Rozmiar buta: <br/>
                         <div className="input-number">
                             <button
-                            onClick={(e) => {changeValueWithButton(e, '-', 'SHOE_SIZE')}}
+                            onClick={(e) => {this.changeValueWithButton(e, '-', 'SHOE_SIZE')}}
                             >-</button>
                             <input type="number" 
-                            value={shoeSize}
-                            onChange={(e) => {changeValueWithInput(e, 'SHOE_SIZE')}}
+                            value={this.state.shoeSize}
+                            onChange={(e) => {this.changeValueWithInput(e)}}
                             name="sizeOfShoe"
                             />
                             <button
-                            onClick={(e) => {changeValueWithButton(e, '+', 'SHOE_SIZE')}}
+                            onClick={(e) => {this.changeValueWithButton(e, '+', 'SHOE_SIZE')}}
                             >+</button>
                         </div>
                     </div>
                     <div className="edit-child-text">
                         Kolor: <br/>
                         <input className="input-color" type="text"
-                        value={favColor} 
-                        onChange={(e)=>changeValueWithInput = (e,  'COLOR')}/>
+                        value={this.state.color} 
+                        onChange={(e)=>this.changeValueWithInput = (e)}/>
                     </div>
                 </div>
 
@@ -202,6 +222,13 @@ const KidDetails = (props) => {
             </form>   
         </div>
     )
+  }
 }
 
-export default KidDetails
+const mapStateToProps = state => {
+    //  return{
+    //      user: state.auth.user
+    //  }
+  }
+
+export default connect(mapStateToProps, {editUser})(KidDetails)

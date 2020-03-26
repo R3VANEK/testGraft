@@ -153,7 +153,7 @@
       &.first-label{
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
-        color:#59cbff
+        color:#00c8ff;
       }
       &.second-label{
         border-top-right-radius: 15px;
@@ -165,6 +165,7 @@
       display: none;
       &:checked + label{
         background: lightgray;    
+        
       }
     } 
   }
