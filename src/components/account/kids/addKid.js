@@ -88,28 +88,56 @@ class AddKid extends Component {
         })
     }
 
-     handleSubmit = (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
 
+        if(!this.state.error){
 
-        const newKid = {
-           name: this.state.name,
-           height: this.state.height,
-           age: this.state.age,
-           shoeSize: this.state.shoeSize,
-           color: this.state.color,
-           gender: this.state.gender
-        }
+            const newKid = {
+            name: this.state.name,
+            height: this.state.height,
+            age: this.state.age,
+            shoeSize: this.state.shoeSize,
+            color: this.state.color,
+            gender: this.state.gender
+            }
 
-        console.log(newKid);
+            const {name, height, age, shoeSize, color} = newKid;
+
+            if(name==='' || height<=0 || age<=0 || shoeSize<=0 || color===''){
+                this.setState({
+                    error: "Pola nie mogę być puste lub zerowe!"
+                })
+
+                setTimeout(() => {
+                    if(this.state.error){
+                        this.setState({
+                            error:''
+                        })
+                    }
+                },3000)
+            } else {
+                console.log(newKid);
+            }
 
         //add new kid
         //this.props.editUser();
+        }
     }
 
 render(){
+
+    const errorMessage = this.state.error ? (
+        <div className="flying-auth-error-block anim-error adding-kid">
+            {this.state.error}
+        </div>
+    ) : ('')
+
     return (
         <div className="add-child-block">
+
+            {errorMessage}
+
             <form onSubmit={this.handleSubmit}>
                 <div className="flying-exit" >
                     <img src={exit} alt="wyjście" 
@@ -219,9 +247,9 @@ render(){
 }
 
 const mapStateToProps = state => {
-    //  return{
-    //      userId: state.auth.user.id
-    //  }
+     // return{
+     //     userId: state.auth.user.id
+     // }
   }
 
 export default connect(mapStateToProps, {editUser})(AddKid);

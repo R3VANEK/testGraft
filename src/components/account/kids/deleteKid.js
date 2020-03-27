@@ -14,9 +14,10 @@ class DeleteKid extends Component {
     }    
 
     deleteKid = () => {
+        removeAll();
+
         //  const userId = this.props.userId;
         // const deletedKidId = this.props.kid.id;
-
   
           //this.props.editUser();
       }
@@ -26,7 +27,7 @@ class DeleteKid extends Component {
         
 
     return (
-        <form className="delete-kid-block" onSubmit={this.deleteKid}>
+        <div className="delete-kid-block" onSubmit={this.deleteKid}>
             <div className="flying-exit" onClick={removeAll}>
                 <img src={exit} alt="usuń"/>
             </div>
@@ -34,16 +35,16 @@ class DeleteKid extends Component {
             <h2>{this.props.kid.name}</h2>
             <h3>Usunąć członka rodziny?</h3>
             
-            <button className="btn purple-btn">Usuń</button>
+            <button className="btn purple-btn" onClick={this.deleteKid}>Usuń</button>
             
-        </form>
+        </div>
     )
   }
 }
 
 const mapStateToProps = state => {
   //  return{
-  //      userId: state.auth.user.id
+   //     userId: state.auth.user.id
   //  }
 }
 

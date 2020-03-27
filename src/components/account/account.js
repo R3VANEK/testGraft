@@ -78,10 +78,6 @@ class Account extends Component {
         ]
     }
 
-    componentDidUpdate(){
-        console.log(this.state.actualKid)
-    }
-
     static propTypes = {
         deleteUser: PropTypes.func.isRequired
     }
@@ -205,7 +201,6 @@ render(){
 
 const mapStateToProps = state => {
 
-    console.log(state.user);
     return {
         state: state.user
     }

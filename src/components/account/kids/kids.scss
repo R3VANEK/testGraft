@@ -47,6 +47,17 @@
   color:palevioletred;
   font-weight: 600;
   font-size: .9em;
+  overflow: visible;
+
+  &.grid{
+    display: grid;
+    grid-template-columns: 150px 30px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.flying-auth-error-block.anim-error.adding-kid{
+  bottom:40%;
 }
 .kid-text-input{
     border:none;
@@ -126,6 +137,17 @@
       &:last-child{
         right:0;
       }
+    }
+  }
+  .gender-img{
+    display: inline-block;
+    top:-3px;
+    margin-left: 5px;
+    position: relative;
+    
+    img{
+      width:20px;
+
     }
   }
   .add-kid-input-sex{
