@@ -1,7 +1,7 @@
 import React from "react"
 import  './offers.css'
 
-const Category_card = ({text, obrazek, showOffers}) =>{
+const CategoryCard = ({text, obrazek, showOffers}) =>{
     return(
         <div class="single-type">
             <input type="radio" id={text} name="type"/>
@@ -12,4 +12,4 @@ const Category_card = ({text, obrazek, showOffers}) =>{
     )
 }
 
-export default Category_card
+export default CategoryCard

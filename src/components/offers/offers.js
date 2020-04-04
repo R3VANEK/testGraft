@@ -1,6 +1,6 @@
 import React from 'react'
-import Category_card from './category-card'
-import Offer_card from './offer-card'
+import CategoryCard from './categoryCard'
+import OfferCard from './offerCard'
 import './offers.css'
 
 import {connect} from 'react-redux';
@@ -206,7 +206,7 @@ class Offers extends React.Component{
 
         const divCategories = this.state.typesOfOffers.map((category)=>{ /*lista divów z kategorią*/
             return(
-                <Category_card text={category.text} picture={category.picture} showOffers={this.showOffers}/>
+                <CategoryCard text={category.text} picture={category.picture} showOffers={this.showOffers}/>
             )
         })
 
@@ -215,14 +215,14 @@ class Offers extends React.Component{
             this.state.sortedArray.map((offer)=>{
                 if(offer.category == this.state.typeOfOffer){
                 return(
-                    <Offer_card item={offer}/>
+                    <OfferCard item={offer}/>
                 )}
             })
         ) : 
         (
             this.state.sortedArray.map((offer)=>{
                 return(
-                    <Offer_card item={offer}/>
+                    <OfferCard item={offer}/>
                 )
             })
         )

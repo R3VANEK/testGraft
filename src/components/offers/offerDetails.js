@@ -3,9 +3,12 @@ import './offers.css'
 import needle from '../../images/needle.jpg'
 import {Link} from 'react-router-dom'
 
-class Offer_card extends Component{
+class OfferDetails extends Component{
 
     state={
+
+        addProductInfo:false,
+
         dummy_offers :[
                 {id:0, itemName:'Autyzm w płynie', price:1337, givenPrice:699, hots:50, imgUrl:"needle.jpg", category:'Ubranka', siteUrl:"www.antyszczepionkowcy.pl", description:"Poznaj cudowny koniec twoich zmartwień! Jeden cudowny zastrzyk i możesz więcej się nie przejmowac swoim dzieckiem"},
                 {id:1, itemName:'Rowerek', price:1500, givenPrice:'', hots:0, imgUrl:"twarz.png", category:'Ubranka', siteUrl : "www.rowerek.com", description:"Zawsze marzyłeś żeby uciec z domu? Ten szybki rowerek zatem jest wszystkim czego ci trzeba! Cyk dwójeczka i nikt cię nie dogoni piracie drogowy!"},
@@ -15,20 +18,58 @@ class Offer_card extends Component{
                 {id:5, itemName:'Gra komputerowa', price:144, givenPrice:699, hots:1337, imgUrl:"item.png", category:'Jedzenie', siteUrl:"www.grytworząterrorystów.pl", description:"Czy chcesz u siebie w domu wyszkolić małego terrorystę? W takim razie to produkt dla Ciebie! Drogi rodzicu, ta gra z gatunku FPS przygotuję twoją pociechę nawet na III wojnę światową"},
         ]
     }
+
+    addProduct = () => {
+
+        if(!this.state.addProductInfo){
+            this.setState({
+                addProductInfo:true
+            })
+
+            console.log("I SHOW")
+
+            setTimeout(() => {
+                if(this.state.addProductInfo){
+                    this.setState({
+                        addProductInfo:false
+                    })
+                }
+            },3000)
+        }
+    }
+
+
     render(){
 
         const {id} = this.props
         
-        
+        const addProductMessage = this.state.addProductInfo ? (
+
+        <div className="product-added-info">
+            <div className="product-added-info-icon">
+                <i className="fas fa-cart-arrow-down"></i>
+            </div>
+            <div className="product-added-info-text">
+               Dodano(1) rzeczy do koszyka! 
+            </div>
+        </div>
+
+        ) : (null)
 
         const produkt = this.state.dummy_offers[id]
     return(
 
-        <div class="big-container1">
+        <div className="big-container1">
+
+            { /*******************  FLYING  **************************** */}
+
+                    {addProductMessage}
+
+                { /*********************************************** */}
 
             <Link to="/oferty">
                 <div className="backOffers">
-                    <p>&lt;</p><p>Powrót</p>
+                    <p>&lt;</p><p>Powrót </p>
                 </div>
             </Link>
             
@@ -55,7 +96,7 @@ class Offer_card extends Component{
                     </div>
 
                     <div className="buttons-container">
-                        <button className="blala">Do koszyka</button>
+                        <button onClick={this.addProduct} className="blala">Do koszyka</button>
                         <button className="blala">Kup teraz</button>
                     </div>
 
@@ -71,4 +112,4 @@ class Offer_card extends Component{
     )}
 }
 
-export default Offer_card
+export default OfferDetails

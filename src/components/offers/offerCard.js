@@ -6,7 +6,7 @@ import not_hot from '../../images/not-hot.png'
 import './offers.css'
 
 
-const Offer_card = ({item}) =>{
+const OfferCard = ({item}) =>{
     return(
         <div class="outside-item" key={item.id}>
             <div id={item.id} class="single-item" >
@@ -39,4 +39,4 @@ const Offer_card = ({item}) =>{
     )
 }
 
-export default Offer_card
+export default OfferCard

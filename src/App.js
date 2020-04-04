@@ -13,7 +13,7 @@ import Regulations from './components/regulations/regulations';
 import Page404 from './components/page404/page404';
 import Account from './components/account/account';
 import Offers from './components/offers/offers'
-import Offer_details from './components/offers/offer_details'
+import OfferDetails from './components/offers/offerDetails'
 import Contact from './components/contact/contact';
 import './app.css'
 
@@ -36,7 +36,7 @@ class App extends Component {
             <Route path="/dla-mediow" component={ForMedia} />
             <Route path="/regulamin" component={Regulations} />
             <Route path="/moje-konto" component={Account} />  
-            <Route path="/oferty/:id" render={(props)=> <Offer_details id={props.match.params.id}/>}/>
+            <Route path="/oferty/:id" render={(props)=> <OfferDetails id={props.match.params.id}/>}/>
             <Route path="/oferty" component={Offers} />
             <Route exact path="/" component={Home} />  
             <Route  component={Page404} />
