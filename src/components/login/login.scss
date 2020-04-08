@@ -40,86 +40,9 @@
 }
 
 
-.register-form{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 50% 50%;
-    width:100%;
-    max-width: 1000px;
-    min-width: 300px;
-    margin: 0 auto 0;
-    position: relative;
-    border-radius: 15px;
-    overflow-x: hidden;
-
-
-    &-1st{
-        background-color: #3b1ca3;
-        height:600px;
-        border-radius: 15px 0 0 15px;
-        color:#fefefe;
-        padding: 0 3vw 5vw;
-        display: flex;
-        flex-direction: column;    
-        justify-content: flex-end;
-        text-align: left;
-        &-p{
-            
-            text-align: left;
-            letter-spacing: 1.2px;
-            line-height: 20px;
-        }
-
-    }
-    &-2nd{
-        background-color: #fefefe;
-        height:600px;
-        padding:2vw 4vw ;
-        border-radius: 0 15px 15px 0;
-        border-right: 1px solid #e0e0e0; 
-        border-bottom: 1px solid #e0e0e0;
-        border-top: 1px solid #e0e0e0;
-    }
-
-    .btn{
-        margin-top: 10px;
-    }
-
-    @media(max-width: 1000px){
-        border-radius: 0;
-        &-1st{
-            border-radius: 0;
-
-        }
-        &-2nd{
-            border-radius: 0;
-            border:none;
-            padding-top: 50px;
-        }
-        .btn{
-            margin-top: 30px;
-        }
-    }
-    @media(max-width: 680px){
-        grid-template-columns: 100%;
-        &-1st{
-            height:auto;
-            padding:40px 8vw;
-        }
-        &-2nd{
-            height:auto;
-            width:100%;
-            max-width: 450px;
-            margin: 0 auto;
-        }
-        .btn{
-            margin: 30px auto 15px;
-        }
-    }
 
     
-}
+
 .text-with-vertical-line{
     font-weight: 600;
     font-size: 30px;
@@ -343,16 +266,16 @@
 }
 .flying-auth-error-block{
     position: fixed;
+    display: flex;
+    align-items: center;
     left:0;
     right:0;
-    bottom:30%;
-    width:220px;
+    bottom:50%;
+    width:200px;
     height:60px;
-    border-radius: 20px;
-    padding:10px;
+    padding:12px;
     margin: 0 auto;
     background-color: #ba0000;
-    border:3px solid #ff6e6e;
     color:#fefefe;
     z-index: 2;
     animation-name: errorAnim;

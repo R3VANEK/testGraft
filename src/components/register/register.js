@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './register.min.css';
 import fb from '../../images/fb.svg'
+import {Link} from 'react-router-dom';
 
 class Register extends Component {
 
@@ -128,6 +129,7 @@ class Register extends Component {
                             </div>
                         </div>
                         <input type="submit" value="Zarejestruj się" className="btn purple-btn" />
+                        <p className="not-important-text register">Masz już konto? <Link to="/logowanie">Zaloguj się</Link></p>
                     </div>
                 </form>
             </main>

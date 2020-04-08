@@ -1,6 +1,6 @@
 .container-register{
     padding-top: 3vw;
-    padding-bottom: 3vw;
+    
 
     @media(max-width: 1000px){
         padding: 0;
@@ -23,7 +23,7 @@
 
     &-1st{
         background-color: #3b1ca3;
-        height:600px;
+        height:620px;
         border-radius: 15px 0 0 15px;
         color:#fefefe;
         padding: 0 3vw 5vw;
@@ -41,7 +41,7 @@
     }
     &-2nd{
         background-color: #fefefe;
-        height:600px;
+        height:620px;
         padding:2vw 4vw ;
         border-radius: 0 15px 15px 0;
         border-right: 1px solid #e0e0e0; 
@@ -279,36 +279,16 @@
     
 
 }
-@keyframes errorAnim {
-    from{
-        transform: translateY(0);
-        opacity: 1;
-    }
-    to{
-        transform: translateY(-100px);
-        opacity: 0;
-    }
-}
-.flying-auth-error-block{
-    position: fixed;
-    left:0;
-    right:0;
-    bottom:30%;
-    width:220px;
-    height:60px;
-    border-radius: 20px;
-    padding:10px;
-    margin: 0 auto;
-    background-color: #ba0000;
-    border:3px solid #ff6e6e;
-    color:#fefefe;
-    z-index: 2;
-    animation-name: errorAnim;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-    animation-duration: 2s;
+
+.not-important-text.register{
+    margin: 0;
+    margin-top: 10px;
 
     @media(max-width: 680px){
-        bottom:70%;
+        margin-bottom: 18px;
     }
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
 }
