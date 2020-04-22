@@ -92,34 +92,49 @@ export const removeAll = () => {
     toggleOverlayAndBlur(false);   
 }
 
-export const changeSecondSection = (section) => {
+export const changeSecondSection = (section, changeFirstSection = true) => {
+    
     let previousBlock = document.querySelector('.second.active');
-    let previousOption = document.querySelector('.first.active');
-
+    
     if(!previousBlock.classList.contains(section)){
-        let editData = document.querySelector('.second.EDIT_DATA');
-        let deleteData = document.querySelector('.second.DELETE_ACCOUNT');
-        let security = document.querySelector('.second.SECURITY');
-        let actualOption = document.querySelector(`.first.${section}`);
 
-        actualOption.classList.add('active');
+        if(changeFirstSection){
+            let previousOption = document.querySelector('.first.active'); 
+            let actualOption = document.querySelector(`.first.${section}`);
+            actualOption.classList.add('active');
+            previousOption.classList.remove('active')
+        }
 
-        previousOption.classList.remove('active')
         previousBlock.classList.remove('active');
         previousBlock.classList.add('none');
 
         switch(section){
             case 'EDIT_DATA':
+
+                let editData = document.querySelector('.second.EDIT_DATA');
                 editData.classList.remove('none');
                 editData.classList.add('active');
                 return;
-            case 'DELETE_ACCOUNT':               
+
+            case 'DELETE_ACCOUNT': 
+            
+            let deleteData = document.querySelector('.second.DELETE_ACCOUNT');
                 deleteData.classList.remove('none');
                 deleteData.classList.add('active');
                 return;
-            case 'SECURITY':        
+
+            case 'SECURITY':  
+
+                let security = document.querySelector('.second.SECURITY');
                 security.classList.remove('none');
                 security.classList.add('active');
+                return;
+
+            case 'ACTIVITY':
+
+                let activity = document.querySelector('.second.ACTIVITY');
+                activity.classList.remove('none');
+                activity.classList.add('active');
                 return;
 
             default: return;

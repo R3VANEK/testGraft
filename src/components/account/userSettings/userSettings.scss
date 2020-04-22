@@ -46,6 +46,7 @@
     grid-template-columns: 50px calc(100% - 50px);
     align-items: center;
     padding:18px 10px 18px 25px;
+    transition: background-color .1s ease-in-out ,color 1s ease-in-out;
     
     .img{
         img{
@@ -89,6 +90,7 @@
     }
 }
 .user-settings-second{
+    height:630px;
     background-color: #fefefe;
     
 }
@@ -198,4 +200,111 @@
         }
     }
 }
+.security-block{
+    display: grid;
+    grid-template-rows: repeat(3 1fr);
+    
+    padding-top: 4vw;
+    width:100%;
+
+    &-child{
+        box-shadow: 0px 3px 6px #00000029;              
+        &.margin{
+            margin: 50px 0;
+        }
+
+    }
+}
+.activity-header{
+    margin-top: 30px;
+}
+.security-block-child, .activity-header{
+    padding: 15px 15px 15px 10px;
+    width:100%;
+    display: grid;
+    grid-template-columns: 100px calc(100% - 100px);
+    align-items: center;
+    justify-content: center;
+    min-height:121px;
+    cursor: pointer;
+
+    img{      
+            width:60px;
+            height: 50px;
+    }
+    
+    &-2nd{
+
+        h2{
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 30px;
+            color:#6336AF;
+            font-weight: 500;
+        }
+        p{
+            margin: 0;
+            color:black;
+        }
+        
+    }
+}
+.active-login{
+    display: grid;
+    width:90%;
+    grid-template-columns: 80px calc(100% - 160px) 80px;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 43px;
+    align-items: center;
+    margin: 25px auto;
+    padding:8px 15px;
+
+    &-1st{
+        img{
+        width:55px;
+        }
+    }
+    &-3rd{
+        cursor: pointer;
+        img{
+            width:40px
+        }
+    }
+    
+    &-2nd{
+        h2{
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 26px;
+            color:#6336AF;
+            font-weight: 500;
+        }
+        p{
+            margin: 0;
+            font-size: 18px;
+            color:black;
+        }
+    }
+}
+
+
+
+
+
+
+
+@keyframes fadeInAnimation{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.fade-in{
+    animation-name: fadeInAnimation;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
 

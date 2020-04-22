@@ -19,7 +19,7 @@ class DeleteAccount extends Component {
 render() {
     
     return (
-        <div className="delete-account">
+        <div className="delete-account fade-in">
             <h2>Usuwanie konta</h2>
             <div className="change-data-input-and-label">
                 <label className="change-data-label" htmlFor="username">Hasło</label>

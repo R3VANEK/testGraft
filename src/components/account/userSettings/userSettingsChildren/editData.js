@@ -21,7 +21,7 @@ class EditData extends Component{
 
 render(){
     return (
-        <form className="edit-data" onSubmit={this.handleSubmit}>
+        <form className="edit-data fade-in" onSubmit={this.handleSubmit}>
             <h2>Twoje dane</h2>
             <div className="img-inside-img">
                 <img src={a} alt="Ja" />

@@ -1,5 +1,5 @@
 import React from 'react';
-import './userSettings.min.css';
+import './userSettings.css';
 import '../account.min.css';
 import x from '../../../images/exit.png';
 import deleteAccount from '../../../images/Delete.svg';
@@ -9,6 +9,8 @@ import security from '../../../images/Security.svg';
 import EditData from './userSettingsChildren/editData';
 import Security from './userSettingsChildren/security';
 import DeleteAccount from './userSettingsChildren/deleteAccount';
+import Activity from './userSettingsChildren/securityChildren/activityOnAccount';
+
 import {changeSecondSection, removeAll} from '../../../functions/userAccountHelplers';
 
 
@@ -56,6 +58,10 @@ const UserSettings = () => {
                 <div className="second SECURITY none">
                     <Security />
                 </div>
+                <div className="second ACTIVITY none">
+                    <Activity/>
+                </div>
+
                 <div className="second DELETE_ACCOUNT none">
                     <DeleteAccount />
                 </div>

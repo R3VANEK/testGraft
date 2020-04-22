@@ -70,6 +70,8 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 18px 10px 18px 25px;
+  -webkit-transition: background-color .1s ease-in-out ,color 1s ease-in-out;
+  transition: background-color .1s ease-in-out ,color 1s ease-in-out;
   cursor: pointer;
 }
 
@@ -135,6 +137,7 @@
 }
 
 .user-settings-second {
+  height: 630px;
   background-color: #fefefe;
 }
 
@@ -256,5 +259,131 @@
   .delete-account h2, .edit-data h2 {
     font-size: 1.2em;
   }
+}
+
+.security-block {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3 1fr);
+  padding-top: 4vw;
+  width: 100%;
+}
+
+.security-block-child {
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+}
+
+.security-block-child.margin {
+  margin: 50px 0;
+}
+
+.activity-header {
+  margin-top: 30px;
+}
+
+.security-block-child, .activity-header {
+  padding: 15px 15px 15px 10px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100px calc(100% - 100px);
+      grid-template-columns: 100px calc(100% - 100px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 121px;
+  cursor: pointer;
+}
+
+.security-block-child img, .activity-header img {
+  width: 60px;
+  height: 50px;
+}
+
+.security-block-child-2nd h2, .activity-header-2nd h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: #6336AF;
+  font-weight: 500;
+}
+
+.security-block-child-2nd p, .activity-header-2nd p {
+  margin: 0;
+  color: black;
+}
+
+.active-login {
+  display: -ms-grid;
+  display: grid;
+  width: 90%;
+  -ms-grid-columns: 80px calc(100% - 160px) 80px;
+      grid-template-columns: 80px calc(100% - 160px) 80px;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
+          box-shadow: 0px 3px 6px #00000029;
+  border-radius: 43px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 25px auto;
+  padding: 8px 15px;
+}
+
+.active-login-1st img {
+  width: 55px;
+}
+
+.active-login-3rd {
+  cursor: pointer;
+}
+
+.active-login-3rd img {
+  width: 40px;
+}
+
+.active-login-2nd h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #6336AF;
+  font-weight: 500;
+}
+
+.active-login-2nd p {
+  margin: 0;
+  font-size: 18px;
+  color: black;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation-name: fadeInAnimation;
+          animation-name: fadeInAnimation;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 /*# sourceMappingURL=userSettings.css.map */
