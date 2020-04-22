@@ -220,7 +220,11 @@ class Home extends Component {
                     </div>
                 </div>
                 
-                <button className="btn purple-btn"><i className="fas fa-eye"></i>&nbsp;ZACZNIJ!</button>
+                <div className="button-and-text-wrapper">
+                    <button className="btn purple-btn"><i className="fas fa-eye"></i>&nbsp;ZACZNIJ!</button>
+                    <a href="/">Dowiedz się więcej!</a>
+                </div>
+
                 <i><p>
                     Masz prawo odpocząć od irytujących, nietrafionych ofert i niechcianych ofert.
                     Pragniemy Ci udostępnić proste i przejrzyste narzędzie, które pozwoli Ci oszczędić

@@ -9,10 +9,16 @@
 }
 
 .register-form {
+  display: -ms-grid;
   display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 50% 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
   width: 100%;
   max-width: 1000px;
   min-width: 300px;
@@ -28,9 +34,16 @@
   border-radius: 15px 0 0 15px;
   color: #fefefe;
   padding: 0 3vw 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   text-align: left;
 }
 
@@ -73,7 +86,8 @@
 
 @media (max-width: 680px) {
   .register-form {
-    grid-template-columns: 100%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
   }
   .register-form-1st {
     height: auto;
@@ -129,40 +143,93 @@
 }
 
 /***************** ANIMATION ************************/
-@keyframes goDown3 {
+@-webkit-keyframes goDown3 {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 1;
   }
   33% {
-    transform: translateY(-111px);
+    -webkit-transform: translateY(-111px);
+            transform: translateY(-111px);
     opacity: 0;
   }
   66% {
-    transform: translateY(-222px);
+    -webkit-transform: translateY(-222px);
+            transform: translateY(-222px);
     opacity: 1;
   }
   100% {
-    transform: translateY(-333px);
+    -webkit-transform: translateY(-333px);
+            transform: translateY(-333px);
     opacity: 0;
+  }
+}
+@keyframes goDown3 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  33% {
+    -webkit-transform: translateY(-111px);
+            transform: translateY(-111px);
+    opacity: 0;
+  }
+  66% {
+    -webkit-transform: translateY(-222px);
+            transform: translateY(-222px);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-333px);
+            transform: translateY(-333px);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes goDown4 {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 0;
+  }
+  33% {
+    -webkit-transform: translateY(-111px);
+            transform: translateY(-111px);
+    opacity: 1;
+  }
+  66% {
+    -webkit-transform: translateY(-222px);
+            transform: translateY(-222px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(-333px);
+            transform: translateY(-333px);
+    opacity: 1;
   }
 }
 
 @keyframes goDown4 {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
     opacity: 0;
   }
   33% {
-    transform: translateY(-111px);
+    -webkit-transform: translateY(-111px);
+            transform: translateY(-111px);
     opacity: 1;
   }
   66% {
-    transform: translateY(-222px);
+    -webkit-transform: translateY(-222px);
+            transform: translateY(-222px);
     opacity: 0;
   }
   100% {
-    transform: translateY(-333px);
+    -webkit-transform: translateY(-333px);
+            transform: translateY(-333px);
     opacity: 1;
   }
 }
@@ -175,20 +242,30 @@
 
 .anim-text-register-child {
   height: 111px;
-  animation-delay: 2s;
-  animation-duration: 7s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .b1, .b3 {
-  animation-name: goDown3;
+  -webkit-animation-name: goDown3;
+          animation-name: goDown3;
 }
 
 .b2, .b4 {
-  animation-name: goDown4;
+  -webkit-animation-name: goDown4;
+          animation-name: goDown4;
 }
 
 .input-1 {
@@ -201,7 +278,20 @@
   border: 1px solid lightgray;
   background-color: transparent;
   padding: 0 8px;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.input-1::-webkit-input-placeholder {
+  color: #7a7a7a;
+}
+
+.input-1:-ms-input-placeholder {
+  color: #7a7a7a;
+}
+
+.input-1::-ms-input-placeholder {
+  color: #7a7a7a;
 }
 
 .input-1::placeholder {
@@ -226,8 +316,12 @@
 }
 
 .captcha-fb-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .captcha, .btn-fb {
@@ -241,8 +335,12 @@
 }
 
 .btn-fb {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #03a9f4;
   color: #fefefe;
   padding: 6px 6px 6px 3px;
@@ -267,8 +365,12 @@
 }
 
 .checkbox-and-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 10px 0;
 }
 
@@ -285,7 +387,8 @@
   width: 25px;
   height: 25px;
   border-radius: 5px;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
@@ -307,3 +410,4 @@
 input:focus, textarea:focus, select:focus {
   outline: none;
 }
+/*# sourceMappingURL=register.css.map */

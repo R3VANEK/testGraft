@@ -58,10 +58,16 @@
 }
 
 .edit-child-text.grid {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 150px 30px;
-  justify-content: center;
-  align-items: center;
+  -ms-grid-columns: 150px 30px;
+      grid-template-columns: 150px 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .flying-auth-error-block.anim-error.adding-kid {
@@ -87,7 +93,8 @@
   height: 30px;
   width: 60%;
   margin: 13px auto 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-width: 129px;
 }
 
@@ -120,7 +127,8 @@
   border-bottom: 3px solid purple;
   font-size: 18px;
   width: 100%;
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
   padding-left: 12px;
 }
 
@@ -161,10 +169,16 @@
 }
 
 .add-kid-input-sex {
+  display: -ms-grid;
   display: grid;
-  align-items: center;
-  justify-content: center;
-  grid-template-columns: 50% 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
   width: 80%;
   min-width: 285px;
   max-width: 370px;
@@ -209,9 +223,14 @@
 }
 
 .delete-kid-block {
+  display: -ms-grid;
   display: grid;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 95%;
   max-width: 500px;
   height: 400px;
@@ -248,3 +267,4 @@
     margin: 10px auto 25px;
   }
 }
+/*# sourceMappingURL=kids.css.map */

@@ -17,15 +17,23 @@
 
 .contact-block-inner {
   width: 100%;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 400px calc(100% - 400px);
+  -ms-grid-columns: 400px calc(100% - 400px);
+      grid-template-columns: 400px calc(100% - 400px);
 }
 
 .contact-block-second {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .contact-block-second-child {
@@ -35,9 +43,15 @@
 }
 
 .contact-block-second-child-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 10px;
   border: 1px solid gray;
   width: 250px;
@@ -63,9 +77,13 @@
 }
 
 .contact-block-two-short-inputs {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 49% 49%;
-  justify-content: space-between;
+  -ms-grid-columns: 49% 49%;
+      grid-template-columns: 49% 49%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .contact-block-input, .contact-block-textarea {
@@ -77,6 +95,18 @@
   margin: 8px 0;
   padding: 8px 16px;
   font-size: 16px;
+}
+
+.contact-block-input::-webkit-input-placeholder, .contact-block-textarea::-webkit-input-placeholder {
+  color: #a6a6a6;
+}
+
+.contact-block-input:-ms-input-placeholder, .contact-block-textarea:-ms-input-placeholder {
+  color: #a6a6a6;
+}
+
+.contact-block-input::-ms-input-placeholder, .contact-block-textarea::-ms-input-placeholder {
+  color: #a6a6a6;
 }
 
 .contact-block-input::placeholder, .contact-block-textarea::placeholder {
@@ -101,6 +131,7 @@
   letter-spacing: .9px;
   height: 40px;
   cursor: pointer;
+  -webkit-transition: background-color ease-in .2s, color ease-in .2s;
   transition: background-color ease-in .2s, color ease-in .2s;
 }
 
@@ -109,3 +140,4 @@
   color: #3c009e;
   background-color: #fefefe;
 }
+/*# sourceMappingURL=contact.css.map */

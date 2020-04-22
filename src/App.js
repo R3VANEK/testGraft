@@ -13,7 +13,7 @@ import Regulations from './components/regulations/regulations';
 import Page404 from './components/page404/page404';
 import Account from './components/account/account';
 import Offers from './components/offers/offers'
-import OfferDetails from './components/offers/offerDetails'
+import OfferDetails from './components/offers/offerDetails/offerDetails'
 import Contact from './components/contact/contact';
 import './app.css'
 
