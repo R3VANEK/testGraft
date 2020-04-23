@@ -15,6 +15,7 @@ import Account from './components/account/account';
 import Offers from './components/offers/offers'
 import OfferDetails from './components/offers/offerDetails/offerDetails'
 import Contact from './components/contact/contact';
+import Faq from './components/faq/faq';
 import './app.css'
 
 
@@ -38,6 +39,7 @@ class App extends Component {
             <Route path="/moje-konto" component={Account} />  
             <Route path="/oferty/:id" render={(props)=> <OfferDetails id={props.match.params.id}/>}/>
             <Route path="/oferty" component={Offers} />
+            <Route path="/faq" component={Faq} />
             <Route exact path="/" component={Home} />  
             <Route  component={Page404} />
           </Switch>

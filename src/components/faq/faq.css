@@ -1,0 +1,71 @@
+.faq-container {
+  padding: 0 5vw 8vw;
+}
+
+.faq-image {
+  width: 85%;
+  max-width: 600px;
+}
+
+.faq-h1 {
+  margin: 3vw 0;
+  font-size: 50px;
+}
+
+.faq-paragraph {
+  font-size: 24px;
+}
+
+.unfolding-content-block {
+  padding-left: 10vw;
+  margin: 30px auto 30px 0;
+}
+
+.unfolding-content-block-main {
+  width: 100%;
+  max-width: 850px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.unfolding-content-block-main-image {
+  margin-right: 25px;
+}
+
+.unfolding-content-block-main-image img {
+  width: 80px;
+  cursor: pointer;
+}
+
+.unfolding-content-block-main-text {
+  text-align: left;
+  font-size: 20px;
+}
+
+.unfolding-content-block-content {
+  max-width: 850px;
+  font-style: italic;
+  text-align: left;
+  font-size: 0;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  -webkit-transition: opacity .25s, font-size .5s .25s, margin .5s .25s, padding .5s .25s;
+  transition: opacity .25s, font-size .5s .25s, margin .5s .25s, padding .5s .25s;
+}
+
+.unfolding-content-block-content.shown {
+  opacity: 1;
+  font-size: 20px;
+  padding-left: 105px;
+  -webkit-transition: font-size .25s, margin .25s, padding .25s, opacity .5s .25s;
+  transition: font-size .25s, margin .25s, padding .25s, opacity .5s .25s;
+}
+/*# sourceMappingURL=faq.css.map */
