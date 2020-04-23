@@ -10,6 +10,12 @@
   }
 }
 
+.user-settings-wrapper.low-z-index {
+  z-index: 4;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+}
+
 .user-settings-block {
   display: -ms-grid;
   display: grid;
@@ -358,6 +364,68 @@
   margin: 0;
   font-size: 18px;
   color: black;
+}
+
+.flying-block.activity-logout-wrapper {
+  max-width: 600px;
+  max-height: 680px;
+  border-radius: 34px;
+  background-color: #fefefe;
+  margin: 0 auto;
+}
+
+.activity-block {
+  padding: 1vw 2vw 4vw;
+}
+
+h2.activity-h2 {
+  font-size: 32px;
+  color: #311B92;
+  font-weight: 500;
+  padding: 0 5.5vw;
+  margin: 5px 0 40px;
+}
+
+img.activity-img {
+  width: 80px;
+}
+
+h3.activity-h3 {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+p.activity-paragraph {
+  font-weight: 500;
+  font-size: 25px;
+  margin: 25px 0;
+}
+
+p.activity-paragraph.lighter-text {
+  color: #868686;
+  margin: 3vw 0;
+}
+
+.settings-buttons-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings-button {
+  background-color: #311B92;
+  border: none;
+  color: #FFFFFF;
+  font-size: 28px;
+  border-radius: 32px;
+  width: 200px;
+  height: 60px;
+  cursor: pointer;
 }
 
 @-webkit-keyframes fadeInAnimation {

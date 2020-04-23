@@ -54,6 +54,21 @@ export const toggleDeleteKid = (show=true) => {
         }
 }
 
+export const toggleLogoutActivity = (show=true) => {
+
+    let userSettings = document.querySelector('.user-settings-wrapper');
+    let logoutActivity = document.querySelector('.activity-logout-wrapper');
+
+        if(show){
+            logoutActivity.classList.remove('none');
+            userSettings.classList.add('low-z-index');
+            toggleOverlayAndBlur();
+        } else {
+            logoutActivity.classList.add('none');
+            userSettings.classList.remove('low-z-index');
+        }
+}
+
 export const toggleOverlayAndBlur = (show=true) => {
     let header = document.querySelector('header');
     let main = document.querySelector('main');
@@ -83,26 +98,43 @@ export const toggleOverlayAndBlur = (show=true) => {
    
 }
 
-export const removeAll = () => {
+export const removeAll = (specificBlock) => {
+
+    if(typeof(specificBlock) === 'object'){
+
     toggleSettings(false);
     toggleAddKid(false);
     toggleKidDetails(false);
     toggleOfferDetails(false); 
     toggleDeleteKid(false);
-    toggleOverlayAndBlur(false);   
+    toggleOverlayAndBlur(false);
+    toggleLogoutActivity(false);
+
+    } else {
+        switch(specificBlock){
+            case 'LOGOUT_ACTIVITY':
+                toggleLogoutActivity(false);
+        }
+    }
 }
 
 export const changeSecondSection = (section, changeFirstSection = true) => {
     
     let previousBlock = document.querySelector('.second.active');
+
+    console.log(previousBlock)
+    console.log(section)
     
     if(!previousBlock.classList.contains(section)){
 
         if(changeFirstSection){
             let previousOption = document.querySelector('.first.active'); 
             let actualOption = document.querySelector(`.first.${section}`);
-            actualOption.classList.add('active');
-            previousOption.classList.remove('active')
+            if(previousOption !== actualOption){
+                actualOption.classList.add('active');
+                previousOption.classList.remove('active');
+            }
+            
         }
 
         previousBlock.classList.remove('active');

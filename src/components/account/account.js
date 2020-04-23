@@ -15,6 +15,7 @@ import Offer from './offers/offer';
 import OfferDetails from './offers/offerDetails';
 import UserSettings from './userSettings/userSettings';
 import DeleteKid from './kids/deleteKid';
+import ActivityLogout from './userSettings/userSettingsChildren/securityChildren/activityLogout';
 import {
         toggleSettings, 
         toggleAddKid, 
@@ -140,6 +141,9 @@ render(){
             </div>
             <div className="flying-block user-offer-details-wrapper anim-fade-in none">
                 <OfferDetails offer={this.state.actualOffer} />    
+            </div>
+            <div className="flying-block activity-logout-wrapper anim-fade-in none">
+                <ActivityLogout />    
             </div>
 
             <div className="overlay none" onClick={removeAll}></div>

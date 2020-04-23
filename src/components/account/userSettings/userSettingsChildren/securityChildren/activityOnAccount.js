@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import kreski from '../../../../../images/jakiesKreski.svg';
 import a from '../../../../../images/a.png';
 import logout from '../../../../../images/logout.svg';
+import {toggleLogoutActivity} from '../../../../../functions/userAccountHelplers';
 
 class activityOnAccount extends Component {
 
@@ -25,7 +26,7 @@ class activityOnAccount extends Component {
                         <h2>Windows Chrome</h2>
                         <p>Londyn | 255.0.0.0</p>
                     </div>
-                    <div className="active-login-3rd">
+                    <div className="active-login-3rd" onClick={toggleLogoutActivity}>
                         <img src={logout} alt="logout" />
                     </div>
                 </div>
@@ -37,7 +38,7 @@ class activityOnAccount extends Component {
                         <h2>Windows Chrome</h2>
                         <p>Londyn | 255.0.0.0</p>
                     </div>
-                    <div className="active-login-3rd">
+                    <div className="active-login-3rd" onClick={toggleLogoutActivity}>
                         <img src={logout} alt="logout" />
                     </div>
                 </div>
