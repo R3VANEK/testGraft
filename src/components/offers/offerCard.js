@@ -8,8 +8,8 @@ import './offers.css'
 
 const OfferCard = ({item}) =>{
     return(
-        <div class="outside-item" key={item.id}>
-            <div id={item.id} class="single-item" >
+        <div class="outside-item" key={item._id}>
+            <div class="single-item" >
                 <div className="item-image-area">
                     <div className="item-flying-images">
                         <div className="item-flying-image-child">
@@ -23,7 +23,7 @@ const OfferCard = ({item}) =>{
                         </div>
                     </div>
                     <div className="item-main-image">
-                         <img src={require(`../../images/`+ item.imgUrl)} alt="zdjęcie"/>
+                         <img src={item.image} alt="zdjęcie"/>
                     </div>        
                 </div>
                 
@@ -31,7 +31,7 @@ const OfferCard = ({item}) =>{
                 <h2>{item.itemName}</h2>
                 <div class="normal-text blue-text"> {item.price}  zł</div>
 
-                        <Link to={"/oferty/"+item.id}>
+                        <Link to={"/oferty/"+item._id}>
                             <button class="btn">Przejdź do oferty</button>
                         </Link>
             </div>

@@ -9,11 +9,11 @@
 
 .faq-h1 {
   margin: 3vw 0;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .faq-paragraph {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .unfolding-content-block {
@@ -40,13 +40,13 @@
 }
 
 .unfolding-content-block-main-image img {
-  width: 80px;
+  width: 60px;
   cursor: pointer;
 }
 
 .unfolding-content-block-main-text {
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .unfolding-content-block-content {
@@ -63,7 +63,7 @@
 
 .unfolding-content-block-content.shown {
   opacity: 1;
-  font-size: 20px;
+  font-size: 18px;
   padding-left: 105px;
   -webkit-transition: font-size .25s, margin .25s, padding .25s, opacity .5s .25s;
   transition: font-size .25s, margin .25s, padding .25s, opacity .5s .25s;

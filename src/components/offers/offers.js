@@ -136,12 +136,12 @@ class Offers extends React.Component{
                 await this.setState({
                     sortedArray : helpArray
                 })
-                console.log(this.state.sortedArray)
+               // console.log(this.state.sortedArray)
             }
             else if(this.state.sort1 = "price"){
 
                 if(this.state.sort2 == "min-max"){
-                    console.log("min-max")
+                  //  console.log("min-max")
                     let helpArray = this.state.dummy_listOfOffers.sort((a,b)=>{
                         if(a.price < b.price){
                             return -1
@@ -157,10 +157,10 @@ class Offers extends React.Component{
                     await this.setState({
                         sortedArray : helpArray
                     })
-                    console.log(this.state.sortedArray)
+                  //  console.log(this.state.sortedArray)
                 }
                 else if(this.state.sort2 == "max-min"){
-                    console.log("jestem w max-min")
+                   // console.log("jestem w max-min")
                     let helpArray = this.state.dummy_listOfOffers.sort((a,b)=>{
                         if(a.price < b.price){
                             return 1
@@ -175,7 +175,7 @@ class Offers extends React.Component{
                     await this.setState({
                         sortedArray : helpArray
                     })
-                    console.log(this.state.sortedArray)
+                  //  console.log(this.state.sortedArray)
                 } 
             }
         }
@@ -210,7 +210,7 @@ class Offers extends React.Component{
             )
         })
 
-        const divOffers = (this.state.typeOfOffer !=null) ?
+     /*   const divOffers = (this.state.typeOfOffer !=null) ?
         (
             this.state.sortedArray.map((offer)=>{
                 if(offer.category == this.state.typeOfOffer){
@@ -225,6 +225,22 @@ class Offers extends React.Component{
                     <OfferCard item={offer}/>
                 )
             })
+        )*/
+
+        console.log(this.props.offers.length)
+
+        const listOfOffers = this.props.offers.length > 0 ? (
+
+            this.props.offers.map(offer => {
+                return(
+                    <OfferCard item = {offer} />
+                )
+            })
+
+        ) : (
+
+        <h1>NIE MA OFERT</h1>
+
         )
 
         
@@ -276,7 +292,7 @@ class Offers extends React.Component{
                         </div>
 
                         <div className="container-offers">
-                            {divOffers}
+                            {listOfOffers}
                         </div>   
                     </div>
                 </div>
@@ -287,9 +303,8 @@ class Offers extends React.Component{
 }
  /************************* REDUX *************************/
 const mapStateToProps = state => {
-    console.log(state)
     return{
-        offers: state.offer
+        offers: state.offer.offers
     }  
 }
  /************************* REDUX *************************/

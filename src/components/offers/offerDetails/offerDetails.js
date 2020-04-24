@@ -1,9 +1,24 @@
-import React, {Component} from 'react'
-import './offerDetails.css'
-import needle from '../../../images/Boy Avatar.svg'
-import {Link} from 'react-router-dom'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {getOffers} from '../../../actions/offerActions';
+import './offerDetails.css';
+import needle from '../../../images/Boy Avatar.svg';
+import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 class OfferDetails extends Component{
+
+    static propTypes = {
+        getOffers: PropTypes.func.isRequired,
+        offer:PropTypes.object
+    }
+
+    componentDidMount(){
+
+        if(this.props.offer === undefined){
+            this.props.getOffers();
+        }
+    }
 
     state={
 
@@ -44,8 +59,9 @@ class OfferDetails extends Component{
         }
     }
 
-
     render(){
+
+        console.log(this.props.offer)
 
         const {id} = this.props
         
@@ -77,7 +93,7 @@ class OfferDetails extends Component{
         const actualImage =  <img src={require(`../../../images/${this.state.actualImage}`)} alt="zdjęcie oferty" className="item-details-img"/>
         
 
-        const produkt = this.state.dummy_offers[id]
+        const offer = this.props.offer
     return(
 
         <div className="item-details-container">
@@ -103,7 +119,7 @@ class OfferDetails extends Component{
             <div className="item-details-inner">
                 <div className="item-details-inner-1st">
 
-                    {actualImage}
+                <img src={offer?.image} alt="zdjęcie oferty" className="item-details-img"/>
 
                 
                     <div className='item-details-inner-1st-image-list'>
@@ -113,18 +129,14 @@ class OfferDetails extends Component{
                 </div>
                 <div className="item-details-inner-2nd">
                         <h2 className="item-details-inner-title">
-                            {produkt.itemName}
+                            OFERT SĄ BEZ TYTUŁU
                         </h2>
                         <p className="item-details-inner-content">
-                            Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum
-                            Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum
-                            Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum 
-                            Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum
-                            Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum  Lorem ipsum
+                            {offer?.description}
                         </p>
                         <div className="item-details-inner-price-and-stars-block">
                             <p className="price">
-                                {produkt.price}zł
+                                {offer?.price}zł
                              </p>
                             <div className="stars">
                                 GWIAZDKI
@@ -141,7 +153,7 @@ class OfferDetails extends Component{
                         </div>
 
                         <div className="item-details-link">
-                        <a href="#">{produkt.siteUrl}</a>
+                        <a href="#">{offer?.product_url}</a>
                         </div>
                         
                 </div>
@@ -150,4 +162,11 @@ class OfferDetails extends Component{
     )}
 }
 
-export default OfferDetails
+const mapStateToProps = (state, ownProps) => {
+
+    return{
+        offer: state.offer.offers.find(offer => offer._id === ownProps.id)
+    }
+}
+
+export default connect(mapStateToProps, {getOffers})(OfferDetails)

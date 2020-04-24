@@ -7,10 +7,10 @@
 }
 .faq-h1{
     margin: 3vw 0;
-    font-size:50px;
+    font-size:40px;
 }
 .faq-paragraph{
-    font-size:24px;
+    font-size:20px;
 }
 .unfolding-content-block{
     padding-left: 10vw;
@@ -24,7 +24,7 @@
         
         &-image{
             img{
-                width: 80px;
+                width: 60px;
                 cursor: pointer;
             }
             margin-right: 25px;
@@ -32,7 +32,7 @@
         }
         &-text{
             text-align: left;
-            font-size: 20px;
+            font-size: 18px;
         }
     }
     &-content{
@@ -52,7 +52,7 @@
 
         &.shown{
             opacity: 1;
-            font-size:20px;
+            font-size:18px;
             padding-left: 105px;
 
             transition: font-size .25s,

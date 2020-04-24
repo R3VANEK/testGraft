@@ -2,14 +2,30 @@
     width:95%;
     max-width: 900px;
     min-height:565px; 
+    position: relative;
 
     @media(max-width: 780px){
         width: 100%;
     }
+    &::before{
+        content:'';
+        position: absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-color: black;
+        border-radius: 25px;
+        z-index: -1;
+        opacity: 0;
+        transition: z-index 1s ease-in-out, opacity .5s ease-in-out;
+    }
 
     &.low-z-index{
-        z-index: 4;
-        filter:blur(3px)
+        &::before{
+            opacity: .4;
+            z-index: 5;
+        }
     }
 }
 .user-settings-block{
@@ -230,11 +246,11 @@
     grid-template-columns: 100px calc(100% - 100px);
     align-items: center;
     justify-content: center;
-    min-height:121px;
+    min-height:111px;
     cursor: pointer;
 
     img{      
-            width:60px;
+            width:45px;
             height: 50px;
     }
     
@@ -243,7 +259,7 @@
         h2{
             margin: 0;
             margin-bottom: 10px;
-            font-size: 30px;
+            font-size: 26px;
             color:#6336AF;
             font-weight: 500;
         }
@@ -264,6 +280,8 @@
     margin: 25px auto;
     padding:8px 15px;
 
+    
+
     &-1st{
         img{
         width:55px;
@@ -272,7 +290,7 @@
     &-3rd{
         cursor: pointer;
         img{
-            width:40px
+            width:35px
         }
     }
     
@@ -280,13 +298,13 @@
         h2{
             margin: 0;
             margin-bottom: 10px;
-            font-size: 26px;
+            font-size: 22px;
             color:#6336AF;
             font-weight: 500;
         }
         p{
             margin: 0;
-            font-size: 18px;
+            font-size: 16px;
             color:black;
         }
     }
@@ -302,7 +320,7 @@
    padding: 1vw 2vw 4vw;
 }
 h2.activity-h2 {
-    font-size: 32px;
+    font-size: 26px;
     color:#311B92;
     font-weight: 500;
     padding:0 5.5vw;
@@ -313,11 +331,11 @@ img.activity-img{
 }
 h3.activity-h3{
     font-weight: 600;
-    font-size: 28px;
+    font-size: 22px;
 }
 p.activity-paragraph{
     font-weight: 500;
-    font-size: 25px;
+    font-size: 20px;
     margin:25px 0;
 
     &.lighter-text{
@@ -334,10 +352,10 @@ p.activity-paragraph{
     background-color: #311B92;
     border:none;
     color:#FFFFFF;
-    font-size: 28px;
+    font-size: 24px;
     border-radius: 32px;
-    width:200px;
-    height: 60px;
+    width:180px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -359,5 +377,6 @@ p.activity-paragraph{
     animation-duration: .3s;
     animation-fill-mode: forwards;
 }
+
 
 

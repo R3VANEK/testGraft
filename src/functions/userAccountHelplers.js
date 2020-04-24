@@ -121,9 +121,6 @@ export const removeAll = (specificBlock) => {
 export const changeSecondSection = (section, changeFirstSection = true) => {
     
     let previousBlock = document.querySelector('.second.active');
-
-    console.log(previousBlock)
-    console.log(section)
     
     if(!previousBlock.classList.contains(section)){
 
