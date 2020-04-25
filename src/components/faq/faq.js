@@ -10,7 +10,7 @@ const toggleHiddenContent = (e) => {
 
     hiddenBlock.classList.toggle('shown');
 
-    console.log(e.target.parentNode.parentNode.nextElementSibling)
+    e.target.parentNode.classList.toggle('rotate-img');
 }
 
 const faq = () => {
