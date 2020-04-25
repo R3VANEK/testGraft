@@ -28,7 +28,7 @@ const OfferCard = ({item}) =>{
                 </div>
                 
 
-                <h2>{item.itemName}</h2>
+                <h2>{item.description}</h2>
                 <div class="normal-text blue-text"> {item.price}  zł</div>
 
                         <Link to={"/oferty/"+item._id}>

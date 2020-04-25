@@ -136,7 +136,7 @@ class OfferDetails extends Component{
                         </p>
                         <div className="item-details-inner-price-and-stars-block">
                             <p className="price">
-                                {offer?.price}zł
+                                {offer?.price}
                              </p>
                             <div className="stars">
                                 GWIAZDKI
@@ -153,7 +153,7 @@ class OfferDetails extends Component{
                         </div>
 
                         <div className="item-details-link">
-                        <a href="#">{offer?.product_url}</a>
+                        <a href={offer?.product_url} target="_blank">{offer?.product_url}</a>
                         </div>
                         
                 </div>

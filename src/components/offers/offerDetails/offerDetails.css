@@ -60,9 +60,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -76,7 +76,8 @@
 }
 
 .item-details-inner-1st img {
-  width: 100%;
+  max-width: 90%;
+  max-height: 95%;
 }
 
 .item-details-inner-1st-image-list-wrapper {
