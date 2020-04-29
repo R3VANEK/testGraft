@@ -1,20 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getOffers} from '../../../actions/offerActions';
+import {getOffers, testingRedux} from '../../../actions/offerActions';
 import './offerDetails.css';
 import needle from '../../../images/Boy Avatar.svg';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
+
 class OfferDetails extends Component{
 
     static propTypes = {
         getOffers: PropTypes.func.isRequired,
+        testingRedux: PropTypes.func.isRequired,
         offer:PropTypes.object
     }
 
     componentDidMount(){
 
+        this.props.testingRedux(3)
         if(this.props.offer === undefined){
             this.props.getOffers();
         }
@@ -169,4 +172,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps, {getOffers})(OfferDetails)
+export default connect(mapStateToProps, {getOffers, testingRedux})(OfferDetails)

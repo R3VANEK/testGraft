@@ -17,15 +17,19 @@ class Offers extends React.Component{
     }
      /************************* TO NIE REDUX ALE DOBRZE TO MIEĆ *************************/
 
+
     state={
         
         typesOfOffers : [
-            {text : "Ubranka", picture : "ubranko.png"},
-            {text : "Jedzenie", picture : "jedzenie.png"},
-            {text : "Zabawki", picture : "zabawki.png"},
-            {text : "Kosmetyki", picture : "kosmetyki.png"},
-            {text : "Shrek", picture : "shrek.png"},
-            {text : "Shrek 2" ,picture : "shrek2.png"}
+            {text : "Ubranka i buty", picture : "ubranko.png", API_id : "ubraniaibuty"},
+            {text : "Dom i ogród", picture : "jedzenie.png", API_id : "domiogrod"},
+            {text : "Zabawki i gry", picture : "zabawki.png", API_id : "zabawkigry"},
+            {text : "Kosmetyki do włosów", picture : "kosmetyki.png", API_id : "wlosy"},
+            {text : "Kobieta w ciąży", picture : "shrek.png", API_id : "kobietawciazy"},
+            {text : "Zdrowie i pielęgnacja" ,picture : "shrek2.png", API_id : "zdrowie"},
+            {text : "Akcesoria dla dzieci" ,picture : "shrek2.png", API_id : "akcesoriadladzieci"},
+            {text : "Czystość w domu" ,picture : "shrek2.png", API_id : "czystoscwdomu"},
+            {text : "Wyposażenie domu" ,picture : "shrek2.png", API_id : "wyposazeniedomu"}
         ],
         dummy_listOfOffers : [
             {id:0, itemName:'Adam 1', price:123, givenPrice:699, hots:50, imgUrl:"watch.jpeg", category:'Ubranka'},
@@ -67,8 +71,18 @@ class Offers extends React.Component{
 
     }
 
+    testAPI = () =>{
+        fetch('http://vps817819.ovh.net/?categories=legginsy', {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+               }
+        })}
+   
+
     componentWillMount(){
       
+        /*this.testAPI()*/
     /************************* REDUX *************************/
         this.props.getOffers();      
     /************************* REDUX *************************/
@@ -87,6 +101,8 @@ class Offers extends React.Component{
             })
         })
     }
+    
+    
 
      sortOption = async(e) =>{
         if(e.target.id == "sort-1"){
@@ -206,26 +222,11 @@ class Offers extends React.Component{
 
         const divCategories = this.state.typesOfOffers.map((category)=>{ /*lista divów z kategorią*/
             return(
-                <CategoryCard text={category.text} picture={category.picture} showOffers={this.showOffers}/>
+                <CategoryCard text={category.text} picture={category.picture} getOffers={this.props.getOffers} API_id={category.API_id}/>
             )
         })
 
-     /*   const divOffers = (this.state.typeOfOffer !=null) ?
-        (
-            this.state.sortedArray.map((offer)=>{
-                if(offer.category == this.state.typeOfOffer){
-                return(
-                    <OfferCard item={offer}/>
-                )}
-            })
-        ) : 
-        (
-            this.state.sortedArray.map((offer)=>{
-                return(
-                    <OfferCard item={offer}/>
-                )
-            })
-        )*/
+     
 
         console.log(this.props.offers.length)
 
