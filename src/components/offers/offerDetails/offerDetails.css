@@ -133,7 +133,7 @@
 .item-details-inner-two-buttons {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (50%)[2];
+  -ms-grid-columns: (50%);
       grid-template-columns: repeat(2, 50%);
 }
 
@@ -141,6 +141,10 @@
   margin: 30px 0;
   border-radius: 12px;
   font-size: 18px;
+
+}
+.item-details-inner-two-buttons .btn:focus{
+  outline:0;
 }
 
 .item-details-inner-two-buttons .btn.purple {
