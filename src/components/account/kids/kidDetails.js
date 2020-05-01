@@ -281,9 +281,9 @@ render(){
 }
 
 const mapStateToProps = state => {
-    //  return{
+      return{
     //      user: state.auth.user
-    //  }
+      }
   }
 
 export default connect(mapStateToProps, {editUser})(KidDetails)

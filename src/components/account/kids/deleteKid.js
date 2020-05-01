@@ -43,9 +43,9 @@ class DeleteKid extends Component {
 }
 
 const mapStateToProps = state => {
-  //  return{
+   return{
    //     userId: state.auth.user.id
-  //  }
+    }
 }
 
 export default connect(mapStateToProps, {editUser})(DeleteKid);

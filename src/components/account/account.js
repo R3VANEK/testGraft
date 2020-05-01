@@ -38,6 +38,19 @@ class Account extends Component {
             <Kid kid={element} key={element.id} handleClickEditProfile={props.handleClickEditProfile}/>
         )
     })*/
+
+    componentDidMount() {
+        window.addEventListener('beforeunload', (e) => {
+            e.preventDefault();
+
+           console.log(e)
+           e.returnValue = "A"
+            return "DO NOT LEAVE"
+        })
+
+   
+    }
+
     state = {
         actualKid : {
             id:11,
@@ -80,7 +93,7 @@ class Account extends Component {
     }
 
     static propTypes = {
-        deleteUser: PropTypes.func.isRequired
+        deleteUser: PropTypes.func
     }
 
 
