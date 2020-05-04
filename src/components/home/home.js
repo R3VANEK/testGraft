@@ -239,6 +239,37 @@ class Home extends Component {
                 </div>
             </div>
         </section>
+
+        <section className="home-section">
+            <h1>Co zyskasz używając naszej platformy?</h1>
+            <div className="home-section-inner">
+                <div className="home-card">
+                    <img src={bank} alt="obraz" />
+                    <h2>Oszczędność</h2>
+                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                </div>
+                <div className="home-card">
+                    <img src={bank} alt="obraz" />
+                    <h2>Oszczędność</h2>
+                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                </div>
+                <div className="home-card">
+                    <img src={bank} alt="obraz" />
+                    <h2>Oszczędność</h2>
+                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                </div>
+                <div className="home-card">
+                    <img src={bank} alt="obraz" />
+                    <h2>Oszczędność</h2>
+                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                </div>
+                <div className="home-card">
+                    <img src={bank} alt="obraz" />
+                    <h2>Oszczędność</h2>
+                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                </div>
+            </div>
+        </section>
     
         <section className="grid purple">
                 <div className="grid-elem-1">

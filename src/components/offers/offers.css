@@ -346,9 +346,6 @@ a {
   width: 150px;
   margin: 0 10px;
 }
-.single-type-label img{
-  max-width:30%;
-}
 
 @media (min-width: 1001px) {
   .shown-offer-grid {

@@ -404,7 +404,7 @@ h1, h3 {
   }
 }
 
-@media (max-width: 902px) {
+@media (max-width: 901px) {
   .container .grid {
     padding: 5vw 2vw;
     -ms-grid-columns: 100%;
@@ -662,9 +662,9 @@ h1, h3 {
     width: 75%;
   }
   .icon-fb, .icon-insta {
-    position: relative;
+    font-size: 20px;
     width: 200px;
-    margin: 25px 5px 25px left;
+    margin: 40px auto;
   }
   .newsletter {
     -ms-grid-columns: 0 100%;
@@ -968,5 +968,92 @@ img.vert-move {
 .button-and-text-wrapper .btn {
   margin: 0;
   margin-right: 4vw;
+}
+
+@media (max-width: 600px) {
+  .button-and-text-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .button-and-text-wrapper .btn {
+    margin-bottom: 40px;
+  }
+}
+
+/*HOME SECTION*/
+.home-section {
+  padding: 0 7vw;
+  margin-bottom: 5vw;
+}
+
+.home-section h1 {
+  font-size: 2.3em;
+  font-weight: 500;
+  margin-top: 0;
+  color: #4d004d;
+}
+
+.home-section-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.home-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 265px;
+  height: 340px;
+  margin: 2vw 4vw;
+  padding: 25px;
+  border-radius: 5px;
+  -webkit-box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.75);
+          box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 901px) {
+  .home-card {
+    margin: 25px 4vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-card {
+    width: 100%;
+  }
+}
+
+.home-card img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.home-card h2 {
+  color: #4d004d;
+  font-weight: 700;
+}
+
+.home-card p {
+  font-weight: 600;
 }
 /*# sourceMappingURL=home.css.map */
