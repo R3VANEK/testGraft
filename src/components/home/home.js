@@ -14,6 +14,15 @@ import flame from '../../images/Flame.svg'
 import purchase from '../../images/purchase.svg'
 import screen2 from '../../images/screen2.svg'
 import contact from '../../images/contact.svg'
+
+///
+import krolik from '../../images/krolik.svg'
+import simple from '../../images/simple.svg'
+import oszczedzaj from '../../images/oszczedzaj.svg'
+import spokoj from '../../images/spokoj.svg'
+import target from '../../images/target.svg'
+///
+
 //import {createCookie, readCookie} from '../../functions/cookiesMethods'
 
 
@@ -242,31 +251,32 @@ class Home extends Component {
 
         <section className="home-section">
             <h1>Co zyskasz używając naszej platformy?</h1>
+            <h2>Jesteś unikalny, korzystając z naszej aplikacji nigdy już nie będziesz „Kolejnym klientem”.</h2>
             <div className="home-section-inner">
                 <div className="home-card">
-                    <img src={bank} alt="obraz" />
+                    <img src={oszczedzaj} alt="obraz" />
                     <h2>Oszczędność</h2>
-                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy.</p>
                 </div>
                 <div className="home-card">
-                    <img src={bank} alt="obraz" />
-                    <h2>Oszczędność</h2>
-                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                    <img src={spokoj} alt="obraz" />
+                    <h2>SPOKÓJ</h2>
+                    <p>Odpocznij od nachalnych ofert i natarczywego wciskania.</p>
                 </div>
                 <div className="home-card">
-                    <img src={bank} alt="obraz" />
-                    <h2>Oszczędność</h2>
-                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                    <img src={target} alt="obraz" />
+                    <h2>PEWNOŚĆ</h2>
+                    <p>Otrzymuj dokładnie to na czym ci zależy pomijając to co cię nie interesuje.</p>
                 </div>
                 <div className="home-card">
-                    <img src={bank} alt="obraz" />
-                    <h2>Oszczędność</h2>
-                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                    <img src={krolik} alt="obraz" />
+                    <h2>SZYBKOŚĆ</h2>
+                    <p>Zoszczędź swój czas i szybko skompletuj zakupy.</p>
                 </div>
                 <div className="home-card">
-                    <img src={bank} alt="obraz" />
-                    <h2>Oszczędność</h2>
-                    <p>Dzięki naszej platformie zaoszczędzisz część swoich pieniędzy</p>
+                    <img src={simple} alt="obraz" />
+                    <h2>PROSTOTE</h2>
+                    <p>Zaplanuj swoje zakupy bez zbędnych utrudnień.</p>
                 </div>
             </div>
         </section>
