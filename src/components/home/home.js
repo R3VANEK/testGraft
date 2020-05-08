@@ -22,6 +22,20 @@ import oszczedzaj from '../../images/oszczedzaj.svg'
 import spokoj from '../../images/spokoj.svg'
 import target from '../../images/target.svg'
 ///
+/****HOME ANIMATIONS***** */
+
+import {
+    handleScrollOfOtherFields,
+    handleClick,
+    handleClick2,
+    handleClickOv,
+    handleOnLoad,
+    handleScrollOfHomeCards,
+    handleScroll
+       } from '../../functions/homeAnimationsHelper';
+
+
+/************************ */
 
 //import {createCookie, readCookie} from '../../functions/cookiesMethods'
 
@@ -33,8 +47,8 @@ class Home extends Component {
             }
     
             componentDidMount() {
-                window.addEventListener('scroll', this.handleScroll, true);
-                window.addEventListener('load', this.handleScroll, true);
+                window.addEventListener('scroll', handleScroll, true);
+                window.addEventListener('load', handleScroll, true);
 
 
         /********** NEWSLETTER ***********/
@@ -80,85 +94,16 @@ class Home extends Component {
                         header.classList.toggle('blur')
                         container.classList.toggle('blur')
                         footer.classList.toggle('blur')
-                    }
+                        }
                     }
                 
-                     handleOnLoad = (e) => {
-                            const movingLeft = document.querySelectorAll(".moving.left"); 
-                            const movingRight = document.querySelectorAll(".moving.right");
-                            
-                            movingLeft.forEach( (e) => {
-                               
-                                if( parseInt(window.innerHeight + window.scrollY-
-                                (e.clientHeight) - e.getBoundingClientRect().top) > 0){
-                                e.classList.add('from-left-move'); 
-                                }    
-                            })
-                            movingRight.forEach( (e) => {
-                                if( parseInt(window.innerHeight + window.scrollY-
-                                (e.clientHeight) - e.getBoundingClientRect().top) > 0){
-                                e.classList.add('from-right-move'); 
-                                }    
-                            })
-                           
-                        }
+                    
                 
                         
                 
-                        handleScroll = (e) => {                   
-                            const movingLeft = document.querySelectorAll(".moving.left"); 
-                            const movingRight = document.querySelectorAll(".moving.right");
-                            
-                            movingLeft.forEach( (e) => {
-                                if( parseInt(window.innerHeight + window.scrollY -
-                                (e.clientHeight)  - e.getBoundingClientRect().top) > 0){
-                                e.classList.add('from-left-move'); 
-                                }    
-                            })
-                            movingRight.forEach( (e) => {
-                                if( parseInt(window.innerHeight + window.scrollY -
-                                (e.clientHeight) - e.getBoundingClientRect().top) > 0){
-                                e.classList.add('from-right-move'); 
-                                }    
-                            })  
-                        }
+                        
                 
-                        handleClick = () => {
-                            const showVideo = document.querySelector('.video1');
-                            
-                            showVideo.classList.toggle('hidden');
-                            
-                        }
-                
-                        handleClickOv = () => {
-                            const showVideo = document.querySelector('.video1');
-                            const showVideo2 = document.querySelector('.video2');
-                            
-                            this.toggleBlurAndOverlay();
-    
-                            this.setState({
-                                isNewsLetterActive:false
-                            })
-                            if(showVideo.classList.contains('hidden')){
-                               showVideo2.classList.add('hidden');           
-                            }
-                            else showVideo.classList.add('hidden');     
-                        }
-                        handleClick2 = (e) => {
-
-                            if( !(e.target.classList.contains('video')) ) {
-                                const showVideo2 = document.querySelector('.video2');
-                                if(showVideo2.classList.contains('hidden')){
-                                    showVideo2.childNodes[0].play(); 
-                                }else{
-                                    showVideo2.childNodes[0].pause();
-                                }
-                                    
-                                this.toggleBlurAndOverlay();
-                                showVideo2.classList.toggle('hidden');
-                            }
-                        }
-                
+                        
                         
                         
                         closeNewsLetter = () => {
@@ -197,7 +142,7 @@ class Home extends Component {
             return ( 
     <main className="landing-page">  
         {newsLetter}
-        <div className="video2 hidden" onClick={(e)=>{this.handleClick2(e)}} >
+        <div className="video2 hidden" onClick={(e)=>{handleClick2(e)}} >
             <video  controls className="video">
                 <source src={videoNr1}   type="video/mp4"/>
             </video>
@@ -205,16 +150,16 @@ class Home extends Component {
       <div className="container">
         
     
-       <div className="overlay hidden" onClick={this.handleClickOv}></div>
+       <div className="overlay hidden" onClick={handleClickOv}></div>
     
-                <div className="video1 hidden" onClick={this.handleClick} >
+                <div className="video1 hidden" onClick={handleClick} >
                     
                 </div>
     
                 
     
     
-        <section className="grid  special" onScroll={this.handleScroll} onLoad={this.handleOnLoad}>
+        <section className="grid  special" onScroll={handleScroll} onLoad={handleOnLoad}>
             <div className="grid-elem-1">
             <h1 className="big-h1">Zapewnij sobie</h1>
 
@@ -287,7 +232,7 @@ class Home extends Component {
                     <i><p>NIEZALEŻNIE CZY TO NOWY UPOMINEK, UBRANIE CZY UPRAGNIONA WYCIECZKA.</p></i>
                     <p>Jesteś unikalny, korzystając z naszej aplikacji nigdy już nie będziesz "Kolejnym klientem".</p> 
     
-                    <button className="btn purple-btn" onClick={this.handleClick2}>
+                    <button className="btn purple-btn" onClick={handleClick2}>
                         <i class="fas fa-play-circle icon"></i>Zobacz video
                     </button>
                 </div>

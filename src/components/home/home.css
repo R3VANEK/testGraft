@@ -1,3 +1,29 @@
+@-webkit-keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 body {
   margin: 0 auto;
   font-family: 'Montserrat', sans-serif;
@@ -1044,6 +1070,43 @@ img.vert-move {
   border-radius: 5px;
   -webkit-box-shadow: 0px 6px 6px #00000029;
           box-shadow: 0px 6px 6px #00000029;
+  opacity: 0;
+  -webkit-transform: translateX(-40px);
+          transform: translateX(-40px);
+}
+
+.home-card.fade-in-from-left {
+  -webkit-animation-name: fadeInFromLeft;
+          animation-name: fadeInFromLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.home-card.fade-in-from-left:nth-of-type(1) {
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+.home-card.fade-in-from-left:nth-of-type(2) {
+  -webkit-animation-delay: .25s;
+          animation-delay: .25s;
+}
+
+.home-card.fade-in-from-left:nth-of-type(3) {
+  -webkit-animation-delay: .50s;
+          animation-delay: .50s;
+}
+
+.home-card.fade-in-from-left:nth-of-type(4) {
+  -webkit-animation-delay: .25s;
+          animation-delay: .25s;
+}
+
+.home-card.fade-in-from-left:nth-of-type(5) {
+  -webkit-animation-delay: .50s;
+          animation-delay: .50s;
 }
 
 @media (max-width: 901px) {

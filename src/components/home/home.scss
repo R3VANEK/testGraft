@@ -1,4 +1,7 @@
 
+@import "../../styles/animations.scss";
+
+
 //GLOBAL STYLES
 body{
   margin: 0 auto;
@@ -830,6 +833,34 @@ img.vert-move {
   padding: 25px;
   border-radius: 5px;
   box-shadow: 0px 6px 6px #00000029;
+ opacity: 0;
+ transform: translateX(-40px);
+
+  //animations
+
+  &.fade-in-from-left{
+    animation-name: fadeInFromLeft;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+  &:nth-of-type(1){
+    animation-delay: 0;
+  }
+  &:nth-of-type(2){
+    animation-delay: .25s;
+  }
+  &:nth-of-type(3){
+    animation-delay: .50s;
+  }
+  &:nth-of-type(4){
+    animation-delay: .25s;
+  }
+  &:nth-of-type(5){
+    animation-delay: .50s;
+  }
+  /////////////////
+  }
+  
 
   @media(max-width:901px){
     margin: 25px 4vw;
