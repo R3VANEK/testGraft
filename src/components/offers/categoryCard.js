@@ -8,7 +8,7 @@ const CategoryCard = ({text, picture, getOffers, API_id}) =>{
             <input type="radio" id={text} name="type"/>
             <label class="single-type-label"  for={text} onClick={()=>{getOffers(null,API_id)}}>
                 <h3>{text}</h3>
-                <img src={require(`../../images/categoryIcons/${picture}`)} alt="logo kategorii produktów"/>
+                <img  class="categoryImg" src={require(`../../images/categoryIcons/${picture}`)} alt="logo kategorii produktów"/>
             </label>
         </div>
     )

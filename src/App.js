@@ -16,6 +16,7 @@ import Offers from './components/offers/offers'
 import OfferDetails from './components/offers/offerDetails/offerDetails'
 import Contact from './components/contact/contact';
 import Faq from './components/faq/faq';
+import Creator from './components/register/creator/creator.js'  /* tymczasowo do testów wyglądu */
 import './app.css'
 
 
@@ -31,6 +32,7 @@ class App extends Component {
 
           <Switch>
             <Route path="/rejestracja" component={Register} />
+            <Route  path="/bla" component={Creator}/>
             <Route path="/logowanie" component={Login} />
             <Route path="/o-nas" component={About} />
             <Route path="/kontakt" component={Contact} />
