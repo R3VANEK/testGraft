@@ -21,15 +21,15 @@ class Offers extends React.Component{
     state={
         
         typesOfOffers : [
-            {text : "Ubranka i buty", picture : "clothes.svg", API_id : "ubraniaibuty"},
-            {text : "Dom i ogród", picture : "sofa.svg", API_id : "domiogrod"},
-            {text : "Zabawki i gry", picture : "Puzzle.svg", API_id : "zabawkigry"},
-            {text : "Kosmetyki do włosów", picture : "kosmetyki.svg", API_id : "wlosy"},
-            {text : "Kobieta w ciąży", picture : "dlakobietwciazy.svg", API_id : "kobietawciazy"},
-            {text : "Zdrowie i pielęgnacja" ,picture : "Apple.svg", API_id : "zdrowie"},
-            {text : "Akcesoria dla dzieci" ,picture : "akcesoriadladzieci.svg", API_id : "akcesoriadladzieci"},
-            {text : "Czystość w domu" ,picture : "czystoscwdomu.svg", API_id : "czystoscwdomu"},
-            {text : "Wyposażenie domu" ,picture : "sofa.svg", API_id : "wyposazeniedomu"}
+            {text : "Ubranka i buty", picture : "clothes.svg", picture1 : "clothes-white.svg", API_id : "ubraniaibuty"},
+            {text : "Dom i ogród", picture : "sofa.svg", picture1 : "sofa-white.svg", API_id : "domiogrod"},
+            {text : "Zabawki i gry", picture : "Puzzle.svg", picture1 : "Puzzle-white.svg", API_id : "zabawkigry"},
+            {text : "Kosmetyki do włosów", picture : "kosmetyki.svg", picture1 : "kosmetyki-white.svg", API_id : "wlosy"},
+            {text : "Kobieta w ciąży", picture : "dlakobietwciazy.svg",picture1 : "dlakobietwciazy-white.svg",  API_id : "kobietawciazy"},
+            {text : "Zdrowie i pielęgnacja" ,picture : "Apple.svg", picture1 : "Apple-white.svg", API_id : "zdrowie"},
+            {text : "Akcesoria dla dzieci" ,picture : "akcesoriadladzieci.svg", picture1 : "akcesoriadladzieci-white.svg", API_id : "akcesoriadladzieci"},
+            {text : "Czystość w domu" ,picture : "czystoscwdomu.svg", picture1 : "czystoscwdomu-white.svg", API_id : "czystoscwdomu"},
+            {text : "Wyposażenie domu" ,picture : "sofa.svg", picture1 : "sofa-white.svg", API_id : "wyposazeniedomu"}
         ],
         dummy_listOfOffers : [
             {id:0, itemName:'Adam 1', price:123, givenPrice:699, hots:50, imgUrl:"watch.jpeg", category:'Ubranka'},
@@ -205,6 +205,18 @@ class Offers extends React.Component{
         })
     }
 
+    testing = (id) =>{
+        const findedObj = this.state.typesOfOffers.find((object)=>{
+            if(object.text == id){
+                return object
+            }
+        })
+        for(let i = 0; i< this.state.typesOfOffers.length; i++){
+            console.log(this.state.typesOfOffers[i].text+"img")
+            document.getElementById(this.state.typesOfOffers[i].text+"img").src = require(`../../images/categoryIcons/${this.state.typesOfOffers[i].picture}`)
+        }
+        document.getElementById(id+"img").src =  require(`../../images/categoryIcons/${findedObj.picture1}`)
+    }
     
 
     render(){
@@ -222,7 +234,7 @@ class Offers extends React.Component{
 
         const divCategories = this.state.typesOfOffers.map((category)=>{ /*lista divów z kategorią*/
             return(
-                <CategoryCard text={category.text} picture={category.picture} getOffers={this.props.getOffers} API_id={category.API_id}/>
+                <CategoryCard text={category.text} picture={category.picture} getOffers={this.props.getOffers} API_id={category.API_id} onChangeFunc={this.testing}/>
             )
         })
 
